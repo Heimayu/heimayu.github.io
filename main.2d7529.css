@@ -2152,7 +2152,7 @@ pre .id {
 }
 
 .article-more-link a:hover {
-    background: #00b195
+    opacity: .8;
 }
 
 .article-more-link a.hidden {
@@ -2253,7 +2253,7 @@ pre .id {
     cursor: pointer;
 }
 
-.article-inner h1:first-child:hover{
+.article-inner h1 a:first-child:hover{
   color: #00b195;
 }
 
