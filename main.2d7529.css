@@ -2111,7 +2111,7 @@ pre .id {
 .article-header {
     border-left: 5px solid #4d4d4d;
     padding: 30px 0 15px 25px;
-    padding-left: 7.6923%
+    padding-left: calc(7.6923% - 10px);
 }
 
 .article-meta {
@@ -2152,7 +2152,7 @@ pre .id {
 }
 
 .article-more-link a:hover {
-    background: #3c3c3c
+    background: #00b195
 }
 
 .article-more-link a.hidden {
@@ -2248,7 +2248,13 @@ pre .id {
 
 .article-inner h1:first-child {
     margin-bottom: 10px;
-    display: inline
+    display: inline;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.article-inner h1:first-child:hover{
+  color: #00b195;
 }
 
 .article-entry {
@@ -2456,6 +2462,7 @@ pre .id {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    display: none;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -3956,4 +3963,8 @@ a.pswp__share--download:hover {
 .pswp__error-msg a {
     color: #ccc;
     text-decoration: underline
+}
+
+.article-entry .article-more-a{
+  display: none
 }
