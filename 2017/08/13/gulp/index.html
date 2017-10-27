@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>heimayu | learn and live</title>
+  <title>当Gulp遇到requireJS | heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/index.html">
+  <meta name="description" content="gulp好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="当Gulp遇到requireJS">
+<meta property="og:url" content="http://www.webhmy.com/2017/08/13/gulp/index.html">
 <meta property="og:site_name" content="heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="gulp好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~">
+<meta property="og:updated_time" content="2017-10-27T08:14:27.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="当Gulp遇到requireJS">
+<meta name="twitter:description" content="gulp好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~">
   
     <link rel="alternative" href="/atom.xml" title="heimayu | learn and live" type="application/atom+xml">
   
@@ -134,16 +135,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-gulp" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/13/gulp/">当Gulp遇到requireJS</a>
+    <h1 class="article-title" itemprop="name">
+      当Gulp遇到requireJS
     </h1>
   
 
@@ -156,10 +155,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h4><p>好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~<br>
-        
-          <a class="article-more-a" href="/2017/08/13/gulp/#more">more >></a>
-        
+        <h4 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h4><p>好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~<br><a id="more"></a></p>
+
+<div class="bs-example">
+  <div id="setContent">
+
+  </div>
+</div>
+
+<h4 id="1、gulp常用插件"><a href="#1、gulp常用插件" class="headerlink" title="1、gulp常用插件"></a>1、gulp常用插件</h4><p><strong>LESS：</strong> gulp-less<br><strong>CSS压缩：</strong> gulp-minify-css<br><strong>JS压缩：</strong> gulp-uglify<br><strong>HTML压缩：</strong> gulp-minify-html<br><strong>JS代码检查：</strong> gulp-jshint<br><strong>文件合并：</strong> gulp-concat<br><strong>图片压缩：</strong> gulp-imagemin<br><strong>Md5版本号添加：</strong> gulp-rev和gulp-rev-collector<br><strong>文件监听：</strong> gulp-watch<br><strong>雪碧图生成：</strong> gulp-spritesmith<br><strong>重命名：</strong> gulp-rename</p>
+<h4 id="2、基本用法"><a href="#2、基本用法" class="headerlink" title="2、基本用法"></a>2、基本用法</h4><p>可以把文件的配置单独配置到一个JS里去，然后在gulpfile.js中引用。保证代码的干净整洁。举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var less = require(&apos;gulp-less&apos;);</div><div class="line">gulp.task(&apos;less&apos;, [&apos;clean&apos;], function() &#123;</div><div class="line">    return gulp.src(CONFIG.less.src)</div><div class="line">        .pipe(less())</div><div class="line">        .pipe(gulp.dest(CONFIG.css.srcFile));</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>gulp.task：</strong> 表示任务流，gulp以管道流的形式完成一个个的任务。<br><strong>gulp.src：</strong> 执行任务的源文件<br><strong>pipe()：</strong> 任务执行输出动作<br><strong>gulp.dest()：</strong> 任务输出源文件</p>
+<h4 id="3、Md5版本号添加"><a href="#3、Md5版本号添加" class="headerlink" title="3、Md5版本号添加"></a>3、Md5版本号添加</h4><p>我们经常通过给加载文件加入版本号的方法清除缓存，gulp通过gulp-rev和gulp-rev-collector两个插件完成该动作。例如：<br>a.将JS文件加入版本号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var minJs = require(&apos;gulp-uglify&apos;); // js压缩</div><div class="line">gulp.task(&apos;js&apos;, function() &#123;</div><div class="line">    return gulp.src(CONFIG.js.src)</div><div class="line">        .pipe(minJs())</div><div class="line">        .pipe(rev()) //将文件加入版本号</div><div class="line">        .pipe(gulp.dest(CONFIG.js.dist))</div><div class="line">        .pipe(rev.manifest()) // 生成一个rev-manifest.json</div><div class="line">        .pipe(gulp.dest(CONFIG.rev.json)); //将json文件存放到一个文件夹中</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>生成的<code>rev-manifest.json</code>长这个样子，可以看到，对应的JS后面多了版本号了~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;index.js&quot;: &quot;index-d8f0c67dcc.js&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>b.将对应HTML中的路径替换掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//修改HTML中的路径</div><div class="line">gulp.task(&apos;rev&apos;, [&apos;js&apos;], function() &#123;</div><div class="line">    gulp.src([CONFIG.rev.json, CONFIG.html.src])</div><div class="line">        .pipe(revCollector()) //替换路径</div><div class="line">        .pipe(gulp.dest(CONFIG.html.dist));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>HTML中的路径会变成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/plugins/require.js&quot; data-main=&quot;js/apps/index-d8f0c67dcc.js?&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="4、requireJS中的路径替换"><a href="#4、requireJS中的路径替换" class="headerlink" title="4、requireJS中的路径替换"></a>4、requireJS中的路径替换</h4><p>我们知道，在写requireJS配置的时候会配置paths，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">paths: &#123;        </div><div class="line">        jquery: &apos;js/plugins/jquery.min&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中加载的插件不需要加上<code>.js</code>的后缀名，因为requireJS会默认加上的。但是我们在3中的替换rev-manifest.json中是有后缀名的，否则是无法替换的，因此我们将paths中的插件都加上<code>.js</code>。导致的问题是浏览器会报错加载了<code>js/plugins/jquery.min.js.js</code>。</p>
+<p>修改问题的方法是，修改requireJS中对路径的处理（第1895行）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (baseElement) &#123;</div><div class="line">      head.insertBefore(node, baseElement);</div><div class="line">  &#125; else &#123;</div><div class="line">  	var srcArr = node.src.split(&apos;.js&apos;);</div><div class="line">  	node.src = !!srcArr[1] ? srcArr[0] + &apos;.js&apos; + srcArr[1] : srcArr[0] + &apos;.js&apos;;  	</div><div class="line">    head.appendChild(node);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="5、修改版本号的表现形式"><a href="#5、修改版本号的表现形式" class="headerlink" title="5、修改版本号的表现形式"></a>5、修改版本号的表现形式</h4><p>我们想将引用改变成下面常用的这样，就必须再修改下gulp-rev和gulp-rev-collector插件的源码！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/plugins/require.js&quot; data-main=&quot;js/apps/index.js?v=d8f0c67dcc&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>a. 打开node_modules\gulp-rev\index.js</p>
+<p>第144行 <code>manifest[originalFile] = revisionedFile;</code><br>更新为:<br><code>manifest[originalFile] = originalFile + ‘?v=’ + file.revHash;</code></p>
+<p>b. 打开nodemodules\gulp-rev\nodemodules\rev-path\index.js</p>
+<p>10行 <code>return filename + ‘-’ + hash + ext;</code><br>更新为:<br> <code>return filename + ext;</code></p>
+<p>c. 打开node_modules\gulp-rev-collector\index.js<br>新版本的gulp-rev-collector这样修改<br><code>let cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuffix ), &#39;&#39; );</code><br>更新为:<br><code>let cleanReplacement =  path.basename(json[key]).split(&#39;?&#39;)[0];</code><br>即可。</p>
+
       
 
       
@@ -181,160 +202,102 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/13/gulp/">Read more >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2017/08/13/gulp/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
-
-
-
-
-
   
-    <article id="post-command" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/19/command/">杂记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/19/command/" class="archive-article-date">
-  	<time datetime="2017-04-19T00:56:28.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-                
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一点引子"><a href="#一点引子" class="headerlink" title="一点引子"></a>一点引子</h4><p>最近工作又接触到不少新的东西，等到闲暇一些的时候要再好好消化总结一下。涉及到很多命令行操作和其他，将会一一记录下来便于平时查找使用。<br>
-        
-          <a class="article-more-a" href="/2017/04/19/command/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/19/command/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aboutme" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/aboutme/">依然前行2017</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/13/aboutme/" class="archive-article-date">
-  	<time datetime="2017-03-13T06:34:46.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-                
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h4><p>因工作原因偶遇hexo，发现其是搭建博客的好帮手，支持markdown语法，易于文件管理，可以让人更加专注于博客的内容。遂浅学了半天把博客迁出原空间(正好过期需续费了)。因此hexo的出现是场及时雨，帮我省了一笔银子，只是去年博客的内容就不搬迁了，一是觉得没什么内容，二是想重新开始吧。<br>
-        
-          <a class="article-more-a" href="/2017/03/13/aboutme/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼碎碎念/" class="article-tag-list-link color2">黑玛鱼碎碎念</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/aboutme/">Read more >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
+<nav id="article-nav">
   
   
+    <a href="/2017/04/19/command/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">杂记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+  <section id="comments" class="duoshuo">
+    <!-- 多说评论框 start -->
+      <div id="ds-thread" class="ds-thread" data-thread-key="2017/08/13/gulp/" data-title="当Gulp遇到requireJS" data-url="http://www.webhmy.com/2017/08/13/gulp/"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+        var duoshuoQuery = {short_name:"webhmy"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0]
+           || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+  <!-- 多说公共JS代码 end -->
+  </section>
+
+
 
 
           </div>
@@ -362,8 +325,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
