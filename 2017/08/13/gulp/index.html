@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.webhmy.com/2017/08/13/gulp/index.html">
 <meta property="og:site_name" content="heimayu | learn and live">
 <meta property="og:description" content="gulp好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~">
-<meta property="og:updated_time" content="2017-10-27T08:14:27.918Z">
+<meta property="og:updated_time" content="2017-12-11T04:10:09.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当Gulp遇到requireJS">
 <meta name="twitter:description" content="gulp好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~">
@@ -180,6 +180,7 @@
 <p>b. 打开nodemodules\gulp-rev\nodemodules\rev-path\index.js</p>
 <p>10行 <code>return filename + ‘-’ + hash + ext;</code><br>更新为:<br> <code>return filename + ext;</code></p>
 <p>c. 打开node_modules\gulp-rev-collector\index.js<br>新版本的gulp-rev-collector这样修改<br><code>let cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuffix ), &#39;&#39; );</code><br>更新为:<br><code>let cleanReplacement =  path.basename(json[key]).split(&#39;?&#39;)[0];</code><br>即可。</p>
+<h4 id="6、传统的JSP项目-requireJS"><a href="#6、传统的JSP项目-requireJS" class="headerlink" title="6、传统的JSP项目+requireJS"></a>6、传统的JSP项目+requireJS</h4><p>不想大动干戈，可以让后台手动给一个版本号的变量。然后在需要加版本号的地方手动加上后缀名。<br>对于requireJS的资源，则首先在入口文件加入一个data属性例如：<code>data-urlArgs=&quot;${***}&quot;</code>，然后更改require.js的源码在1802行增加如下代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> urlArgs = script.getAttribute(<span class="string">'data-urlArgs'</span>);</div><div class="line"><span class="keyword">if</span> (urlArgs) &#123;</div><div class="line">    <span class="comment">//Set the cfg.urlArgs, if it is not cfg.urlArgs set.</span></div><div class="line">    <span class="keyword">if</span> (!cfg.urlArgs) &#123;</div><div class="line">        cfg.urlArgs = <span class="string">'ver='</span> + urlArgs;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
 
