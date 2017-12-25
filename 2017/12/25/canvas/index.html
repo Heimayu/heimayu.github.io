@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Category: 黑玛鱼知识库 | heimayu | learn and live</title>
+  <title>炫彩之旅-初识canvas(一) | heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/categories/黑玛鱼知识库/index.html">
+  <meta name="description" content="canvas 是自己一直想学的技术，之前总是学点学点就跑偏了，最近有点时间重新拾掇下，并督促自己学一点记一点。今天又一年的圣诞，祝福快乐哟！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="炫彩之旅-初识canvas(一)">
+<meta property="og:url" content="http://www.webhmy.com/2017/12/25/canvas/index.html">
 <meta property="og:site_name" content="heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="canvas 是自己一直想学的技术，之前总是学点学点就跑偏了，最近有点时间重新拾掇下，并督促自己学一点记一点。今天又一年的圣诞，祝福快乐哟！">
+<meta property="og:image" content="http://www.webhmy.com/2017/12/25/canvas/canvas-circle-1.png">
+<meta property="og:updated_time" content="2017-12-25T08:19:54.150Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="炫彩之旅-初识canvas(一)">
+<meta name="twitter:description" content="canvas 是自己一直想学的技术，之前总是学点学点就跑偏了，最近有点时间重新拾掇下，并督促自己学一点记一点。今天又一年的圣诞，祝福快乐哟！">
+<meta name="twitter:image" content="http://www.webhmy.com/2017/12/25/canvas/canvas-circle-1.png">
   
     <link rel="alternative" href="/atom.xml" title="heimayu | learn and live" type="application/atom+xml">
   
@@ -134,37 +137,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-canvas" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      炫彩之旅-初识canvas(一)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/25/canvas/" class="archive-article-date">
+
+        
+        <a href="/2017/12/25/canvas/" class="archive-article-date">
   	<time datetime="2017-12-25T03:10:43.118Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/25/canvas/">炫彩之旅-初识canvas(一)</a>
-    </h1>
-  
+                
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>canvas</code> 是自己一直想学的技术，之前总是学点学点就跑偏了，最近有点时间重新拾掇下，并督促自己学一点记一点。今天又一年的圣诞，祝福快乐哟！<br><a id="more"></a></p>
+<p>下面的小demo是在一个用canvas做的绚丽小球钟表器，根据功能的实现简述一些基础用法。<br>
+<style>
+  #myCanvas{
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    border:1px solid #d3d3d3;
+    border-radius:4px;
+  }
+</style>
+  <canvas id="myCanvas"></canvas>
+  <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="/js/canvas/digit.js"></script>
+  <script type="text/javascript" src="/js/canvas/test1.js"></script>
+</p>
+<h4 id="标签定义"><a href="#标签定义" class="headerlink" title="标签定义"></a>标签定义</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="绘制画布"><a href="#绘制画布" class="headerlink" title="绘制画布"></a>绘制画布</h4><p>首先得想象一下，自己是个绘画大师，没错那个人就是我，然后拿起手中的“画笔”，一起描绘世界吧~<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取环境的方法</span></div><div class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'myCanvas'</span>),</div><div class="line">    ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line"></div><div class="line"><span class="comment">//定义宽高的方法，也可以直接在&lt;canvas&gt;的标签上定义</span></div><div class="line">canvas.width = <span class="number">300</span>;</div><div class="line">canvas.height = <span class="number">300</span>;</div></pre></td></tr></table></figure></p>
+<h4 id="先画一条线"><a href="#先画一条线" class="headerlink" title="先画一条线"></a>先画一条线</h4><p><code>canvas</code> 是基于状态绘制的，先描述状态，再执行操作。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//开始绘制</span></div><div class="line">ctx.beginPath();</div><div class="line"></div><div class="line"><span class="comment">//moveTo(x坐标，y坐标)，画笔起点</span></div><div class="line">ctx.moveTo(<span class="number">0</span>,<span class="number">120</span>);</div><div class="line"></div><div class="line"><span class="comment">//lineTo(x坐标，y坐标)，画线</span></div><div class="line"><span class="comment">//ctx.canvas.width 获取当前画布的宽度</span></div><div class="line">ctx.lineTo(ctx.canvas.width,<span class="number">120</span>);</div><div class="line"></div><div class="line"><span class="comment">//绘制虚线setLineDash([间隔])</span></div><div class="line">ctx.setLineDash([<span class="number">1</span>]);</div><div class="line"></div><div class="line"><span class="comment">//线的宽度，颜色，绘制方法</span></div><div class="line">ctx.lineWidth = <span class="number">3</span>;</div><div class="line">ctx.strokeStyle = <span class="string">"#caff67"</span>;</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure></p>
+<h4 id="再画一个圆"><a href="#再画一个圆" class="headerlink" title="再画一个圆"></a>再画一个圆</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//开始绘制圆</span></div><div class="line">ctx.beginPath();</div><div class="line"></div><div class="line"><span class="comment">//ctx.arc(圆的起始x坐标,y坐标,R半径,0起始点,2*Math.PI表示弧度，是否按照顺时针方向)</span></div><div class="line">ctx.arc(x, y, R, <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI,<span class="literal">true</span>);</div><div class="line"></div><div class="line"><span class="comment">//圆的颜色和绘制方法</span></div><div class="line">ctx.fillStyle = <span class="string">'#caff67'</span>;</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
+<p>关于<code>ctx.arc</code>方法中弧度的表示含义，截取网上的一张图示：<br><img src="/2017/12/25/canvas/canvas-circle-1.png" alt="ctx.arc"></p>
+<h4 id="钟表核心思想"><a href="#钟表核心思想" class="headerlink" title="钟表核心思想"></a>钟表核心思想</h4><ul>
+<li><p>提前准备一个矩阵（表示0-9的），其中0表示空，1的位置表示画圆，然后遍历矩阵画出表示数字的圆，比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//表示0的矩阵</span></div><div class="line">[</div><div class="line">    [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>],</div><div class="line">    [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">    [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">    [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">    [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">    [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">    [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">    [<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>],</div><div class="line">    [<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>],</div><div class="line">    [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>]</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+<li><p>每次在数字改变的时候重新绘制彩色数字</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//生成彩色的小球</span></div><div class="line"><span class="keyword">var</span> ball = &#123;</div><div class="line">  x: x, <span class="comment">// 小球的x坐标</span></div><div class="line">  y: y, <span class="comment">// 小球的y坐标</span></div><div class="line">  g: <span class="number">1.5</span> + <span class="built_in">Math</span>.random(), <span class="comment">// 加速度</span></div><div class="line">  vx: <span class="built_in">Math</span>.pow(<span class="number">-1</span>, <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">1000</span>)) * <span class="number">4</span>,<span class="comment">// 初始x轴变化速度</span></div><div class="line">  vy: <span class="number">-5</span>,<span class="comment">// 初始y坐标速度</span></div><div class="line">  color: colors[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>)]<span class="comment">// 随机颜色值</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//放到全局的balls里</span></div><div class="line">balls.push(ball);</div></pre></td></tr></table></figure>
+<ul>
+<li>定义一个定时器，每50毫秒更新一次彩色小球的位置，这里用到了物理加速度知识 <code>v = vx + gt</code> 模拟小球降落的现象，并注意在画布的底部进行碰撞检测：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; balls.length; i++) &#123;  	</div><div class="line">  <span class="comment">// 设置新的位置</span></div><div class="line">  balls[i].x -= balls[i].vx;</div><div class="line">  balls[i].y += balls[i].vy;</div><div class="line">  balls[i].vy += balls[i].g;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (balls[i].y &gt; <span class="number">296</span>) &#123;</div><div class="line">    balls[i].y = <span class="number">296</span>;</div><div class="line">    balls[i].vy = -balls[i].vy * <span class="number">0.6</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>记得每次重新绘制的时候，需要清除一次画布哟~</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, ctx.canvas.width, ctx.canvas.height);</div></pre></td></tr></table></figure>
+<h4 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h4><p>这里只是总结了一下该案例用到的一些关于canvas的方法，至于具体的实现，F12看具体的代码吧！期待下一篇章，加油了！</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -177,169 +214,103 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2017/12/25/canvas/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/18/raphael/" class="archive-article-date">
-  	<time datetime="2017-12-18T03:16:13.991Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/18/raphael/">浅记录-Raphael</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/18/raphael/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅记录-Raphael</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/11/toPdf/" class="archive-article-date">
-  	<time datetime="2017-12-11T01:30:17.920Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/11/toPdf/">开发人员写文档（Atom/Markdown/Pdf）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/13/gulp/" class="archive-article-date">
-  	<time datetime="2017-08-13T07:23:14.484Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/13/gulp/">当Gulp遇到requireJS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/19/command/" class="archive-article-date">
-  	<time datetime="2017-04-19T00:56:28.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/19/command/">按命令行事（git/hexo/fis3）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+  <section id="comments" class="duoshuo">
+    <!-- 多说评论框 start -->
+      <div id="ds-thread" class="ds-thread" data-thread-key="2017/12/25/canvas/" data-title="炫彩之旅-初识canvas(一)" data-url="http://www.webhmy.com/2017/12/25/canvas/"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+        var duoshuoQuery = {short_name:"webhmy"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0]
+           || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+  <!-- 多说公共JS代码 end -->
+  </section>
 
-    
+
 
 
           </div>
@@ -368,10 +339,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		root: "/",
 		innerArchive: false,

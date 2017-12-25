@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.webhmy.com/2017/08/13/gulp/index.html">
 <meta property="og:site_name" content="heimayu | learn and live">
 <meta property="og:description" content="gulp好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~">
-<meta property="og:updated_time" content="2017-12-11T04:10:09.267Z">
+<meta property="og:updated_time" content="2017-12-18T03:22:03.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当Gulp遇到requireJS">
 <meta name="twitter:description" content="gulp好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~">
@@ -156,13 +156,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h4><p>好久没上来，当年也使用过gulp，没记~然后又忘了，这次重新学习下必须MARK了，免得老年痴呆又忘记了~<br><a id="more"></a></p>
-
-<div class="bs-example">
-  <div id="setContent">
-
-  </div>
-</div>
-
 <h4 id="1、gulp常用插件"><a href="#1、gulp常用插件" class="headerlink" title="1、gulp常用插件"></a>1、gulp常用插件</h4><p><strong>LESS：</strong> gulp-less<br><strong>CSS压缩：</strong> gulp-minify-css<br><strong>JS压缩：</strong> gulp-uglify<br><strong>HTML压缩：</strong> gulp-minify-html<br><strong>JS代码检查：</strong> gulp-jshint<br><strong>文件合并：</strong> gulp-concat<br><strong>图片压缩：</strong> gulp-imagemin<br><strong>Md5版本号添加：</strong> gulp-rev和gulp-rev-collector<br><strong>文件监听：</strong> gulp-watch<br><strong>雪碧图生成：</strong> gulp-spritesmith<br><strong>重命名：</strong> gulp-rename</p>
 <h4 id="2、基本用法"><a href="#2、基本用法" class="headerlink" title="2、基本用法"></a>2、基本用法</h4><p>可以把文件的配置单独配置到一个JS里去，然后在gulpfile.js中引用。保证代码的干净整洁。举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var less = require(&apos;gulp-less&apos;);</div><div class="line">gulp.task(&apos;less&apos;, [&apos;clean&apos;], function() &#123;</div><div class="line">    return gulp.src(CONFIG.less.src)</div><div class="line">        .pipe(less())</div><div class="line">        .pipe(gulp.dest(CONFIG.css.srcFile));</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p><strong>gulp.task：</strong> 表示任务流，gulp以管道流的形式完成一个个的任务。<br><strong>gulp.src：</strong> 执行任务的源文件<br><strong>pipe()：</strong> 任务执行输出动作<br><strong>gulp.dest()：</strong> 任务输出源文件</p>

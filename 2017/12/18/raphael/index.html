@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Category: 黑玛鱼知识库 | heimayu | learn and live</title>
+  <title>浅记录-Raphael | heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/categories/黑玛鱼知识库/index.html">
+  <meta name="description" content="关于前几天有人问我。echarts 实现不了的一些图形怎么画，我咨询了后别人跟我说 RaphaelJS 可以实现，于我而言如果自己不会渔，如何授人以渔和鱼昵？所以自己浅学了一番，帮他们画出了想实现的图形。记录总结一下学习到的知识点。以后如果能用到再深学之~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅记录-Raphael">
+<meta property="og:url" content="http://www.webhmy.com/2017/12/18/raphael/index.html">
 <meta property="og:site_name" content="heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="关于前几天有人问我。echarts 实现不了的一些图形怎么画，我咨询了后别人跟我说 RaphaelJS 可以实现，于我而言如果自己不会渔，如何授人以渔和鱼昵？所以自己浅学了一番，帮他们画出了想实现的图形。记录总结一下学习到的知识点。以后如果能用到再深学之~">
+<meta property="og:updated_time" content="2017-12-25T03:19:43.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="浅记录-Raphael">
+<meta name="twitter:description" content="关于前几天有人问我。echarts 实现不了的一些图形怎么画，我咨询了后别人跟我说 RaphaelJS 可以实现，于我而言如果自己不会渔，如何授人以渔和鱼昵？所以自己浅学了一番，帮他们画出了想实现的图形。记录总结一下学习到的知识点。以后如果能用到再深学之~">
   
     <link rel="alternative" href="/atom.xml" title="heimayu | learn and live" type="application/atom+xml">
   
@@ -134,75 +135,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-raphael" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/25/canvas/" class="archive-article-date">
-  	<time datetime="2017-12-25T03:10:43.118Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/25/canvas/">炫彩之旅-初识canvas(一)</a>
+    <h1 class="article-title" itemprop="name">
+      浅记录-Raphael
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/18/raphael/" class="archive-article-date">
+        
+        <a href="/2017/12/18/raphael/" class="archive-article-date">
   	<time datetime="2017-12-18T03:16:13.991Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/18/raphael/">浅记录-Raphael</a>
-    </h1>
-  
+                
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><p>前几天有人问我。<code>echarts</code> 实现不了的一些图形怎么画，我咨询了后别人跟我说 <code>RaphaelJS</code> 可以实现，于我而言如果自己不会渔，如何授人以渔和鱼昵？所以自己浅学了一番，帮他们画出了想实现的图形。记录总结一下学习到的知识点。以后如果能用到再深学之~<br><a id="more"></a></p>
+<blockquote>
+<p>这世界笑了于是你合群的一起笑了。</p>
+</blockquote>
+<h4 id="创建画布"><a href="#创建画布" class="headerlink" title="创建画布"></a>创建画布</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 画布创建Raphael(id名称,画布宽度,画布高度)</div><div class="line">var paper = Raphael("canvas", cWidth, cHeight);</div></pre></td></tr></table></figure>
+<h4 id="正圆"><a href="#正圆" class="headerlink" title="正圆"></a>正圆</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// paper.circle(x坐标,y坐标,半径)</div><div class="line">// attr()圆属性</div><div class="line"></div><div class="line">paper.circle(200, 150, 100).attr(&#123;</div><div class="line">    "fill": "#039fe9",  // 填充颜色          </div><div class="line">    "stroke": "#0f1c22", // 边框颜色</div><div class="line">    "stroke-width": 1 // 边框宽度</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="椭圆"><a href="#椭圆" class="headerlink" title="椭圆"></a>椭圆</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// paper.ellipse(x坐标,y坐标,水平半径,垂直半径)</div><div class="line"></div><div class="line">paper.ellipse(200, 150, 110, 100).attr(&#123;</div><div class="line">    "fill": "#039fe9",  // 填充颜色          </div><div class="line">    "stroke": "#0f1c22", // 边框颜色</div><div class="line">    "stroke-width": 1 // 边框宽度</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="直线"><a href="#直线" class="headerlink" title="直线"></a>直线</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// paper.path(M起始坐标L直线截止坐标)</div><div class="line"></div><div class="line">paper.path(2M0,0L26,0);</div></pre></td></tr></table></figure>
+<h4 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// paper.text(x坐标,y坐标,显示文字)</div><div class="line"></div><div class="line">paper.text(100,100,'我是一只鱼');</div></pre></td></tr></table></figure>
+<h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var st = paper.set();</div><div class="line">st.remove();</div><div class="line">st.push(</div><div class="line">    paper.circle(10, 10, 5),</div><div class="line">    paper.circle(30, 10, 5)</div><div class="line">);</div><div class="line">st.attr(&#123;fill: "red"&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>更多学习内容参考<a href="http://blog.csdn.net/witsonx/article/details/52386277" target="_blank"> 这里</a></p>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -215,131 +189,112 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2017/12/18/raphael/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/11/toPdf/" class="archive-article-date">
-  	<time datetime="2017-12-11T01:30:17.920Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/11/toPdf/">开发人员写文档（Atom/Markdown/Pdf）</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+    <a href="/2017/12/25/canvas/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          炫彩之旅-初识canvas(一)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/11/toPdf/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开发人员写文档（Atom/Markdown/Pdf）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/13/gulp/" class="archive-article-date">
-  	<time datetime="2017-08-13T07:23:14.484Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/13/gulp/">当Gulp遇到requireJS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/19/command/" class="archive-article-date">
-  	<time datetime="2017-04-19T00:56:28.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/19/command/">按命令行事（git/hexo/fis3）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+  <section id="comments" class="duoshuo">
+    <!-- 多说评论框 start -->
+      <div id="ds-thread" class="ds-thread" data-thread-key="2017/12/18/raphael/" data-title="浅记录-Raphael" data-url="http://www.webhmy.com/2017/12/18/raphael/"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+        var duoshuoQuery = {short_name:"webhmy"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0]
+           || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+  <!-- 多说公共JS代码 end -->
+  </section>
+
+
 
 
           </div>
@@ -368,10 +323,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		root: "/",
 		innerArchive: false,
