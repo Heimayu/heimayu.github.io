@@ -117,7 +117,7 @@ var test1 = {
 
   //渲染数字
   rendDigit: function(x, y, num, boolean) {
-    var R = 4,
+    var R = document.body.clientWidth > 800 ? 4 : 2,
       	colors = ["#f9f51a", "#a594c0", "#fa8ecc", "#caff67", "#f9f51a", "#a594c0", "#caff67", "red", "pink", "green", "blue"],
       	that = this;
 
@@ -174,8 +174,9 @@ var test1 = {
   },
 
   render: function(ball) {
+  	var R = document.body.clientWidth > 800 ? 4 : 2;
     this.ctx.beginPath();
-    this.ctx.arc(ball.x, ball.y, 4, 0, 2 * Math.PI);
+    this.ctx.arc(ball.x, ball.y, R, 0, 2 * Math.PI);
     this.ctx.fillStyle = ball.color;
     this.ctx.fill();
   },
