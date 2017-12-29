@@ -30,11 +30,11 @@ var test1 = {
     }
 
 
-    that.canvas = document.getElementById('myCanvas'),
+    that.canvas = document.getElementById('myCanvas');
       that.ctx = that.canvas.getContext('2d');
 
-    that.canvas.width = document.getElementById('post-canvas').clientWidth * 0.84;
-    that.canvas.height = 300;
+    that.canvas.width = document.getElementById('post-canvas').clientWidth * 0.63;
+    that.canvas.height = document.getElementById('post-canvas').clientWidth * 0.3;
 
     var t = that.getTime();
     that.lastH = t.h;
@@ -55,7 +55,7 @@ var test1 = {
     that.ctx.clearRect(0, 0, that.ctx.canvas.width, that.ctx.canvas.height);
 
     //画线
-    that.drawLine(120);
+    that.drawLine(100);
 
     //获取位置间隔
     that.space = Math.floor(that.ctx.canvas.width / 8);
@@ -117,8 +117,8 @@ var test1 = {
 
   //渲染数字
   rendDigit: function(x, y, num, boolean) {
-    var R = document.body.clientWidth > 500 ? 4 : 1,
-      	colors = ["#f9f51a", "#a594c0", "#fa8ecc", "#caff67", "#f9f51a", "#a594c0", "#caff67", "red", "pink", "green", "blue"],
+    var R = document.body.clientWidth > 500 ? 3 : 1,
+      	colors = ["#f9f51a", "#a594c0", "#fa8ecc", "#caff67", "#f9f51a", "#a594c0", "#caff67", "#5fc0ca", "pink", "green", "blue"],
       	that = this;
 
     //放置彩色小球的数组
@@ -133,12 +133,12 @@ var test1 = {
         if (val === 1) {
           that.ctx.beginPath();
           that.ctx.arc(x + j * 2 * (R + 1) + (R + 1), y + i * 2 * (R + 1) + (R + 1), R, 0, 2 * Math.PI);
-          that.ctx.fillStyle = '#caff67';
+          that.ctx.fillStyle = '#5fc0ca';
           that.ctx.fill();
 
           //这里表示要绘制彩色小球，所有的数字都是随机的好吗？
           if (boolean) {
-            //生成彩色的小球 
+            //生成彩色的小球
             var ball = {
               x: x + j * 2 * (R + 1) + (R + 1),
               y: y + i * 2 * (R + 1) + (R + 1),
@@ -157,14 +157,14 @@ var test1 = {
   //更新小球的位置
   updateBalls: function() {
     var that = this;
-    for (var i = 0; i < that.balls.length; i++) {  	
+    for (var i = 0; i < that.balls.length; i++) {
       //设置新的位置
       that.balls[i].x -= that.balls[i].vx;
       that.balls[i].y += that.balls[i].vy;
       that.balls[i].vy += that.balls[i].g;
 
-      if (that.balls[i].y > 296) {
-        that.balls[i].y = 296;
+      if (that.balls[i].y > that.canvas.height - 4) {
+        that.balls[i].y = that.canvas.height - 4;
         that.balls[i].vy = -that.balls[i].vy * 0.6;
       }
       //绘制新的彩色小球
@@ -189,7 +189,7 @@ var test1 = {
 
     that.ctx.setLineDash([1]);
     that.ctx.lineWidth = 3;
-    that.ctx.strokeStyle = "#caff67";
+    that.ctx.strokeStyle = "#5fc0ca";
     that.ctx.stroke()
 
   }
