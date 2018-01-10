@@ -3968,3 +3968,7 @@ a.pswp__share--download:hover {
 .article-entry .article-more-a{
   display: none
 }
+
+#uyan_frame{
+    padding: 0 35px;
+}
