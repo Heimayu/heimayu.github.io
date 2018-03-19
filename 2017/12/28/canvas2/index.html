@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>璀璨之旅-初识canvas(二) | heimayu | learn and live</title>
+  <title>璀璨的星空-初识canvas(二) | heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="璀璨之旅-初识canvas(二)">
+<meta property="og:title" content="璀璨的星空-初识canvas(二)">
 <meta property="og:url" content="http://www.webhmy.com/2017/12/28/canvas2/index.html">
 <meta property="og:site_name" content="heimayu | learn and live">
 <meta property="og:description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
 <meta property="og:image" content="http://www.webhmy.com/2017/12/28/canvas2/star.png">
-<meta property="og:updated_time" content="2017-12-29T08:56:02.550Z">
+<meta property="og:updated_time" content="2018-01-16T03:15:43.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="璀璨之旅-初识canvas(二)">
+<meta name="twitter:title" content="璀璨的星空-初识canvas(二)">
 <meta name="twitter:description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
 <meta name="twitter:image" content="http://www.webhmy.com/2017/12/28/canvas2/star.png">
   
@@ -156,7 +156,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      璀璨之旅-初识canvas(二)
+      璀璨的星空-初识canvas(二)
     </h1>
   
 
@@ -164,7 +164,7 @@
         <a href="/2017/12/28/canvas2/" class="archive-article-date">
   	<time datetime="2017-12-28T08:12:40.957Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
 </a>
-                
+        
       </header>
     
     <div class="article-entry" itemprop="articleBody">
@@ -174,49 +174,37 @@
   <canvas id="canvas"></canvas>
   <script type="text/javascript" src="/js/canvas/star.js"></script>
 </p>
-<ul>
-<li>绘制<code>canvas</code></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>),</div><div class="line">    ctx = canvas.getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure>
-<ul>
-<li>绘制深蓝色的背景</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 矩形背景</span></div><div class="line">ctx.fillStyle = <span class="string">"#393550"</span>;</div><div class="line"><span class="comment">// 绘制矩形 ctx.fillRect(x坐标,y坐标,w宽度,h高度)</span></div><div class="line">ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, ctx.canvas.width, ctx.canvas.height);</div></pre></td></tr></table></figure>
+<h4 id="1-绘制canvas"><a href="#1-绘制canvas" class="headerlink" title="1.绘制canvas"></a>1.绘制<code>canvas</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>),</div><div class="line">    ctx = canvas.getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure>
+<h4 id="2-绘制深蓝色的背景"><a href="#2-绘制深蓝色的背景" class="headerlink" title="2.绘制深蓝色的背景"></a>2.绘制深蓝色的背景</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 矩形背景</span></div><div class="line">ctx.fillStyle = <span class="string">"#393550"</span>;</div><div class="line"><span class="comment">// 绘制矩形 ctx.fillRect(x坐标,y坐标,w宽度,h高度)</span></div><div class="line">ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, ctx.canvas.width, ctx.canvas.height);</div></pre></td></tr></table></figure>
 <blockquote>
 <p>描边矩形请使用  <code>ctx.strokeRect(0, 0, ctx.canvas.width, ctx.canvas.height)</code></p>
 </blockquote>
+<h4 id="3-绘制背景图片"><a href="#3-绘制背景图片" class="headerlink" title="3.绘制背景图片"></a>3.绘制背景图片</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ctx.drawImage(图片，x位置，y位置，图片显示宽度，图片显示高度) 5个参数</span></div><div class="line">ctx.drawImage(img, <span class="number">10</span>, <span class="number">10</span>, canvas.width - <span class="number">20</span>, canvas.height - <span class="number">20</span>);</div></pre></td></tr></table></figure>
 <ul>
-<li>绘制背景图片</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ctx.drawImage(图片，x位置，y位置，图片显示宽度，图片显示高度) 5个参数</span></div><div class="line">ctx.drawImage(img, <span class="number">10</span>, <span class="number">10</span>, canvas.width - <span class="number">20</span>, canvas.height - <span class="number">20</span>);</div></pre></td></tr></table></figure>
-<ul>
-<li>图片阴影<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 阴影的颜色</span></div><div class="line">ctx.shadowColor = <span class="string">"#81f2f4"</span>;</div><div class="line"><span class="comment">// 阴影的羽化值</span></div><div class="line">ctx.shadowBlur = <span class="number">20</span>;</div></pre></td></tr></table></figure>
+<li>加入图片阴影<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 阴影的颜色</span></div><div class="line">ctx.shadowColor = <span class="string">"#81f2f4"</span>;</div><div class="line"><span class="comment">// 阴影的羽化值</span></div><div class="line">ctx.shadowBlur = <span class="number">20</span>;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
 <p>阴影x轴上的偏移量<code>ctx.shadowOffsetX</code>，y轴上的偏移量<code>ctx.shadowOffsetY</code>。</p>
 </blockquote>
-<ul>
-<li>单个星星定义（类的方法）<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> SingleStar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">SingleStar.prototype = &#123;</div><div class="line">  <span class="comment">//初始化</span></div><div class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//定义当前星星的X坐标</span></div><div class="line">    <span class="keyword">this</span>.x = <span class="built_in">Math</span>.random() * canvas.width + <span class="number">10</span>;</div><div class="line">    <span class="comment">//定义当前星星的Y坐标</span></div><div class="line">    <span class="keyword">this</span>.y = <span class="built_in">Math</span>.random() * canvas.height + <span class="number">10</span>;</div><div class="line">    <span class="comment">//绘制星星，使用的是一张49*7的有7颗小星星的单图片，根据位置的不同显示不同大小星星取值（0，7)</span></div><div class="line">    <span class="comment">//比如this.picNo=1 则显示照片中的第一颗星星</span></div><div class="line">    <span class="comment">//比如this.picNo=7 则显示照片中的最后一颗星星</span></div><div class="line">    <span class="keyword">this</span>.picNo = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">7</span>);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">//在不同的位置上绘制不同大小的星星</span></div><div class="line">  draw: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//drawImage(img,sx,sy,swidth,sheight,x,y,width,height) 9个参数时</span></div><div class="line">    <span class="comment">//img: 图片</span></div><div class="line">    <span class="comment">//sx: 图片的X起点</span></div><div class="line">    <span class="comment">//sy: 图片的Y起点</span></div><div class="line">    <span class="comment">//swidth:要绘制的图片选取的宽度</span></div><div class="line">    <span class="comment">//sheight:要绘制的图片选取的高度</span></div><div class="line">    <span class="comment">//x,y:图片在canvas上显示的位置</span></div><div class="line">    <span class="comment">//width,height:在Canvas上要显示的大小，进行缩放</span></div><div class="line">    ctx.drawImage(starImg, <span class="keyword">this</span>.picNo * <span class="number">7</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="keyword">this</span>.x, <span class="keyword">this</span>.y, <span class="number">7</span>, <span class="number">7</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<h4 id="4-单个星星定义（类的方法）"><a href="#4-单个星星定义（类的方法）" class="headerlink" title="4.单个星星定义（类的方法）"></a>4.单个星星定义（类的方法）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> SingleStar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">SingleStar.prototype = &#123;</div><div class="line">  <span class="comment">//初始化</span></div><div class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//定义当前星星的X坐标</span></div><div class="line">    <span class="keyword">this</span>.x = <span class="built_in">Math</span>.random() * canvas.width + <span class="number">10</span>;</div><div class="line">    <span class="comment">//定义当前星星的Y坐标</span></div><div class="line">    <span class="keyword">this</span>.y = <span class="built_in">Math</span>.random() * canvas.height + <span class="number">10</span>;</div><div class="line">    <span class="comment">//绘制星星，使用的是一张49*7的有7颗小星星的单图片，根据位置的不同显示不同大小星星取值（0，7)</span></div><div class="line">    <span class="comment">//比如this.picNo=1 则显示照片中的第一颗星星</span></div><div class="line">    <span class="comment">//比如this.picNo=7 则显示照片中的最后一颗星星</span></div><div class="line">    <span class="keyword">this</span>.picNo = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">7</span>);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">//在不同的位置上绘制不同大小的星星</span></div><div class="line">  draw: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//drawImage(img,sx,sy,swidth,sheight,x,y,width,height) 9个参数时</span></div><div class="line">    <span class="comment">//img: 图片</span></div><div class="line">    <span class="comment">//sx: 图片的X起点</span></div><div class="line">    <span class="comment">//sy: 图片的Y起点</span></div><div class="line">    <span class="comment">//swidth:要绘制的图片选取的宽度</span></div><div class="line">    <span class="comment">//sheight:要绘制的图片选取的高度</span></div><div class="line">    <span class="comment">//x,y:图片在canvas上显示的位置</span></div><div class="line">    <span class="comment">//width,height:在Canvas上要显示的大小，进行缩放</span></div><div class="line">    ctx.drawImage(starImg, <span class="keyword">this</span>.picNo * <span class="number">7</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="keyword">this</span>.x, <span class="keyword">this</span>.y, <span class="number">7</span>, <span class="number">7</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>星星图片是酱紫的：<img src="/2017/12/28/canvas2/star.png" alt="star"> 仔细瞅哈，因为是透明的png~</p>
 </blockquote>
 <ul>
-<li><p>初始化星星</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 星星存储数组</span></div><div class="line"><span class="keyword">var</span> littleStars = [];</div><div class="line"><span class="comment">// 绘制星星数量</span></div><div class="line"><span class="keyword">var</span> num = <span class="number">60</span>;</div><div class="line"><span class="comment">// 初始化星星</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">  littleStars[i] = <span class="keyword">new</span> SingleStar();</div><div class="line">  littleStars[i].init();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>初始化星星<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 星星存储数组</span></div><div class="line"><span class="keyword">var</span> littleStars = [];</div><div class="line"><span class="comment">// 绘制星星数量</span></div><div class="line"><span class="keyword">var</span> num = <span class="number">60</span>;</div><div class="line"><span class="comment">// 初始化星星</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">  littleStars[i] = <span class="keyword">new</span> SingleStar();</div><div class="line">  littleStars[i].init();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>循环动画显示闪闪星星<br>1.原理：在星星的位置每隔一段时间重新绘制一个不同大小的星星，显示出一闪闪的效果，这里引入的循环方法是 <code>requestAnimationFrame(fun)</code> 接受一个参数回调函数，这是H5新方法，效果比定时器流畅省内存。</p>
+</ul>
+<h4 id="5-循环动画显示闪闪星星"><a href="#5-循环动画显示闪闪星星" class="headerlink" title="5.循环动画显示闪闪星星"></a>5.循环动画显示闪闪星星</h4><ul>
+<li><p>原理：在星星的位置每隔一段时间重新绘制一个不同大小的星星，显示出一闪闪的效果，这里引入的循环方法是 <code>requestAnimationFrame(fun)</code> 接受一个参数回调函数，这是H5新方法，效果比定时器流畅省内存。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个gameloop的方法，初始化调用一次，实现循环调用</span></div><div class="line"><span class="keyword">var</span> gameloop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.requestAnimationFrame(gameloop);</div><div class="line">    <span class="comment">//绘制背景及图片</span></div><div class="line">    ...</div><div class="line">    <span class="comment">//绘制好多星星</span></div><div class="line">    drawStars();</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>2.绘制好多星星：每循环一次重新渲染一次，只改变星星的位置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//更新星星的位置</span></div><div class="line">SingleStar.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.picNo += <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.picNo &gt;= <span class="number">7</span>) &#123;</div><div class="line">      <span class="keyword">this</span>.picNo = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制好多星星</span></div><div class="line"><span class="keyword">var</span> drawStars = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">      <span class="comment">//更新位置</span></div><div class="line">      littleStars[i].update();</div><div class="line">      <span class="comment">//重新渲染</span></div><div class="line">      littleStars[i].draw();</div><div class="line">    &#125;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
-<ul>
-<li>星星移动<br>仔细看下图片中的星星，都在以缓慢的速度移动，到边缘后就消失了。动画的原理在第一篇的时候已经介绍过。<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//初始化函数中定义下速度</span></div><div class="line">SingleStar.prototype.init = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">//y轴移动速度</span></div><div class="line">    <span class="keyword">this</span>.ySpd = <span class="built_in">Math</span>.random() * <span class="number">0.6</span> - <span class="number">0.3</span>; <span class="comment">//[-0.3, 0.3)</span></div><div class="line">    <span class="comment">//x轴移动速度</span></div><div class="line">    <span class="keyword">this</span>.xSpd = <span class="built_in">Math</span>.random() * <span class="number">0.2</span> - <span class="number">0.1</span>; <span class="comment">//[-0.1, 0.1)</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>绘制好多星星：每循环一次重新渲染一次，只改变星星的位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//更新星星的位置</span></div><div class="line">SingleStar.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.picNo += <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.picNo &gt;= <span class="number">7</span>) &#123;</div><div class="line">      <span class="keyword">this</span>.picNo = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制好多星星</span></div><div class="line"><span class="keyword">var</span> drawStars = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">      <span class="comment">//更新位置</span></div><div class="line">      littleStars[i].update();</div><div class="line">      <span class="comment">//重新渲染</span></div><div class="line">      littleStars[i].draw();</div><div class="line">    &#125;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
+<h4 id="6-移动的小星星"><a href="#6-移动的小星星" class="headerlink" title="6.移动的小星星"></a>6.移动的小星星</h4><p>仔细看下图片中的星星，都在以缓慢的速度移动，到边缘后就消失了。动画的原理在第一篇的时候已经介绍过。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//初始化函数中定义下速度</span></div><div class="line">SingleStar.prototype.init = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">//y轴移动速度</span></div><div class="line">    <span class="keyword">this</span>.ySpd = <span class="built_in">Math</span>.random() * <span class="number">0.6</span> - <span class="number">0.3</span>; <span class="comment">//[-0.3, 0.3)</span></div><div class="line">    <span class="comment">//x轴移动速度</span></div><div class="line">    <span class="keyword">this</span>.xSpd = <span class="built_in">Math</span>.random() * <span class="number">0.2</span> - <span class="number">0.1</span>; <span class="comment">//[-0.1, 0.1)</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//更新速度</span></div><div class="line">SingleStar.prototype.update = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">this</span>.x += <span class="keyword">this</span>.xSpd;</div><div class="line">    <span class="keyword">this</span>.y += <span class="keyword">this</span>.ySpd;</div><div class="line"></div><div class="line">    <span class="comment">//超出边界，重生星星</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.x &gt; canvas.width - <span class="number">20</span> || <span class="keyword">this</span>.x &lt; <span class="number">10</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.init();</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.y &gt; canvas.height - <span class="number">20</span> || <span class="keyword">this</span>.y &lt; <span class="number">10</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.init();</div><div class="line">    &#125;      </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>今天是2017年最后一个工作日了，期待2018年自己能翻出新的篇章，加油~</p>
 
@@ -306,30 +294,19 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          致小美好-初识canvas(三)
+          放大镜下的真相-初识canvas(三)
         
       </div>
     </a>
   
   
     <a href="/2017/12/25/canvas/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">炫彩之旅-初识canvas(一)</div>
+      <div class="article-nav-title">绚丽的钟表器-初识canvas(一)</div>
       <i class="icon-circle-right"></i>
     </a>
   
 </nav>
 
-
-
-
-
-
-
-
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2152729"></script>
-<!-- UY END -->
 
 
 
