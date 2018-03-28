@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://www.webhmy.com">
   <title>vue全家桶（es6篇） | heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="话说最近在学习vue全家桶，但是发现如果不把es6吃透，学习起来也的确是件很费劲的事。为此决定先学习好es6再继续前面的vue课程。我相信在学习道路上的每一分付出，都能获取相应的回报，继续加油~">
+  <meta name="description" content="vue全家桶-ES6篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue全家桶（es6篇）">
 <meta property="og:url" content="http://www.webhmy.com/2018/01/16/es6/index.html">
 <meta property="og:site_name" content="heimayu | learn and live">
-<meta property="og:description" content="话说最近在学习vue全家桶，但是发现如果不把es6吃透，学习起来也的确是件很费劲的事。为此决定先学习好es6再继续前面的vue课程。我相信在学习道路上的每一分付出，都能获取相应的回报，继续加油~">
-<meta property="og:updated_time" content="2018-03-19T07:54:35.575Z">
+<meta property="og:description" content="vue全家桶-ES6篇">
+<meta property="og:updated_time" content="2018-03-28T02:00:22.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue全家桶（es6篇）">
-<meta name="twitter:description" content="话说最近在学习vue全家桶，但是发现如果不把es6吃透，学习起来也的确是件很费劲的事。为此决定先学习好es6再继续前面的vue课程。我相信在学习道路上的每一分付出，都能获取相应的回报，继续加油~">
+<meta name="twitter:description" content="vue全家桶-ES6篇">
   
     <link rel="alternative" href="/atom.xml" title="heimayu | learn and live" type="application/atom+xml">
   
@@ -49,7 +49,7 @@
 			<img src="/img/heimayu.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">heimayu</a></h1>
+		  <h1 class="header-author"><a href="/">Heimayu</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">莫失莫忘 不忘初心</p>
@@ -99,7 +99,7 @@
 				<img src="/img/heimayu.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">heimayu</h1>
+			  <h1 class="header-author js-header-author">Heimayu</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>莫失莫忘 不忘初心<i class="icon icon-quo-right"></i></p>
@@ -167,29 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>话说最近在学习vue全家桶，但是发现如果不把es6吃透，学习起来也的确是件很费劲的事。为此决定先学习好es6再继续前面的vue课程。我相信在学习道路上的每一分付出，都能获取相应的回报，继续加油~<br><a id="more"></a></p>
-<h3 id="2-函数的扩展"><a href="#2-函数的扩展" class="headerlink" title="2.函数的扩展"></a>2.函数的扩展</h3><h4 id="参数默认值赋值"><a href="#参数默认值赋值" class="headerlink" title="参数默认值赋值"></a>参数默认值赋值</h4><ul>
-<li>参数变量是默认声明的，所以不能用 <code>let</code> 或 <code>const</code> 再次声明；</li>
-<li>参数对应undefined，结果触发默认值，参数等于null，不触发默认值；</li>
-<li>指定了默认值后，length属性失真<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x, y = <span class="string">'quorra'</span></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(x, y);</div><div class="line">&#125;</div><div class="line"></div><div class="line">log(<span class="string">'hello'</span>) <span class="comment">// hello quorra</span></div><div class="line">log(<span class="string">'hello'</span>, <span class="literal">null</span>) <span class="comment">// hello null</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><ul>
-<li><p>基本使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5</span></div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> v + <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ES6 + 拓展</span></div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="number">1</span> <span class="comment">// 1个参数</span></div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125; <span class="comment">// 没有参数</span></div><div class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">x,y,...</span>) =&gt;</span> &#123;&#125; <span class="comment">// 多个参数</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>没有返回值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">void</span> doesNotReturn();</div></pre></td></tr></table></figure>
-</li>
-<li><p>与对象的结合</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> data.a + <span class="string">' '</span> + data.b;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">&#123;a,b&#125;</span>) =&gt;</span> a + <span class="string">' '</span> + b;</div></pre></td></tr></table></figure>
-</li>
-<li><p>this 的指向<br>箭头函数里面根本没有自己的this，而是引用外层的this，是固定的。所以也就不能用call()、apply()、bind()这些方法去改变this的指向。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> handler = &#123;</div><div class="line">  id: <span class="string">'12345'</span>,</div><div class="line">  <span class="comment">//使用了箭头函数，这导致这个箭头函数里面的this，总是指向handler对象。否则，回调函数运行this.doSomething这一行时会报错，因为此时this指向document对象。</span></div><div class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>,event =&gt; <span class="keyword">this</span>.doingsomething(event.type),<span class="literal">false</span>);</div><div class="line">  &#125;,</div><div class="line">  doSomething: <span class="function"><span class="keyword">function</span>(<span class="params">type</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Handling '</span> + type  + <span class="string">' for '</span> + <span class="keyword">this</span>.id);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>双冒号运算符<br>未完待续3.</p>
-</li>
-</ul>
+        <p>vue全家桶-ES6篇<br><a id="more"></a></p>
 
       
 
@@ -283,8 +261,8 @@
     </a>
   
   
-    <a href="/2018/01/15/vue2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue全家桶（vue路由篇）</div>
+    <a href="/2018/01/02/canvas3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">放大镜下的真相-初识canvas(三)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -301,7 +279,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 heimayu
+    		&copy; 2018 Heimayu
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
