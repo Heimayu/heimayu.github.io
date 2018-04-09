@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>使用requireJS实现单页面开发 | learn and live</title>
+  <title>使用requireJS实现单页面开发 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。">
+  <meta name="description" content="本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用requireJS实现单页面开发">
 <meta property="og:url" content="http://www.webhmy.com/2018/03/24/require-css/index.html">
-<meta property="og:site_name" content="learn and live">
-<meta property="og:description" content="关于本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。">
-<meta property="og:updated_time" content="2018-03-24T07:25:27.199Z">
+<meta property="og:site_name" content="Heimayu | learn and live">
+<meta property="og:description" content="本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。">
+<meta property="og:updated_time" content="2018-04-08T07:23:24.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用requireJS实现单页面开发">
-<meta name="twitter:description" content="关于本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。">
+<meta name="twitter:description" content="本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。">
   
-    <link rel="alternative" href="/atom.xml" title="learn and live" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -173,7 +173,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><p>本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。<br><a id="more"></a></p>
+        <p>本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。<br><a id="more"></a></p>
 <h3 id="1-requireJS加载css和html的插件引入"><a href="#1-requireJS加载css和html的插件引入" class="headerlink" title="1.requireJS加载css和html的插件引入"></a>1.requireJS加载css和html的插件引入</h3><p>引入CSS样式表依赖库是：<a href="https://github.com/guybedford/require-css" target="_blank" rel="external">css.min</a> （它可以读取指定的样式表）；<br>加载HTML的依赖库是：<a href="https://github.com/requirejs/text" target="_blank" rel="external">text.min</a>（它可以读取指定文件的内容，读取到的内容就是文本）。</p>
 <p><code>map</code>告诉RequireJS在任何模块之前，都先载入这些模块。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">map: &#123;</div><div class="line">    <span class="string">'*'</span>: &#123;</div><div class="line">        <span class="string">'css'</span>: <span class="string">'require/css.min'</span>,<span class="comment">//对应的css.min文件存放的路径</span></div><div class="line">        <span class="string">'text'</span>: <span class="string">'require/text.min'</span><span class="comment">//对应的text.min文件存放的路径</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -274,6 +274,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/04/08/es6-base/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ES6入门-基础篇
+        
+      </div>
+    </a>
   
   
     <a href="/2018/01/02/canvas3/" id="article-nav-older" class="article-nav-link-wrap">
