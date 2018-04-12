@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Archives | Heimayu | learn and live</title>
+  <title>vue学习-入门篇 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/archives/page/2/index.html">
+  <meta name="description" content="本文主要记录使用vue的一些基础内容及常用知识点的记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue学习-入门篇">
+<meta property="og:url" content="http://www.webhmy.com/2018/04/12/vue-base/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="本文主要记录使用vue的一些基础内容及常用知识点的记录。">
+<meta property="og:updated_time" content="2018-04-12T06:25:48.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="vue学习-入门篇">
+<meta name="twitter:description" content="本文主要记录使用vue的一些基础内容及常用知识点的记录。">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -152,37 +153,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-base" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/19/command/" class="archive-article-date">
-  	<time datetime="2017-04-19T00:56:28.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/19/command/">按命令行事（git/hexo/fis3）</a>
+    <h1 class="article-title" itemprop="name">
+      vue学习-入门篇
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2018/04/12/vue-base/" class="archive-article-date">
+  	<time datetime="2018-04-12T05:54:35.915Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文主要记录使用vue的一些基础内容及常用知识点的记录。<br><a id="more"></a></p>
+<h3 id="1、搭建脚手架"><a href="#1、搭建脚手架" class="headerlink" title="1、搭建脚手架"></a>1、搭建脚手架</h3><p><code>vue init webpack vue-demo</code><br>执行之后，<code>npm install</code> 安装包依赖<br><code>npm run dev</code> 启动可以实现热加载</p>
+<h3 id="2、vue的对象常用参数"><a href="#2、vue的对象常用参数" class="headerlink" title="2、vue的对象常用参数"></a>2、vue的对象常用参数</h3><ul>
+<li><code>data</code>：绑定的数据</li>
+<li><code>methods</code>：方法，this可以指向data中的数据</li>
+<li><code>watch</code>：数据监听，方法名对应data中的数据<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">watch: &#123;</div><div class="line">   dataname:&#123;</div><div class="line">    <span class="comment">//事件执行</span></div><div class="line">     handler:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       ...</div><div class="line">     &#125;,</div><div class="line">     <span class="comment">//是否深度执行</span></div><div class="line">     deep: <span class="literal">true</span></div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3、模板指令"><a href="#3、模板指令" class="headerlink" title="3、模板指令"></a>3、模板指令</h3><ul>
+<li>数据渲染：<code>v-text</code>  <code>v-html</code> </li>
+<li>控制隐藏：<code>v-if</code>  <code>v-show</code> </li>
+<li>循环渲染：<code>v-for=&quot;item in items&quot;</code>，在每条数据的事件绑定可以将数据放在方法里，<br>例如：<code>v-on:click=cancelEvt(item)</code></li>
+<li>事件绑定：<code>v-on:click</code>  或者 <code>@click</code> 后面是methods中的方法，可以写一些键盘事件，比如<code>@keyup.enter</code> </li>
+<li>属性指令：<code>v-bind:src=&quot;imgSrc&quot;</code>  <code>:class=&quot;{red: isRed}&quot;</code>  <code>:class=&quot;[classAName,{classB: isB}]&quot;</code><br>其中，<code>classAName</code> 就是类名，但是 <code>isB</code> 是布尔值</li>
+<li>表单指令：<code>v-model</code></li>
+</ul>
+<h3 id="4、组件注册"><a href="#4、组件注册" class="headerlink" title="4、组件注册"></a>4、组件注册</h3><p>全局注册：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 全局注册组件</span></div><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">    template: <span class="string">'&lt;p&gt;hi girl&lt;/p&gt;'</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// 创建根实例</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: <span class="string">'#box'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>局部注册：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Child = &#123;</div><div class="line">    template: <span class="string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">    components: &#123;</div><div class="line">        <span class="string">'my-component'</span>: Child</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="5、组件模板"><a href="#5、组件模板" class="headerlink" title="5、组件模板"></a>5、组件模板</h3><ul>
+<li><p>直接定义</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'myheader'</span>,&#123;</div><div class="line">    template:<span class="string">'&lt;div&gt;&lt;/div&gt;'</span>,</div><div class="line">    data()&#123;...&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>模板定义</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"myheader"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    ...</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'name'</span>,&#123;</div><div class="line">    template:<span class="string">'#myheader'</span>,</div><div class="line">    data()&#123;...&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="6、组件通信-prop-down-events-up"><a href="#6、组件通信-prop-down-events-up" class="headerlink" title="6、组件通信  prop down events up"></a>6、组件通信  <code>prop down events up</code></h3><p>1.父元素向子元素传递数据（通过props选项）：</p>
+<ul>
+<li><p>父组件中使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 父组件将值放在属性中--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mySun</span> <span class="attr">mumtell</span>=<span class="string">"你是我的儿子"</span>&gt;</span><span class="tag">&lt;/<span class="name">mySun</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>子组件定义</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在.vue的文件中`export default&#123;&#125;` 会自动实例化一个`new Vue(&#123;&#125;)`</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  props: [<span class="string">'mumtell'</span>],<span class="comment">//子获取父的值，然后通过this.mumtell就可以获取对应的值了</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.子元素向父元素传递数据（通过$emit事件发送）：</p>
+<ul>
+<li>父组件中使用<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 父组件使用子组件 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mySun</span> <span class="attr">v-on:myboy</span>=<span class="string">"youson"</span>&gt;</span><span class="tag">&lt;/<span class="name">mySun</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;sonmsg&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> mySun <span class="keyword">from</span> <span class="string">'./mySun.vue'</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data() &#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            sonmsg:<span class="string">""</span></div><div class="line">        &#125;;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;    </div><div class="line">        youson(msg)&#123;</div><div class="line">            <span class="keyword">this</span>.sonmsg = msg;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    components: &#123; mySun &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>子组件定义<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data() &#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            msg: <span class="string">"我是app的子组件"</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">        subClick() &#123;</div><div class="line">        <span class="comment">//儿子告诉爸爸的话用事件触发</span></div><div class="line">        <span class="keyword">this</span>.$emit(<span class="string">'myboy'</span>,<span class="keyword">this</span>.msg)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -195,59 +241,77 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/04/12/vue-base/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/13/aboutme/" class="archive-article-date">
-  	<time datetime="2017-03-13T06:34:46.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/13/aboutme/">黑玛鱼</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼碎碎念/" class="article-tag-list-link color2">黑玛鱼碎碎念</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/09/es6-advanced/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6入门-进阶篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
 
@@ -277,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
