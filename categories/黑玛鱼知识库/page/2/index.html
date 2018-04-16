@@ -6,20 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>璀璨的星空-初识canvas(二) | Heimayu | learn and live</title>
+  <title>Category: 黑玛鱼知识库 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
-<meta property="og:type" content="article">
-<meta property="og:title" content="璀璨的星空-初识canvas(二)">
-<meta property="og:url" content="http://www.webhmy.com/2017/12/28/canvas2/index.html">
+  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Heimayu | learn and live">
+<meta property="og:url" content="http://www.webhmy.com/categories/黑玛鱼知识库/page/2/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
-<meta property="og:image" content="http://www.webhmy.com/2017/12/28/canvas2/star.png">
-<meta property="og:updated_time" content="2018-04-16T08:33:47.061Z">
+<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="璀璨的星空-初识canvas(二)">
-<meta name="twitter:description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
-<meta name="twitter:image" content="http://www.webhmy.com/2017/12/28/canvas2/star.png">
+<meta name="twitter:title" content="Heimayu | learn and live">
+<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -155,102 +152,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-canvas2" class="article article-type-post "
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      璀璨的星空-初识canvas(二)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/04/19/command/" class="archive-article-date">
+  	<time datetime="2017-04-19T00:56:28.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/04/19/command/">按命令行事（git/hexo/fis3）</a>
     </h1>
   
 
+        <div class="article-info info-on-right">
           
-            <a href="/2017/12/28/canvas2/" class="archive-article-date">
-  	<time datetime="2017-12-28T08:12:40.957Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-            <span class="btn-bg"></span>
-            <span class="btn-text">文章导航</span>
-          </p>
-          <div id="toc-article" class="toc-article">
-            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-            <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、绘制canvas"><span class="toc-number">1.</span> <span class="toc-text">1、绘制canvas</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、绘制深蓝色的背景"><span class="toc-number">2.</span> <span class="toc-text">2、绘制深蓝色的背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、绘制背景图片"><span class="toc-number">3.</span> <span class="toc-text">3、绘制背景图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、单个星星定义（类的方法）"><span class="toc-number">4.</span> <span class="toc-text">4、单个星星定义（类的方法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、循环动画显示闪闪星星"><span class="toc-number">5.</span> <span class="toc-text">5、循环动画显示闪闪星星</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、移动的小星星"><span class="toc-number">6.</span> <span class="toc-text">6、移动的小星星</span></a></li></ol>
-          </div>
-          <script type="text/javascript">
-            function showToc() {
-              var toc_article = document.getElementById("toc-article");
-              var show_toc_btn = document.getElementById("show-toc-btn");
-              toc_article.setAttribute("style", "display:block");
-              show_toc_btn.setAttribute("style", "display:none");
-            };
-
-            function showBtn() {
-              var toc_article = document.getElementById("toc-article");
-              var show_toc_btn = document.getElementById("show-toc-btn");
-              toc_article.setAttribute("style", "display:none");
-              show_toc_btn.setAttribute("style", "display:block");
-            };
-
-          </script>
           
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                        <p>这一篇主要描述如何使用 <code>canvas</code> 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~<br><a id="more"></a></p>
-<p>我们等候着青春，却错过了彼此…… 但我永远会记得，那年夏天，最灿烂、最寂寞的星空。–《星空》<br>
-  <canvas id="canvas"></canvas>
-  <script type="text/javascript" src="/js/canvas/star.js"></script>
-</p>
-<h4 id="1、绘制canvas"><a href="#1、绘制canvas" class="headerlink" title="1、绘制canvas"></a>1、绘制<code>canvas</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>),</div><div class="line">    ctx = canvas.getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure>
-<h4 id="2、绘制深蓝色的背景"><a href="#2、绘制深蓝色的背景" class="headerlink" title="2、绘制深蓝色的背景"></a>2、绘制深蓝色的背景</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 矩形背景</span></div><div class="line">ctx.fillStyle = <span class="string">"#393550"</span>;</div><div class="line"><span class="comment">// 绘制矩形 ctx.fillRect(x坐标,y坐标,w宽度,h高度)</span></div><div class="line">ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, ctx.canvas.width, ctx.canvas.height);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>描边矩形请使用  <code>ctx.strokeRect(0, 0, ctx.canvas.width, ctx.canvas.height)</code></p>
-</blockquote>
-<h4 id="3、绘制背景图片"><a href="#3、绘制背景图片" class="headerlink" title="3、绘制背景图片"></a>3、绘制背景图片</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ctx.drawImage(图片，x位置，y位置，图片显示宽度，图片显示高度) 5个参数</span></div><div class="line">ctx.drawImage(img, <span class="number">10</span>, <span class="number">10</span>, canvas.width - <span class="number">20</span>, canvas.height - <span class="number">20</span>);</div></pre></td></tr></table></figure>
-<ul>
-<li>加入图片阴影<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 阴影的颜色</span></div><div class="line">ctx.shadowColor = <span class="string">"#81f2f4"</span>;</div><div class="line"><span class="comment">// 阴影的羽化值</span></div><div class="line">ctx.shadowBlur = <span class="number">20</span>;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>阴影x轴上的偏移量<code>ctx.shadowOffsetX</code>，y轴上的偏移量<code>ctx.shadowOffsetY</code>。</p>
-</blockquote>
-<h4 id="4、单个星星定义（类的方法）"><a href="#4、单个星星定义（类的方法）" class="headerlink" title="4、单个星星定义（类的方法）"></a>4、单个星星定义（类的方法）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> SingleStar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">SingleStar.prototype = &#123;</div><div class="line">  <span class="comment">//初始化</span></div><div class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//定义当前星星的X坐标</span></div><div class="line">    <span class="keyword">this</span>.x = <span class="built_in">Math</span>.random() * canvas.width + <span class="number">10</span>;</div><div class="line">    <span class="comment">//定义当前星星的Y坐标</span></div><div class="line">    <span class="keyword">this</span>.y = <span class="built_in">Math</span>.random() * canvas.height + <span class="number">10</span>;</div><div class="line">    <span class="comment">//绘制星星，使用的是一张49*7的有7颗小星星的单图片，根据位置的不同显示不同大小星星取值（0，7)</span></div><div class="line">    <span class="comment">//比如this.picNo=1 则显示照片中的第一颗星星</span></div><div class="line">    <span class="comment">//比如this.picNo=7 则显示照片中的最后一颗星星</span></div><div class="line">    <span class="keyword">this</span>.picNo = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">7</span>);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">//在不同的位置上绘制不同大小的星星</span></div><div class="line">  draw: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//drawImage(img,sx,sy,swidth,sheight,x,y,width,height) 9个参数时</span></div><div class="line">    <span class="comment">//img: 图片</span></div><div class="line">    <span class="comment">//sx: 图片的X起点</span></div><div class="line">    <span class="comment">//sy: 图片的Y起点</span></div><div class="line">    <span class="comment">//swidth:要绘制的图片选取的宽度</span></div><div class="line">    <span class="comment">//sheight:要绘制的图片选取的高度</span></div><div class="line">    <span class="comment">//x,y:图片在canvas上显示的位置</span></div><div class="line">    <span class="comment">//width,height:在Canvas上要显示的大小，进行缩放</span></div><div class="line">    ctx.drawImage(starImg, <span class="keyword">this</span>.picNo * <span class="number">7</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">7</span>, <span class="keyword">this</span>.x, <span class="keyword">this</span>.y, <span class="number">7</span>, <span class="number">7</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>星星图片是酱紫的：<img src="/2017/12/28/canvas2/star.png" alt="star"> 仔细瞅哈，因为是透明的png~</p>
-</blockquote>
-<ul>
-<li>初始化星星<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 星星存储数组</span></div><div class="line"><span class="keyword">var</span> littleStars = [];</div><div class="line"><span class="comment">// 绘制星星数量</span></div><div class="line"><span class="keyword">var</span> num = <span class="number">60</span>;</div><div class="line"><span class="comment">// 初始化星星</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">  littleStars[i] = <span class="keyword">new</span> SingleStar();</div><div class="line">  littleStars[i].init();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="5、循环动画显示闪闪星星"><a href="#5、循环动画显示闪闪星星" class="headerlink" title="5、循环动画显示闪闪星星"></a>5、循环动画显示闪闪星星</h4><ul>
-<li><p>原理：在星星的位置每隔一段时间重新绘制一个不同大小的星星，显示出一闪闪的效果，这里引入的循环方法是 <code>requestAnimationFrame(fun)</code> 接受一个参数回调函数，这是H5新方法，效果比定时器流畅省内存。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个gameloop的方法，初始化调用一次，实现循环调用</span></div><div class="line"><span class="keyword">var</span> gameloop = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.requestAnimationFrame(gameloop);</div><div class="line">    <span class="comment">//绘制背景及图片</span></div><div class="line">    ...</div><div class="line">    <span class="comment">//绘制好多星星</span></div><div class="line">    drawStars();</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
-</li>
-<li><p>绘制好多星星：每循环一次重新渲染一次，只改变星星的位置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//更新星星的位置</span></div><div class="line">SingleStar.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.picNo += <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.picNo &gt;= <span class="number">7</span>) &#123;</div><div class="line">      <span class="keyword">this</span>.picNo = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制好多星星</span></div><div class="line"><span class="keyword">var</span> drawStars = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</div><div class="line">      <span class="comment">//更新位置</span></div><div class="line">      littleStars[i].update();</div><div class="line">      <span class="comment">//重新渲染</span></div><div class="line">      littleStars[i].draw();</div><div class="line">    &#125;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
-<h4 id="6、移动的小星星"><a href="#6、移动的小星星" class="headerlink" title="6、移动的小星星"></a>6、移动的小星星</h4><p>仔细看下图片中的星星，都在以缓慢的速度移动，到边缘后就消失了。动画的原理在第一篇的时候已经介绍过。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//初始化函数中定义下速度</span></div><div class="line">SingleStar.prototype.init = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">//y轴移动速度</span></div><div class="line">    <span class="keyword">this</span>.ySpd = <span class="built_in">Math</span>.random() * <span class="number">0.6</span> - <span class="number">0.3</span>; <span class="comment">//[-0.3, 0.3)</span></div><div class="line">    <span class="comment">//x轴移动速度</span></div><div class="line">    <span class="keyword">this</span>.xSpd = <span class="built_in">Math</span>.random() * <span class="number">0.2</span> - <span class="number">0.1</span>; <span class="comment">//[-0.1, 0.1)</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//更新速度</span></div><div class="line">SingleStar.prototype.update = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">this</span>.x += <span class="keyword">this</span>.xSpd;</div><div class="line">    <span class="keyword">this</span>.y += <span class="keyword">this</span>.ySpd;</div><div class="line"></div><div class="line">    <span class="comment">//超出边界，重生星星</span></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.x &gt; canvas.width - <span class="number">20</span> || <span class="keyword">this</span>.x &lt; <span class="number">10</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.init();</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.y &gt; canvas.height - <span class="number">20</span> || <span class="keyword">this</span>.y &lt; <span class="number">10</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.init();</div><div class="line">    &#125;      </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-                          
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -263,88 +195,23 @@
 	</div>
 
 
-                      
-
-                          
-                            
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2017/12/28/canvas2/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-                              
-                                <div class="clearfix"></div>
-            </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/01/02/canvas3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          放大镜下的真相-初识canvas(三)
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/12/25/canvas/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">绚丽的钟表器-初识canvas(一)</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
     
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/categories/黑玛鱼知识库/">&laquo; Prev</a><a class="page-number" href="/categories/黑玛鱼知识库/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
-      
+
 
           </div>
         </div>
@@ -372,10 +239,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: true,
 		root: "/",
 		innerArchive: false,

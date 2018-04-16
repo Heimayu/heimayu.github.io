@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.webhmy.com/2017/08/13/gulp/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
 <meta property="og:description" content="记录如何使用gulp及常用插件，以及它与requireJs的配合使用。">
-<meta property="og:updated_time" content="2018-04-10T06:52:35.985Z">
+<meta property="og:updated_time" content="2018-04-16T08:36:52.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当Gulp遇到requireJS">
 <meta name="twitter:description" content="记录如何使用gulp及常用插件，以及它与requireJs的配合使用。">
@@ -153,7 +153,8 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-gulp" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-gulp" class="article article-type-post "
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -164,16 +165,45 @@
     </h1>
   
 
-        
-        <a href="/2017/08/13/gulp/" class="archive-article-date">
+          
+            <a href="/2017/08/13/gulp/" class="archive-article-date">
   	<time datetime="2017-08-13T07:23:14.484Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-13</time>
 </a>
-        
+              
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>记录如何使用gulp及常用插件，以及它与requireJs的配合使用。<br><a id="more"></a></p>
+        <!-- 目录内容 -->
+        
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、gulp常用插件"><span class="toc-number">1.</span> <span class="toc-text">1、gulp常用插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、基本用法"><span class="toc-number">2.</span> <span class="toc-text">2、基本用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、Md5版本号添加"><span class="toc-number">3.</span> <span class="toc-text">3、Md5版本号添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、requireJS中的路径替换"><span class="toc-number">4.</span> <span class="toc-text">4、requireJS中的路径替换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、修改版本号"><span class="toc-number">5.</span> <span class="toc-text">5、修改版本号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、传统的JSP项目-requireJS"><span class="toc-number">6.</span> <span class="toc-text">6、传统的JSP项目+requireJS</span></a></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
+
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
+
+          </script>
+          
+            <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <p>记录如何使用gulp及常用插件，以及它与requireJs的配合使用。<br><a id="more"></a></p>
 <h4 id="1、gulp常用插件"><a href="#1、gulp常用插件" class="headerlink" title="1、gulp常用插件"></a>1、gulp常用插件</h4><p><strong>LESS：</strong> gulp-less<br><strong>CSS压缩：</strong> gulp-minify-css<br><strong>JS压缩：</strong> gulp-uglify<br><strong>HTML压缩：</strong> gulp-minify-html<br><strong>JS代码检查：</strong> gulp-jshint<br><strong>文件合并：</strong> gulp-concat<br><strong>图片压缩：</strong> gulp-imagemin<br><strong>Md5版本号添加：</strong> gulp-rev和gulp-rev-collector<br><strong>文件监听：</strong> gulp-watch<br><strong>雪碧图生成：</strong> gulp-spritesmith<br><strong>重命名：</strong> gulp-rename</p>
 <h4 id="2、基本用法"><a href="#2、基本用法" class="headerlink" title="2、基本用法"></a>2、基本用法</h4><p>可以把文件的配置单独配置到一个JS里去，然后在gulpfile.js中引用。保证代码的干净整洁。举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var less = require(&apos;gulp-less&apos;);</div><div class="line">gulp.task(&apos;less&apos;, [&apos;clean&apos;], function() &#123;</div><div class="line">    return gulp.src(CONFIG.less.src)</div><div class="line">        .pipe(less())</div><div class="line">        .pipe(gulp.dest(CONFIG.css.srcFile));</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p><strong>gulp.task：</strong> 表示任务流，gulp以管道流的形式完成一个个的任务。<br><strong>gulp.src：</strong> 执行任务的源文件<br><strong>pipe()：</strong> 任务执行输出动作<br><strong>gulp.dest()：</strong> 任务输出源文件</p>
@@ -185,7 +215,7 @@
 <h4 id="4、requireJS中的路径替换"><a href="#4、requireJS中的路径替换" class="headerlink" title="4、requireJS中的路径替换"></a>4、requireJS中的路径替换</h4><p>我们知道，在写requireJS配置的时候会配置paths，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">paths: &#123;        </div><div class="line">        jquery: &apos;js/plugins/jquery.min&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>其中加载的插件不需要加上<code>.js</code>的后缀名，因为requireJS会默认加上的。但是我们在3中的替换rev-manifest.json中是有后缀名的，否则是无法替换的，因此我们将paths中的插件都加上<code>.js</code>。导致的问题是浏览器会报错加载了<code>js/plugins/jquery.min.js.js</code>。</p>
 <p>修改问题的方法是，修改requireJS中对路径的处理（第1895行）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if (baseElement) &#123;</div><div class="line">      head.insertBefore(node, baseElement);</div><div class="line">  &#125; else &#123;</div><div class="line">  	var srcArr = node.src.split(&apos;.js&apos;);</div><div class="line">  	node.src = !!srcArr[1] ? srcArr[0] + &apos;.js&apos; + srcArr[1] : srcArr[0] + &apos;.js&apos;;  	</div><div class="line">    head.appendChild(node);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="5、修改版本号的表现形式"><a href="#5、修改版本号的表现形式" class="headerlink" title="5、修改版本号的表现形式"></a>5、修改版本号的表现形式</h4><p>我们想将引用改变成下面常用的这样，就必须再修改下gulp-rev和gulp-rev-collector插件的源码！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/plugins/require.js&quot; data-main=&quot;js/apps/index.js?v=d8f0c67dcc&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="5、修改版本号"><a href="#5、修改版本号" class="headerlink" title="5、修改版本号"></a>5、修改版本号</h4><p>我们想将引用改变成下面常用的这样，就必须再修改下gulp-rev和gulp-rev-collector插件的源码！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;js/plugins/require.js&quot; data-main=&quot;js/apps/index.js?v=d8f0c67dcc&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>a. 打开node_modules\gulp-rev\index.js</p>
 <p>第144行 <code>manifest[originalFile] = revisionedFile;</code><br>更新为:<br><code>manifest[originalFile] = originalFile + ‘?v=’ + file.revHash;</code></p>
 <p>b. 打开nodemodules\gulp-rev\nodemodules\rev-path\index.js</p>
@@ -193,14 +223,14 @@
 <p>c. 打开node_modules\gulp-rev-collector\index.js<br>新版本的gulp-rev-collector这样修改<br><code>let cleanReplacement =  path.basename(json[key]).replace(new RegExp( opts.revSuffix ), &#39;&#39; );</code><br>更新为:<br><code>let cleanReplacement =  path.basename(json[key]).split(&#39;?&#39;)[0];</code><br>即可。</p>
 <h4 id="6、传统的JSP项目-requireJS"><a href="#6、传统的JSP项目-requireJS" class="headerlink" title="6、传统的JSP项目+requireJS"></a>6、传统的JSP项目+requireJS</h4><p>不想大动干戈，可以让后台手动给一个版本号的变量。然后在需要加版本号的地方手动加上后缀名。<br>对于requireJS的资源，则首先在入口文件加入一个data属性例如：<code>data-urlArgs=&quot;${***}&quot;</code>，然后更改require.js的源码在1802行增加如下代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> urlArgs = script.getAttribute(<span class="string">'data-urlArgs'</span>);</div><div class="line"><span class="keyword">if</span> (urlArgs) &#123;</div><div class="line">    <span class="comment">//Set the cfg.urlArgs, if it is not cfg.urlArgs set.</span></div><div class="line">    <span class="keyword">if</span> (!cfg.urlArgs) &#123;</div><div class="line">        cfg.urlArgs = <span class="string">'ver='</span> + urlArgs;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-      
+                          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                            
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -213,10 +243,10 @@
 	</div>
 
 
-      
+                      
 
-      
-        
+                          
+                            
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -266,9 +296,9 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
 
@@ -292,9 +322,9 @@
   
 </nav>
 
+    
 
-
-
+      
 
           </div>
         </div>

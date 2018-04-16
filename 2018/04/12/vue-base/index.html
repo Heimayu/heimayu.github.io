@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.webhmy.com/2018/04/12/vue-base/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
 <meta property="og:description" content="本文主要记录使用vue的一些基础内容及常用知识点的记录。">
-<meta property="og:updated_time" content="2018-04-12T06:25:48.380Z">
+<meta property="og:updated_time" content="2018-04-16T08:25:22.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue学习-入门篇">
 <meta name="twitter:description" content="本文主要记录使用vue的一些基础内容及常用知识点的记录。">
@@ -153,7 +153,8 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-base" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue-base" class="article article-type-post "
+  itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -164,18 +165,47 @@
     </h1>
   
 
-        
-        <a href="/2018/04/12/vue-base/" class="archive-article-date">
+          
+            <a href="/2018/04/12/vue-base/" class="archive-article-date">
   	<time datetime="2018-04-12T05:54:35.915Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
 </a>
-        
+              
       </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>本文主要记录使用vue的一些基础内容及常用知识点的记录。<br><a id="more"></a></p>
+        <!-- 目录内容 -->
+        
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、搭建脚手架"><span class="toc-number">1.</span> <span class="toc-text">1、搭建脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、常用参数"><span class="toc-number">2.</span> <span class="toc-text">2、常用参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、模板指令"><span class="toc-number">3.</span> <span class="toc-text">3、模板指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、组件注册"><span class="toc-number">4.</span> <span class="toc-text">4、组件注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、组件模板"><span class="toc-number">5.</span> <span class="toc-text">5、组件模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、组件通信"><span class="toc-number">6.</span> <span class="toc-text">6、组件通信</span></a></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
+
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
+
+          </script>
+          
+            <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <p>本文主要记录使用vue的一些基础内容及常用知识点的记录。<br><a id="more"></a></p>
 <h3 id="1、搭建脚手架"><a href="#1、搭建脚手架" class="headerlink" title="1、搭建脚手架"></a>1、搭建脚手架</h3><p><code>vue init webpack vue-demo</code><br>执行之后，<code>npm install</code> 安装包依赖<br><code>npm run dev</code> 启动可以实现热加载</p>
-<h3 id="2、vue的对象常用参数"><a href="#2、vue的对象常用参数" class="headerlink" title="2、vue的对象常用参数"></a>2、vue的对象常用参数</h3><ul>
+<h3 id="2、常用参数"><a href="#2、常用参数" class="headerlink" title="2、常用参数"></a>2、常用参数</h3><ul>
 <li><code>data</code>：绑定的数据</li>
 <li><code>methods</code>：方法，this可以指向data中的数据</li>
 <li><code>watch</code>：数据监听，方法名对应data中的数据<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">watch: &#123;</div><div class="line">   dataname:&#123;</div><div class="line">    <span class="comment">//事件执行</span></div><div class="line">     handler:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       ...</div><div class="line">     &#125;,</div><div class="line">     <span class="comment">//是否深度执行</span></div><div class="line">     deep: <span class="literal">true</span></div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
@@ -184,7 +214,7 @@
 <h3 id="3、模板指令"><a href="#3、模板指令" class="headerlink" title="3、模板指令"></a>3、模板指令</h3><ul>
 <li>数据渲染：<code>v-text</code>  <code>v-html</code> </li>
 <li>控制隐藏：<code>v-if</code>  <code>v-show</code> </li>
-<li>循环渲染：<code>v-for=&quot;item in items&quot;</code>，在每条数据的事件绑定可以将数据放在方法里，<br>例如：<code>v-on:click=cancelEvt(item)</code></li>
+<li>循环渲染：<code>v-for=&quot;(item,index) in items&quot;</code>，在每条数据的事件绑定可以将数据放在方法里，<br>例如：<code>v-on:click=cancelEvt(item)</code></li>
 <li>事件绑定：<code>v-on:click</code>  或者 <code>@click</code> 后面是methods中的方法，可以写一些键盘事件，比如<code>@keyup.enter</code> </li>
 <li>属性指令：<code>v-bind:src=&quot;imgSrc&quot;</code>  <code>:class=&quot;{red: isRed}&quot;</code>  <code>:class=&quot;[classAName,{classB: isB}]&quot;</code><br>其中，<code>classAName</code> 就是类名，但是 <code>isB</code> 是布尔值</li>
 <li>表单指令：<code>v-model</code></li>
@@ -201,7 +231,7 @@
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'name'</span>,&#123;</div><div class="line">    template:<span class="string">'#myheader'</span>,</div><div class="line">    data()&#123;...&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="6、组件通信-prop-down-events-up"><a href="#6、组件通信-prop-down-events-up" class="headerlink" title="6、组件通信  prop down events up"></a>6、组件通信  <code>prop down events up</code></h3><p>1.父元素向子元素传递数据（通过props选项）：</p>
+<h3 id="6、组件通信"><a href="#6、组件通信" class="headerlink" title="6、组件通信"></a>6、组件通信</h3><p>1.父元素向子元素传递数据（通过props选项）：</p>
 <ul>
 <li><p>父组件中使用</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 父组件将值放在属性中--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mySun</span> <span class="attr">mumtell</span>=<span class="string">"你是我的儿子"</span>&gt;</span><span class="tag">&lt;/<span class="name">mySun</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -221,14 +251,14 @@
 </li>
 </ul>
 
-      
+                          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+                            
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -241,10 +271,10 @@
 	</div>
 
 
-      
+                      
 
-      
-        
+                          
+                            
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -294,14 +324,23 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/04/16/vue-advanced/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue学习-进阶篇
+        
+      </div>
+    </a>
   
   
     <a href="/2018/04/09/es6-advanced/" id="article-nav-older" class="article-nav-link-wrap">
@@ -311,9 +350,9 @@
   
 </nav>
 
+    
 
-
-
+      
 
           </div>
         </div>
