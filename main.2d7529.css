@@ -2892,6 +2892,9 @@ pre .id {
 }
 
 @media screen and (max-width:800px) {
+  #container .show-toc-btn, #container .toc-article{
+    display:none!important
+  }
   #container,
   body,
   html {
