@@ -2895,6 +2895,9 @@ pre .id {
   #container .show-toc-btn, #container .toc-article{
     display:none!important
   }
+  #comments{
+    background-color: #fff!important;
+  }
   #container,
   body,
   html {
@@ -4203,4 +4206,8 @@ a.pswp__share--download:hover {
 .module-cmt-float-bar,
 .module-cmt-notice{
   display:none!important;
+  background: #fff!important;
+  padding: 20px 20px;
+  margin-left: -15px!important;
+  width: calc(100% + 15px)!important;
 }
