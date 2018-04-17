@@ -4206,8 +4206,12 @@ a.pswp__share--download:hover {
 .module-cmt-float-bar,
 .module-cmt-notice{
   display:none!important;
+}
+
+#SOHU_MAIN{  
   background: #fff!important;
   padding: 20px 20px;
   margin-left: -15px!important;
   width: calc(100% + 15px)!important;
+  border:#e7e6e6 1px solid;
 }
