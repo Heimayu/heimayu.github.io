@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Archives | Heimayu | learn and live</title>
+  <title>模拟接口实现及入门websocket通讯 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/archives/page/2/index.html">
+  <meta name="description" content="简述如何使用node+express实现接口连接及入门websocket通讯。使用技术栈：node + express + typescript + websocket">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟接口实现及入门websocket通讯">
+<meta property="og:url" content="http://www.webhmy.com/2018/07/31/websocket/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="简述如何使用node+express实现接口连接及入门websocket通讯。使用技术栈：node + express + typescript + websocket">
+<meta property="og:image" content="http://www.webhmy.com/2018/07/31/websocket/1.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/07/31/websocket/2.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/07/31/websocket/3.png">
+<meta property="og:updated_time" content="2018-07-31T08:17:59.890Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="模拟接口实现及入门websocket通讯">
+<meta name="twitter:description" content="简述如何使用node+express实现接口连接及入门websocket通讯。使用技术栈：node + express + typescript + websocket">
+<meta name="twitter:image" content="http://www.webhmy.com/2018/07/31/websocket/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -152,37 +157,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-websocket" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模拟接口实现及入门websocket通讯
+    </h1>
+  
+
+          
+            <a href="/2018/07/31/websocket/" class="archive-article-date">
+  	<time datetime="2018-07-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-31</time>
+</a>
+              
+      </header>
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/es6-advanced/" class="archive-article-date">
-  	<time datetime="2018-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/es6-advanced/">ES6入门-进阶篇</a>
-    </h1>
-  
+        <!-- 目录内容 -->
+        
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、接口实现"><span class="toc-number">1.</span> <span class="toc-text">1、接口实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化"><span class="toc-number">1.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建web服务器"><span class="toc-number">1.2.</span> <span class="toc-text">创建web服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模拟接口请求"><span class="toc-number">1.3.</span> <span class="toc-text">模拟接口请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#地址访问"><span class="toc-number">1.4.</span> <span class="toc-text">地址访问</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、websocket概念"><span class="toc-number">2.</span> <span class="toc-text">2、websocket概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#问世"><span class="toc-number">2.2.</span> <span class="toc-text">问世</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、websocket服务端"><span class="toc-number">3.</span> <span class="toc-text">3、websocket服务端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装ws"><span class="toc-number">3.1.</span> <span class="toc-text">安装ws</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务端使用ws"><span class="toc-number">3.2.</span> <span class="toc-text">服务端使用ws</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、websocket客户端"><span class="toc-number">4.</span> <span class="toc-text">4、websocket客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#websocket对象"><span class="toc-number">4.1.</span> <span class="toc-text">websocket对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#websocket属性"><span class="toc-number">4.2.</span> <span class="toc-text">websocket属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#websocket事件"><span class="toc-number">4.3.</span> <span class="toc-text">websocket事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#websocket方法"><span class="toc-number">4.4.</span> <span class="toc-text">websocket方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#客户端使用ws"><span class="toc-number">4.5.</span> <span class="toc-text">客户端使用ws</span></a></li></ol></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
 
-        <div class="article-info info-on-right">
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
+
+          </script>
           
-          
+            <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <p>简述如何使用node+express实现接口连接及入门websocket通讯。使用技术栈：node + express + typescript + websocket<br><a id="more"></a></p>
+<h3 id="1、接口实现"><a href="#1、接口实现" class="headerlink" title="1、接口实现"></a>1、接口实现</h3><p>这里描述前端如何模拟实现接口请求，使用的是<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">express</a>（基于node实现的可以快速搭建web应用的开发框架），这里使用node+express搭建一个简单的web服务器。</p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>1） 初始化生成一个新的 <code>package.json</code> 文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init -y <span class="comment">//-y（代表yes），跳过提问阶段，直接生成文件。</span></div></pre></td></tr></table></figure></p>
+<p>2）安装需要使用的npm包：<code>node</code>， <code>express</code> ，<code>ws</code>(即websocket)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install node express ws --save</div></pre></td></tr></table></figure></p>
+<p>3）这里使用ts开发，所以需要安装ts需要使用的类型定义包（如果使用js就不要安装了）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install @types/node @types/express @types/ws -- save</div></pre></td></tr></table></figure></p>
+<p>4）安装node热更新依赖包<code>nodemon</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install nodemon --save</div></pre></td></tr></table></figure></p>
+<h4 id="创建web服务器"><a href="#创建web服务器" class="headerlink" title="创建web服务器"></a>创建web服务器</h4><p>新建<code>demo-server.ts</code>文件<br>1）数据模拟<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// demo-server.ts</span></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Demodata</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(</div><div class="line">        public id: number,</div><div class="line">        public name: string,</div><div class="line">        public desc: string) &#123; &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> datas: <span class="built_in">Array</span>&lt;Demodata&gt; = [</div><div class="line">    <span class="keyword">new</span> Demodata(<span class="number">1</span>, <span class="string">'heimayu'</span>, <span class="string">'this is my bolg name'</span>),</div><div class="line">    <span class="keyword">new</span> Demodata(<span class="number">2</span>, <span class="string">'websocket'</span>, <span class="string">'this chapter is introduce websocket'</span>),</div><div class="line">    <span class="keyword">new</span> Demodata(<span class="number">3</span>, <span class="string">'express'</span>, <span class="string">'you can use express to start webapp'</span>)</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>2）使用express快速搭建web服务器<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// demo-server.ts</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> express <span class="keyword">from</span> <span class="string">'express'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express();</div><div class="line"></div><div class="line"><span class="comment">// 启动服务器</span></div><div class="line">app.listen(<span class="number">8001</span>,<span class="string">'localhost'</span>,_=&gt;&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'demo服务器已启动，访问地址http://localhost:8001'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h4 id="模拟接口请求"><a href="#模拟接口请求" class="headerlink" title="模拟接口请求"></a>模拟接口请求</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 接口请求-获取数据</span></div><div class="line">app.get(<span class="string">'/datas'</span>, (req, res) =&gt; &#123;</div><div class="line">    res.send(datas) <span class="comment">//数据发送</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 接口请求-根据id获取数据</span></div><div class="line">app.get(<span class="string">'/datas/:id'</span>, (req, res) =&gt; &#123;</div><div class="line">    <span class="keyword">let</span> url_id: number = req.params.id;</div><div class="line">    <span class="keyword">let</span> data: Demodata = datas.find(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">return</span> item.id == url_id</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    res.send(data);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>将ts文件转换成js文件后启动热更新命令 <code>nodemon build/demo-server.js</code><br><img src="/2018/07/31/websocket/1.png" alt=""></p>
+<h4 id="地址访问"><a href="#地址访问" class="headerlink" title="地址访问"></a>地址访问</h4><p>访问 <code>http://localhost:8001/datas</code><br><img src="/2018/07/31/websocket/2.png" alt=""></p>
+<p>访问 <code>http://localhost:8001/datas/1</code><br><img src="/2018/07/31/websocket/3.png" alt=""></p>
+<p>接口实现！</p>
+<h3 id="2、websocket概念"><a href="#2、websocket概念" class="headerlink" title="2、websocket概念"></a>2、websocket概念</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>WebSocket 是 HTML5 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。</p>
+<h4 id="问世"><a href="#问世" class="headerlink" title="问世"></a>问世</h4><ul>
+<li>http请求：必须是由客户端发出请求，服务器返回查询结果。http协议做不到服务器主动向客户端推送消息。</li>
+<li>websocket请求：服务器可以主动向客户端推送消息，客户端也可以主动向服务器发送消息。协议标识符是ws（如果加密，则为wss）。因此，它可以解决 HTTP 协议无法实现服务器主动向客户端发起消息的问题。</li>
+</ul>
+<p>【举例】：比如我们需要定时的获取即时消息数，如果使用http请求，就必须轮询，不停的创建http请求，资源浪费严重，此时可以使用websocket来解决问题，使通信更加高效。</p>
+<h3 id="3、websocket服务端"><a href="#3、websocket服务端" class="headerlink" title="3、websocket服务端"></a>3、websocket服务端</h3><p>node实现websocket有很多模块可实现，这里使用的是ws模块</p>
+<h4 id="安装ws"><a href="#安装ws" class="headerlink" title="安装ws"></a>安装ws</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install ws --save</div></pre></td></tr></table></figure>
+<h4 id="服务端使用ws"><a href="#服务端使用ws" class="headerlink" title="服务端使用ws"></a>服务端使用ws</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Server &#125; <span class="keyword">from</span> <span class="string">'ws'</span>;</div><div class="line"><span class="comment">// 定义websocket服务器</span></div><div class="line"><span class="keyword">const</span> wsServer = <span class="keyword">new</span> Server(&#123; <span class="attr">port</span>: <span class="number">8085</span> &#125;);</div><div class="line"></div><div class="line"><span class="comment">// 定义连接到的websocket集合</span></div><div class="line"><span class="keyword">let</span> socketSet = <span class="keyword">new</span> <span class="built_in">Set</span>&lt;any&gt;();</div><div class="line"></div><div class="line"><span class="comment">// 连接</span></div><div class="line">wsServer.on(<span class="string">'connection'</span>, websocket =&gt; &#123;</div><div class="line">    socketSet.add(websocket)</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 初始化消息数</span></div><div class="line"><span class="keyword">let</span> message = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="comment">// 定时2s发送消息</span></div><div class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    socketSet.forEach(<span class="function"><span class="params">ws</span> =&gt;</span> &#123;        </div><div class="line">        <span class="keyword">if</span> (ws.readyState == <span class="number">1</span>) &#123;</div><div class="line">            ws.send(<span class="built_in">JSON</span>.stringify(&#123;</div><div class="line">                message: message++</div><div class="line">            &#125;))</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            socketSet.delete(ws);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;, <span class="number">2000</span>)</div></pre></td></tr></table></figure>
+<h3 id="4、websocket客户端"><a href="#4、websocket客户端" class="headerlink" title="4、websocket客户端"></a>4、websocket客户端</h3><h4 id="websocket对象"><a href="#websocket对象" class="headerlink" title="websocket对象"></a>websocket对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* url:连接的url</span></div><div class="line"><span class="comment">* protocol:可选，接受的子协议</span></div><div class="line"><span class="comment">**/</span></div><div class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WebSocket(url,[protocol])</div></pre></td></tr></table></figure>
+<h4 id="websocket属性"><a href="#websocket属性" class="headerlink" title="websocket属性"></a>websocket属性</h4><p><code>ws.readyState</code></p>
+<ul>
+<li>0：表示连接尚未建立</li>
+<li>1：已建立，可以通信</li>
+<li>2：连接正在关闭</li>
+<li>3：连接已经关闭</li>
+</ul>
+<h4 id="websocket事件"><a href="#websocket事件" class="headerlink" title="websocket事件"></a>websocket事件</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">事件</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">open</td>
+<td style="text-align:left">连接建立时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left">客户端接收服务端数据时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">error</td>
+<td style="text-align:left">通信发生错误</td>
+</tr>
+<tr>
+<td style="text-align:left">close</td>
+<td style="text-align:left">连接关闭时触发</td>
+</tr>
+</tbody>
+</table>
+<h4 id="websocket方法"><a href="#websocket方法" class="headerlink" title="websocket方法"></a>websocket方法</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">send()</td>
+<td style="text-align:left">使用连接发送数据</td>
+</tr>
+<tr>
+<td style="text-align:left">close()</td>
+<td style="text-align:left">关闭连接</td>
+</tr>
+</tbody>
+</table>
+<h4 id="客户端使用ws"><a href="#客户端使用ws" class="headerlink" title="客户端使用ws"></a>客户端使用ws</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// angular代码</span></div><div class="line">message: number = <span class="number">0</span>; <span class="comment">// 消息数</span></div><div class="line">ws: WebSocket; <span class="comment">// 定义</span></div><div class="line">ngOnInit() &#123; <span class="comment">// 初始化</span></div><div class="line">  <span class="keyword">this</span>.ws = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8085'</span>);</div><div class="line">  <span class="comment">// 客户端接收消息</span></div><div class="line">  <span class="keyword">this</span>.ws.onmessage = <span class="function">(<span class="params">event</span>) =&gt;</span>&#123;</div><div class="line">    <span class="keyword">this</span>.message = <span class="built_in">JSON</span>.parse(event.data).message;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 出错</span></div><div class="line">  <span class="keyword">this</span>.ws.onerror = <span class="function">(<span class="params">error</span>) =&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 关闭</span></div><div class="line">  <span class="keyword">this</span>.ws.onclose = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'webSocket断开连接'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>即时通讯成功！</p>
+
+                          
+
+                            
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -195,375 +304,87 @@
 	</div>
 
 
+                      
+
+                          
+                            
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/07/31/websocket/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/01/es6-base/" class="archive-article-date">
-  	<time datetime="2018-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/01/es6-base/">ES6入门-基础篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/20/require-css/" class="archive-article-date">
-  	<time datetime="2018-03-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/20/require-css/">使用requireJS实现单页面开发</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  <section id="comments">
+    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <div id="SOHUCS" sid="模拟接口实现及入门websocket通讯" style="padding: 0px 30px 0px 46px;"></div>
+    <script>
+      (function () {
+        var appid = 'cytzfOug4',
+            conf = '8f1ff3e2ba569c54d8d0f3ecb439cbb6';
+        var doc = document,
+            s = doc.createElement('script'),
+            h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf=' + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+        window.SCS_NO_IFRAME = true;
+      })()
 
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+    </script>
+  </section>
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/22/canvas3/" class="archive-article-date">
-  	<time datetime="2017-10-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/22/canvas3/">放大镜下的真相-初识canvas(三)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/21/canvas2/" class="archive-article-date">
-  	<time datetime="2017-10-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/21/canvas2/">璀璨的星空-初识canvas(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/20/canvas/" class="archive-article-date">
-  	<time datetime="2017-10-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/20/canvas/">绚丽的钟表器-初识canvas(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/20/raphael/" class="archive-article-date">
-  	<time datetime="2017-07-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/20/raphael/">浅记Raphael图形库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/20/toPdf/" class="archive-article-date">
-  	<time datetime="2017-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/20/toPdf/">开发人员写文档（Atom/Markdown/Pdf）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼大杂烩/" class="article-tag-list-link color2">黑玛鱼大杂烩</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/gulp/" class="archive-article-date">
-  	<time datetime="2017-05-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/gulp/">当Gulp遇到requireJS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/30/command/" class="archive-article-date">
-  	<time datetime="2017-04-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/30/command/">按命令行事（git/hexo/fis3）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
-  
-
-
 
           </div>
         </div>
@@ -591,8 +412,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
