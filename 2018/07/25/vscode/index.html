@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.webhmy.com/2018/07/25/vscode/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
 <meta property="og:description" content="工欲善其事，必先利其器，由sublime text转了vscode觉得vscode超好用的，尤其是强大的插件系统，于是果断摒弃旧爱了~这里记录常用的快捷键或者相关配置，便于平时查找。">
-<meta property="og:updated_time" content="2018-07-27T01:28:02.754Z">
+<meta property="og:updated_time" content="2018-08-01T08:02:33.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VScode使用技巧汇总">
 <meta name="twitter:description" content="工欲善其事，必先利其器，由sublime text转了vscode觉得vscode超好用的，尤其是强大的插件系统，于是果断摒弃旧爱了~这里记录常用的快捷键或者相关配置，便于平时查找。">
@@ -214,6 +214,7 @@
 <li>双屏显示：<code>CTRL + 2</code></li>
 <li>多光标：ALT+点击</li>
 <li>打开当前目录的命令行：CTRL + `</li>
+<li>打开根目录的cmd：<code>CTRL + SHIFT + C</code></li>
 </ul>
 <h3 id="2-ts文件转换"><a href="#2-ts文件转换" class="headerlink" title="2.ts文件转换"></a>2.ts文件转换</h3><p>1） step1：在文件的根目录新建<code>tsconfig.json</code>，使用命令<code>tsc --init</code>，保存常用的配置项<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"compileOnSave"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"compilerOptions"</span>: &#123;</div><div class="line">        <span class="string">"target"</span>: <span class="string">"es5"</span>,  <span class="comment">// 表示要转换的JS格式</span></div><div class="line">        <span class="string">"outDir"</span>: <span class="string">"dist"</span>, <span class="comment">// 表示转换后的JS代码所放文件夹</span></div><div class="line">        <span class="string">"module"</span>: <span class="string">"commonjs"</span>,<span class="comment">// 当前遵循的模块规范</span></div><div class="line">        <span class="string">"emitDecoratorMetadata"</span>: <span class="literal">true</span>,  <span class="comment">// 给源码里的装饰器声明加上设计类型元数据</span></div><div class="line">        <span class="string">"experimentalDecorators"</span>: <span class="literal">true</span>, <span class="comment">// 启用实验性的ES装饰器</span></div><div class="line">        <span class="string">"sourceMap"</span>: <span class="literal">true</span>, <span class="comment">// 用于debug ,生成相应的.map文件</span></div><div class="line">        <span class="string">"noImplicitAny"</span>: <span class="literal">false</span>, <span class="comment">// false 表示当没有指定类型的时候默认为any</span></div><div class="line">        <span class="string">"lib"</span>: [<span class="string">"es6"</span>] <span class="comment">// 开发过程中会使用es6的语法</span></div><div class="line">    &#125;,</div><div class="line">    <span class="string">"exclude"</span>:[<span class="string">"node_modules"</span>,<span class="string">"dist"</span>] <span class="comment">// 表示这里的文件不转换</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>2）step2：ts文件编写后，<br>点击菜单 中的 【任务】-&gt;【运行任务】 然后选择对应的 【tsc:监视-tsconfig.json】 之后可以在当前文件夹中就会看到生产的dist文件，并且会同步更新呢~</p>

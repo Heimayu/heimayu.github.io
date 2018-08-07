@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>放大镜下的真相-初识canvas(三) | Heimayu | learn and live</title>
+  <title>Angular学习2：进阶（路由、依赖注入、非父子组件通讯） | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文主要记录 canvas 在图像、文字处理、离屏技术和放大镜特效的实现过程中使用到的API。">
+  <meta name="description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="放大镜下的真相-初识canvas(三)">
-<meta property="og:url" content="http://www.webhmy.com/2017/10/22/canvas3/index.html">
+<meta property="og:title" content="Angular学习2：进阶（路由、依赖注入、非父子组件通讯）">
+<meta property="og:url" content="http://www.webhmy.com/2018/08/03/angular-advance/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="本文主要记录 canvas 在图像、文字处理、离屏技术和放大镜特效的实现过程中使用到的API。">
-<meta property="og:updated_time" content="2018-06-04T01:15:43.997Z">
+<meta property="og:description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。">
+<meta property="og:updated_time" content="2018-08-02T09:22:35.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="放大镜下的真相-初识canvas(三)">
-<meta name="twitter:description" content="本文主要记录 canvas 在图像、文字处理、离屏技术和放大镜特效的实现过程中使用到的API。">
+<meta name="twitter:title" content="Angular学习2：进阶（路由、依赖注入、非父子组件通讯）">
+<meta name="twitter:description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -153,7 +153,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-canvas3" class="article article-type-post "
+            <article id="post-angular-advance" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -161,13 +161,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      放大镜下的真相-初识canvas(三)
+      Angular学习2：进阶（路由、依赖注入、非父子组件通讯）
     </h1>
   
 
           
-            <a href="/2017/10/22/canvas3/" class="archive-article-date">
-  	<time datetime="2017-10-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
+            <a href="/2018/08/03/angular-advance/" class="archive-article-date">
+  	<time datetime="2018-08-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
 </a>
               
       </header>
@@ -181,7 +181,7 @@
           <div id="toc-article" class="toc-article">
             <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
             <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、显示模糊照片"><span class="toc-number">1.</span> <span class="toc-text">1、显示模糊照片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、放大镜原理"><span class="toc-number">2.</span> <span class="toc-text">2、放大镜原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、离屏技术"><span class="toc-number">3.</span> <span class="toc-text">3、离屏技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、鼠标交互事件"><span class="toc-number">4.</span> <span class="toc-text">4、鼠标交互事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、放大镜下的真相"><span class="toc-number">5.</span> <span class="toc-text">5、放大镜下的真相</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、添加水印的方法"><span class="toc-number">6.</span> <span class="toc-text">6、添加水印的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、结束语"><span class="toc-number">7.</span> <span class="toc-text">7、结束语</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、路由"><span class="toc-number">1.</span> <span class="toc-text">1、路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、依赖注入"><span class="toc-number">2.</span> <span class="toc-text">2、依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、非父子组件通讯"><span class="toc-number">3.</span> <span class="toc-text">3、非父子组件通讯</span></a></li></ol>
           </div>
           <script type="text/javascript">
             function showToc() {
@@ -203,31 +203,9 @@
             <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
-                        <p>本文主要记录 <code>canvas</code> 在图像、文字处理、离屏技术和放大镜特效的实现过程中使用到的API。<br><a id="more"></a><br>致我们单纯的小美好：最近被闺蜜逼着追这部热剧，不得不说男主颜值太高啦，图片看不清？没关系，试着在图片上按住鼠标并滑动，一起来“窥视”花美男的美颜盛世吧！哈哈(<em>^_^</em>)~<br>
-  <canvas id="canvas"></canvas>
-  <canvas id="canvas2" style="display:none"></canvas>
-  <canvas id="canvas3" style="display:none"></canvas>
-  <script type="text/javascript" src="/js/canvas/photo.js"></script>
-</p>
-<h4 id="1、显示模糊照片"><a href="#1、显示模糊照片" class="headerlink" title="1、显示模糊照片"></a>1、显示模糊照片</h4><p>canvas可以对清晰的图片做滤镜处理，涉及到很多图形学的算法，主要使用的处理图片的3个API分别是：</p>
-<p><code>createImageData(对象的宽度,对象的高度)</code> 新建一个画布对象，通过设置data属性，可以画出图像；<br><code>getImageData(x坐标,y坐标,w图像的宽度,h图像的高度)</code> 获取画布上的像素信息，这里会返回一个对象，对象中的data就记录了选取的像素信息，通过更改data属性值变化图片的滤镜；<br><code>putImageData(ImageData对象,对象的x坐标,对象的y坐标,在画布上放置图像的dirtyX坐标位置,在画布上放置图像的dirtyY坐标位置,w图像的宽度,h图像的高度)</code> 在画布上复制更改data属性后的图像，距离左上角的x坐标 = x + dirtyX；距离左上角的y坐标 = y + dirtyY。</p>
-<p>于是乎按照网上的其他教程实现了下，但由于循环太多的原因显得浏览器很卡，所以我放弃了。默默的打开了PS手动模糊了一张照片….下面的，你懂的~</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义canvas画布</span></div><div class="line"><span class="keyword">var</span> canvas1 = <span class="built_in">document</span>.getElementById(<span class="string">'canvas1'</span>);</div><div class="line">    ctx1 = canvas1.getContext(<span class="string">'2d'</span>);</div><div class="line"></div><div class="line"><span class="comment">//模糊图片加载</span></div><div class="line"><span class="keyword">var</span> image1 = <span class="keyword">new</span> Image();</div><div class="line">image1.src = <span class="string">"name1.png"</span>;</div><div class="line"></div><div class="line"><span class="comment">//图片加载成功后绘制图片</span></div><div class="line">image1.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">//drawImage 在画布上绘制模糊图片</span></div><div class="line">  ctx1.drawImage(image1, <span class="number">0</span>, <span class="number">0</span>, canvas1.width, canvas1.height);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h4 id="2、放大镜原理"><a href="#2、放大镜原理" class="headerlink" title="2、放大镜原理"></a>2、放大镜原理</h4><p>实现效果：如上图，点击或点击滑动鼠标显示一个区域，区域中显示对应点击部分范围的放大清晰图片。忽略底图我们可以考虑如何使用canvas来显示局部图片，那么问题就可以肢解为3部分：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、如何在canvas上再画出另外一个canvas；</div><div class="line"><span class="number">2</span>、如何在鼠标点击滑动的时候显示该区域；</div><div class="line"><span class="number">3</span>、如何在canvas中显示并剪切出圆形区域。</div></pre></td></tr></table></figure></p>
-<h4 id="3、离屏技术"><a href="#3、离屏技术" class="headerlink" title="3、离屏技术"></a>3、离屏技术</h4><p>所谓的离屏技术就是在一个canvas上绘制另外一个canvas，我们可以看到，本篇和上篇文章使用的核心API就<code>drawImage()</code>它分别可以支持，3个、5个和9个参数（具体的含义在<a href="http://webhmy.com/2017/12/28/canvas2/" target="_blank" rel="external">璀璨之旅-初识canvas(二)</a>介绍过）；其中第一个参数既可以是图片，也可以是canvas对象；我们知道区域显示的图片是清晰的、放大的，那么首先绘制canvas2并加载清晰大图片（记住隐藏起来哦！）；<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//HTML代码（隐藏）</span></div><div class="line">&lt;canvas id=<span class="string">"canvas2"</span> style=<span class="string">"display:none"</span>&gt;&lt;/canvas&gt;</div><div class="line"></div><div class="line"><span class="comment">//定义canvas2</span></div><div class="line"><span class="keyword">var</span> canvas2 = <span class="built_in">document</span>.getElementById(<span class="string">'canvas2'</span>),</div><div class="line">    ctx2 = canvas2.getContext(<span class="string">'2d'</span>),</div><div class="line">    scale = <span class="number">1.6</span>; <span class="comment">// 放大倍数</span></div><div class="line"></div><div class="line"><span class="comment">// canvas2的图片大小是模糊图片的1.6倍</span></div><div class="line">canvas2.width = canvas.width * scale;</div><div class="line">canvas2.height = canvas.height * scale;</div><div class="line"></div><div class="line"><span class="comment">// 在canvas2中加载图片</span></div><div class="line"><span class="keyword">var</span> image2 = <span class="keyword">new</span> Image();</div><div class="line">image2.src = <span class="string">"name2.png"</span>;</div><div class="line"></div><div class="line">image2.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  ctx2.drawImage(image2, <span class="number">0</span>, <span class="number">0</span>, canvas2.width, canvas2.height);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h4 id="4、鼠标交互事件"><a href="#4、鼠标交互事件" class="headerlink" title="4、鼠标交互事件"></a>4、鼠标交互事件</h4><p>效果：鼠标点击并滑动鼠标产生反应，松开鼠标或者移除画布则失效。处理如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个判断鼠标是否是点击滑动的标识符</span></div><div class="line"><span class="keyword">var</span> flag;</div><div class="line"></div><div class="line"><span class="comment">//鼠标点入事件</span></div><div class="line">canvas.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  flag = <span class="literal">true</span>;</div><div class="line">  <span class="comment">//显示放大镜</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 鼠标移动事件</span></div><div class="line">canvas.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (flag) &#123;</div><div class="line">    <span class="comment">//显示放大镜</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//鼠标松开事件</span></div><div class="line">canvas.onmouseup = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  flag = <span class="literal">false</span>;</div><div class="line">  <span class="comment">// 隐藏放大镜</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//鼠标离开事件</span></div><div class="line">canvas.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  flag = <span class="literal">false</span>;</div><div class="line">  <span class="comment">// 隐藏放大镜</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="5、放大镜下的真相"><a href="#5、放大镜下的真相" class="headerlink" title="5、放大镜下的真相"></a>5、放大镜下的真相</h4><ul>
-<li>鼠标所处的位置点(x,y)是区域的中心，计算出清晰图所在的位置点，我们先假设绘制一个正方形；</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 圆的半径是mr</span></div><div class="line"><span class="keyword">var</span> mr = <span class="number">100</span>;</div><div class="line"></div><div class="line"><span class="comment">//对应清晰图的位置点</span></div><div class="line"><span class="keyword">var</span> imageX = x * scale,</div><div class="line">    imageY = y * scale;</div><div class="line"></div><div class="line"><span class="comment">// 找出清晰图截图的左上角起点</span></div><div class="line"><span class="keyword">var</span> sx = imageX - mr,</div><div class="line">    sy = imageY - mr;</div><div class="line"></div><div class="line"><span class="comment">// 对应模糊图的左上角起点</span></div><div class="line"><span class="keyword">var</span> dx = x - mr,</div><div class="line">    dy = y - mr;</div><div class="line"></div><div class="line"><span class="comment">// 在对应的位置上重新绘制图片</span></div><div class="line">ctx.drawImage(canvas2, sx, sy, <span class="number">2</span> * mr, <span class="number">2</span> * mr, dx, dy, <span class="number">2</span> * mr, <span class="number">2</span> * mr);</div></pre></td></tr></table></figure>
-<ul>
-<li>截取圆形<br>我们知道ctx是一个全局的对象，而鼠标移动显示区域是不断进行的状态，因此这里要使用canvas中绘制状态的最佳搭档<code>save()</code>和<code>restore()</code>：用于对当前状态的保存及释放不影响其他操作；可用于重复的绘制图形的变化过程。而<code>clip()</code>则表示剪切区域；</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 保存当前状态</span></div><div class="line">ctx.save();</div><div class="line"><span class="comment">// 边框</span></div><div class="line">ctx.strokeStyle = <span class="string">"#9eddf1"</span>;</div><div class="line">ctx.lineWidth = <span class="number">3</span>;</div><div class="line"><span class="comment">// 开始绘制</span></div><div class="line">ctx.beginPath();</div><div class="line">ctx.arc(x, y, mr, <span class="number">0</span>, <span class="built_in">Math</span>.PI * <span class="number">2</span>);</div><div class="line">ctx.stroke();</div><div class="line"><span class="comment">// 表示剪切</span></div><div class="line">ctx.clip();</div><div class="line"><span class="comment">// 在剪切后的区域中显示图片</span></div><div class="line">ctx.drawImage(canvas2, sx, sy, <span class="number">2</span> * mr, <span class="number">2</span> * mr, dx, dy, <span class="number">2</span> * mr, <span class="number">2</span> * mr);</div><div class="line"></div><div class="line"><span class="comment">//添加水印</span></div><div class="line">ctx.drawImage(canvas3, dx, dy);</div><div class="line">ctx.restore();</div></pre></td></tr></table></figure>
-<h4 id="6、添加水印的方法"><a href="#6、添加水印的方法" class="headerlink" title="6、添加水印的方法"></a>6、添加水印的方法</h4><p>放大镜中有网址的水印，这里也是采用离屏技术再绘制另一个canvas3；<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> canvas3 = <span class="built_in">document</span>.getElementById(<span class="string">'canvas3'</span>),</div><div class="line">    ctx3 = canvas3.getContext(<span class="string">'2d'</span>);</div><div class="line"></div><div class="line">canvas3.width = <span class="number">200</span>;</div><div class="line">canvas3.height = <span class="number">50</span>;</div><div class="line"></div><div class="line"><span class="comment">//字体设置</span></div><div class="line">ctx3.font = <span class="string">"bold 14px Microsoft Arail"</span>;</div><div class="line"></div><div class="line"><span class="comment">// 创建渐变色createLinearGradient(x0,y0,x1,y1)</span></div><div class="line"><span class="comment">// x0:渐变开始点的 x 坐标</span></div><div class="line"><span class="comment">// y0:渐变开始点的 y 坐标</span></div><div class="line"><span class="comment">// x1:渐变结束点的 x 坐标</span></div><div class="line"><span class="comment">// y1:渐变结束点的 y 坐标</span></div><div class="line"><span class="keyword">var</span> gradient=ctx.createLinearGradient(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, canvas3.height);</div><div class="line"></div><div class="line"><span class="comment">// 增加渐变色</span></div><div class="line">gradient.addColorStop(<span class="string">"0"</span>,<span class="string">"#9eddf1"</span>);</div><div class="line">gradient.addColorStop(<span class="string">"0.5"</span>,<span class="string">"#fff"</span>);</div><div class="line">gradient.addColorStop(<span class="string">"1.0"</span>,<span class="string">"#9eddf1"</span>);</div><div class="line"></div><div class="line"><span class="comment">// Fill with gradient</span></div><div class="line">ctx.fillStyle=gradient;</div><div class="line">ctx3.textBaseline = <span class="string">"middle"</span>;</div><div class="line"></div><div class="line"><span class="comment">// fillText(文本,开始绘制文本的 x 坐标位置（相对于画布）,开始绘制文本的 y 坐标位置（相对于画布）)</span></div><div class="line">ctx3.fillText(<span class="string">"www.webhmy.com"</span>, <span class="number">35</span>, <span class="number">40</span>);</div></pre></td></tr></table></figure></p>
-<h4 id="7、结束语"><a href="#7、结束语" class="headerlink" title="7、结束语"></a>7、结束语</h4><p>话说《小美好》看完后，倒有了些对生活和精神追求上的新的方向，下一步会朝着新的方向展开学习，希望2018年有所收获，进步源于一点一点的坚持–更新于18年1月11日。</p>
-
+                        <p>最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。</p>
+<a id="more"></a>
+<h3 id="1、路由"><a href="#1、路由" class="headerlink" title="1、路由"></a>1、路由</h3><h3 id="2、依赖注入"><a href="#2、依赖注入" class="headerlink" title="2、依赖注入"></a>2、依赖注入</h3><h3 id="3、非父子组件通讯"><a href="#3、非父子组件通讯" class="headerlink" title="3、非父子组件通讯"></a>3、非父子组件通讯</h3>
                           
 
                             
@@ -296,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2017/10/22/canvas3/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/08/03/angular-advance/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,7 +289,7 @@
 
   <section id="comments">
     <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-    <div id="SOHUCS" sid="放大镜下的真相-初识canvas(三)" style="padding: 0px 30px 0px 46px;"></div>
+    <div id="SOHUCS" sid="Angular学习2：进阶（路由、依赖注入、非父子组件通讯）" style="padding: 0px 30px 0px 46px;"></div>
     <script>
       (function () {
         var appid = 'cytzfOug4',
