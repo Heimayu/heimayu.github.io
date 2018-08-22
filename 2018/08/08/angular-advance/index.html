@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Heimayu | learn and live</title>
+  <title>Angular6 进阶（路由、依赖注入、非父子组件通讯） | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/index.html">
+  <meta name="description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用核心知识点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular6 进阶（路由、依赖注入、非父子组件通讯）">
+<meta property="og:url" content="http://www.webhmy.com/2018/08/08/angular-advance/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用核心知识点。">
+<meta property="og:updated_time" content="2018-08-08T05:44:36.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="Angular6 进阶（路由、依赖注入、非父子组件通讯）">
+<meta name="twitter:description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用核心知识点。">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -152,83 +153,15 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-config" class="article article-type-post  article-index"
+            <article id="post-angular-advance" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/22/config/">Vue打包后文件的接口地址配置方法</a>
-    </h1>
-  
-
-          
-            <a href="/2018/08/22/config/" class="archive-article-date">
-  	<time datetime="2018-08-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录如何对Vue打包之后的文件做修改。</p>
-                  
-                    <a class="article-more-a" href="/2018/08/22/config/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/08/22/config/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-angular-advance" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/angular-advance/">Angular6 进阶（路由、依赖注入、非父子组件通讯）</a>
+    <h1 class="article-title" itemprop="name">
+      Angular6 进阶（路由、依赖注入、非父子组件通讯）
     </h1>
   
 
@@ -241,81 +174,129 @@
       
         <!-- 目录内容 -->
         
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>最近学习了下Angular框架相关知识，本篇主要汇总常用核心知识点。</p>
-                  
-                    <a class="article-more-a" href="/2018/08/08/angular-advance/#more">
-                      more >></a>
-                    
-                      
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、路由"><span class="toc-number">1.</span> <span class="toc-text">1、路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本配置"><span class="toc-number">1.1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#传递数据"><span class="toc-number">1.2.</span> <span class="toc-text">传递数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#辅助路由"><span class="toc-number">1.3.</span> <span class="toc-text">辅助路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#路由守卫"><span class="toc-number">1.4.</span> <span class="toc-text">路由守卫</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、依赖注入"><span class="toc-number">2.</span> <span class="toc-text">2、依赖注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注入器"><span class="toc-number">2.1.</span> <span class="toc-text">注入器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提供器"><span class="toc-number">2.2.</span> <span class="toc-text">提供器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、非父子组件通讯"><span class="toc-number">3.</span> <span class="toc-text">3、非父子组件通讯</span></a></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
 
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
 
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/08/08/angular-advance/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-angular-base" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/02/angular-base/">Angular6 基础（数据绑定、生命周期、父子组件通讯、响应式编程）</a>
-    </h1>
-  
-
+          </script>
           
-            <a href="/2018/08/02/angular-base/" class="archive-article-date">
-  	<time datetime="2018-08-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
             <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
-                <p>最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。</p>
-                  
-                    <a class="article-more-a" href="/2018/08/02/angular-base/#more">
-                      more >></a>
-                    
-                      
+                        <p>最近学习了下Angular框架相关知识，本篇主要汇总常用核心知识点。</p>
+<a id="more"></a>
+<h3 id="1、路由"><a href="#1、路由" class="headerlink" title="1、路由"></a>1、路由</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">routes</td>
+<td style="text-align:left">路由的配置，设置哪个URL对应哪个组件</td>
+</tr>
+<tr>
+<td style="text-align:left">outlet（标签）</td>
+<td style="text-align:left">HTML中显示路由的占位符指令 <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Router（模块）</td>
+<td style="text-align:left">运行时可以执行路由的对象，通过调用 <code>navigate</code> 和 <code>navigateByUrl</code> 的方法导航</td>
+</tr>
+<tr>
+<td style="text-align:left">routerLink（标签属性）</td>
+<td style="text-align:left">HTML中声明路由导航的指令</td>
+</tr>
+<tr>
+<td style="text-align:left">ActivatedRoute（模块）</td>
+<td style="text-align:left">表示当前激活的路由对象，保存当前路由的信息，如路由地址，路由参数等</td>
+</tr>
+</tbody>
+</table>
+<h4 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h4><ul>
+<li><p>routes</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> routes: Routes = [</div><div class="line">  &#123;</div><div class="line">    path:<span class="string">''</span>,</div><div class="line">    redirectTo:<span class="string">'/home'</span>, <span class="comment">// 重定向</span></div><div class="line">    pathMatch:<span class="string">'full'</span> <span class="comment">// full精准匹配，prefix模糊匹配</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    path:<span class="string">'login'</span>, <span class="comment">// 访问的地址</span></div><div class="line">    component:LoginComponent <span class="comment">// 地址渲染的组件</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    path:<span class="string">'home'</span>, <span class="comment">// 不需要斜杠‘/’</span></div><div class="line">    component:HomeComponent</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    path:<span class="string">'**'</span>,<span class="comment">// 通配符，匹配不存在的页面，放置在后面</span></div><div class="line">    component:Page404Component</div><div class="line">  &#125;</div><div class="line">];</div></pre></td></tr></table></figure>
+</li>
+<li><p>routerLink</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 属性配置，注意是数组 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/']"</span>&gt;</span>登陆界面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/home']"</span>&gt;</span>首页1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Router<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 第一步，需要引入Router模块</span></div><div class="line"><span class="keyword">constructor</span>(private router: Router) &#123; &#125;</div><div class="line"></div><div class="line"><span class="comment">// 第二步，在方法中使用调用 navigate 和 navigateByUrl 的方法导航</span></div><div class="line"><span class="keyword">this</span>.router.navigate([<span class="string">'/home'</span>]);</div><div class="line"><span class="comment">// 或者</span></div><div class="line"><span class="keyword">this</span>.router.navigateByUrl(<span class="string">'/home'</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="传递数据"><a href="#传递数据" class="headerlink" title="传递数据"></a>传递数据</h4><ul>
+<li>ActivatedRoute<br>1）在查询参数中传递数据 <code>queryParams</code><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/home']"</span> [<span class="attr">queryParams</span>]=<span class="string">"&#123;id:111&#125;"</span>&gt;</span>首页1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 第一步，需要引入ActivatedRoute模块</span></div><div class="line"><span class="keyword">constructor</span>(private routeInfo: ActivatedRoute) &#123; &#125;</div><div class="line"></div><div class="line"><span class="comment">// 第二步，在需要获取数据的方法中调用(参数快照snapshot获取，更快)</span></div><div class="line"><span class="comment">// 111</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.routeInfo.snapshot.queryParams[<span class="string">'id'</span>]);</div></pre></td></tr></table></figure>
+<p>2）在路由路径中传递数据 <code>params</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 更改路由配置</span></div><div class="line"> &#123;</div><div class="line">   path:<span class="string">'home/:id'</span>, </div><div class="line">   component:HomeComponent</div><div class="line"> &#125;,</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"['/home',222]"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 可以使用参数订阅的形式获取，此方法适用于子页面的切换，参数订阅指的是每次值修改都会触发该方法</span></div><div class="line">  ngOnInit() &#123;</div><div class="line">    <span class="keyword">this</span>.routeInfo.params.subscribe(<span class="function">(<span class="params">params</span>)=&gt;</span>&#123;</div><div class="line">    <span class="comment">// 222</span></div><div class="line">      <span class="built_in">console</span>.log(params[<span class="string">'id'</span>])</div><div class="line">    &#125;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>3）在配置数据中获取 <code>data</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   path:<span class="string">'home'</span>,</div><div class="line">   component:HomeComponent,</div><div class="line">   data:[&#123;</div><div class="line">     role:<span class="string">'超级管理员'</span> <span class="comment">// 配置附属信息</span></div><div class="line">   &#125;]</div><div class="line"> &#125;,</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 超级管理员</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.routeInfo.snapshot.data[<span class="number">0</span>].role);</div></pre></td></tr></table></figure>
+<h4 id="辅助路由"><a href="#辅助路由" class="headerlink" title="辅助路由"></a>辅助路由</h4><p>1）定义插槽，需要有name值<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 这里定义了一个名为aux的插槽 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"aux"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2）配置路由，定义辅助路由对应的组件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   path: <span class="string">'auxpath'</span>,</div><div class="line">   component: AuxComponent,</div><div class="line">   outlet: <span class="string">'aux'</span> <span class="comment">// 表示该组件，只能显示在name为aux的路由插座上</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3）控制显示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux: 'auxpath'&#125;&#125;]"</span>&gt;</span>显示aux<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> [<span class="attr">routerLink</span>]=<span class="string">"[&#123;outlets:&#123;aux: null&#125;&#125;]"</span>&gt;</span>关闭aux<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="路由守卫"><a href="#路由守卫" class="headerlink" title="路由守卫"></a>路由守卫</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">守卫方法</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>CanActive</code></td>
+<td style="text-align:left">进入路由之前</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CanDeactivate</code></td>
+<td style="text-align:left">从当前路由离开的情况</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>CanActive</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; CanActivate, ActivatedRouteSnapshot &#125; <span class="keyword">from</span> <span class="string">"@angular/router"</span>;</div><div class="line"></div><div class="line"><span class="comment">// 进入组件前的路由守卫，返回true则进入，返回false则不进入</span></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">BeforeComeIn</span> <span class="title">implements</span> <span class="title">CanActivate</span> </span>&#123;</div><div class="line">    canActivate(route: ActivatedRouteSnapshot): boolean&#123;</div><div class="line">        <span class="keyword">const</span> role = route.data[<span class="number">0</span>].role;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(role === <span class="string">'超级管理员'</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>CanDeactivate</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;CanDeactivate&#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">BeforeLeave</span> <span class="title">implements</span> <span class="title">CanDeactivate</span>&lt;<span class="title">any</span>&gt; </span>&#123;</div><div class="line">    canDeactivate(): boolean&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.confirm(<span class="string">'确认离开吗？'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  path: <span class="string">'home'</span>, <span class="comment">// 不需要斜杠/</span></div><div class="line">  component: HomeComponent,</div><div class="line">  data: [&#123;</div><div class="line">    role: <span class="string">'超级管理员'</span></div><div class="line">  &#125;],</div><div class="line">  canActivate:[BeforeComeIn],</div><div class="line">  canDeactivate:[BeforeLeave]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，这里的 <code>BeforeComeIn</code> 和 <code>BeforeLeave</code> 需要在根模块中的provider中注册，因为需要实例化~</p>
+</blockquote>
+<h3 id="2、依赖注入"><a href="#2、依赖注入" class="headerlink" title="2、依赖注入"></a>2、依赖注入</h3><p>用来创建对象及其依赖的其它对象的一种方式，简化依赖的方式不用自己手动的实例化对象，实现代码的松耦合和可重用性</p>
+<h4 id="注入器"><a href="#注入器" class="headerlink" title="注入器"></a>注入器</h4><p>Angular 的依赖注入器负责创建服务的实例，并把它们注入到你想要注入的类中。依赖注入的方法，直接在构造函数中定义<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注入一个DemoService的对象，并赋给demoService属性中</span></div><div class="line"><span class="keyword">constructor</span>(public demoService: DemoService)&#123;...&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="提供器"><a href="#提供器" class="headerlink" title="提供器"></a>提供器</h4><p>1）方法一：@Injectable 装饰器<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@Injectable(&#123;</div><div class="line">    providedIn: <span class="string">'root'</span>,</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>这里providedIn 告诉 Angular，服务在整个应用中可用</p>
+<p>2）方法二：@NgModule 中的 providers，<strong>适用于更多的配置</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 简写</span></div><div class="line">providers:[DemoService]</div><div class="line"></div><div class="line"><span class="comment">// 1、用类useClass，相当于，provide表示对外暴露的服务名称；useClass表示实例化对象的名称，此时相当于new DemoService()</span></div><div class="line">providers:[&#123;<span class="attr">provide</span>:DemoService,<span class="attr">useClass</span>:DemoService&#125;]</div><div class="line"></div><div class="line"><span class="comment">// 相当于new OtherDemoService()</span></div><div class="line">providers:[&#123;<span class="attr">provide</span>:DemoService,<span class="attr">useClass</span>:OtherDemoService&#125;]</div><div class="line"></div><div class="line"><span class="comment">// 2、工厂模式useFactory，用于判断生成不同的实例，只会被调用一次,deps表示依赖的服务与工厂中的参数一一对应</span></div><div class="line">providers:[</div><div class="line">    anotherService, </div><div class="line">    &#123;</div><div class="line">        provide: DemoService,</div><div class="line">        useFactory:<span class="function">(<span class="params">another:anotherService</span>)=&gt;</span>&#123;...&#125;,</div><div class="line">        deps: [anotherService]</div><div class="line">    &#125;]</div><div class="line"></div><div class="line"><span class="comment">// 3、用值useValue</span></div><div class="line">provides:[&#123;<span class="attr">provide</span>:<span class="string">'IS_DEV'</span>，useValue:<span class="literal">true</span>&#125;]</div></pre></td></tr></table></figure></p>
+<h3 id="3、非父子组件通讯"><a href="#3、非父子组件通讯" class="headerlink" title="3、非父子组件通讯"></a>3、非父子组件通讯</h3>
+                          
 
                             
             </div>
@@ -336,79 +317,59 @@
 
 
                       
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/08/02/angular-base/">
-                            Read more >></a>
-                        </p>
-                        
 
                           
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-websocket" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/31/websocket/">实现接口模拟及websocket通讯</a>
-    </h1>
-  
-
-          
-            <a href="/2018/07/31/websocket/" class="archive-article-date">
-  	<time datetime="2018-07-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-31</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>简述如何使用node+express实现接口连接及入门websocket通讯。使用技术栈：node + express + typescript + websocket<br></p>
-                  
-                    <a class="article-more-a" href="/2018/07/31/websocket/#more">
-                      more >></a>
-                    
-                      
-
                             
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/08/08/angular-advance/" alt="微信分享二维码">
+    </div>
+</div>
 
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/07/31/websocket/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
+<div class="mask js-mask"></div>
+                              
                                 <div class="clearfix"></div>
             </div>
   </div>
@@ -416,411 +377,26 @@
 
 
 
+  <section id="comments">
+    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <div id="SOHUCS" sid="Angular6 进阶（路由、依赖注入、非父子组件通讯）" style="padding: 0px 30px 0px 46px;"></div>
+    <script>
+      (function () {
+        var appid = 'cytzfOug4',
+            conf = '8f1ff3e2ba569c54d8d0f3ecb439cbb6';
+        var doc = document,
+            s = doc.createElement('script'),
+            h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf=' + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+        window.SCS_NO_IFRAME = true;
+      })()
 
+    </script>
+  </section>
   
-    <article id="post-vscode" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/vscode/">VScode使用技巧汇总</a>
-    </h1>
-  
-
-          
-            <a href="/2018/07/25/vscode/" class="archive-article-date">
-  	<time datetime="2018-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>工欲善其事，必先利其器，由<code>sublime text</code>转了<code>vscode</code>觉得vscode超好用的，尤其是强大的插件系统，于是果断摒弃旧爱了~这里记录常用的快捷键或者相关配置，便于平时查找。</p>
-                  
-                    <a class="article-more-a" href="/2018/07/25/vscode/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/07/25/vscode/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-crossdomain" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/crossdomain/">前端如何使用proxy代理配置和nginx解决跨域问题</a>
-    </h1>
-  
-
-          
-            <a href="/2018/07/18/crossdomain/" class="archive-article-date">
-  	<time datetime="2018-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>最近经常遇到跨域的问题，有时候问题虽然解决了，但是还是会有些模棱两可概念不清，于是在网上看了一些教程结合实际使用，做个笔记。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/07/18/crossdomain/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/07/18/crossdomain/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-wechat" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/05/wechat/">微信小程序入门案例</a>
-    </h1>
-  
-
-          
-            <a href="/2018/07/05/wechat/" class="archive-article-date">
-  	<time datetime="2018-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文通过具体的实例记录微信小程序的入门知识。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/07/05/wechat/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/07/05/wechat/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-echarts" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/echarts/">echarts解决各种大屏图形配置方案</a>
-    </h1>
-  
-
-          
-            <a href="/2018/06/23/echarts/" class="archive-article-date">
-  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录使用echarts解决各种大屏图形配置方案。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/06/23/echarts/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/06/23/echarts/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-vue-vuex" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/vue-vuex/">vuex的深入浅出</a>
-    </h1>
-  
-
-          
-            <a href="/2018/06/09/vue-vuex/" class="archive-article-date">
-  	<time datetime="2018-06-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录使用vuex的使用场景、重要组成部分和学习心得。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/06/09/vue-vuex/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/06/09/vue-vuex/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-vue-base" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/24/vue-base/">vue基础知识入门</a>
-    </h1>
-  
-
-          
-            <a href="/2018/05/24/vue-base/" class="archive-article-date">
-  	<time datetime="2018-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录使用vue的一些基础内容及常用知识点的记录。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/05/24/vue-base/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/05/24/vue-base/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
-
-
 
           </div>
         </div>
@@ -847,8 +423,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

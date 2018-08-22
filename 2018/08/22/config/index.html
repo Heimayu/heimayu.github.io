@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Angular学习2：进阶（路由、依赖注入、非父子组件通讯） | Heimayu | learn and live</title>
+  <title>Vue打包后文件的接口地址配置方法 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。">
+  <meta name="description" content="本文主要记录如何对Vue打包之后的文件做修改。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Angular学习2：进阶（路由、依赖注入、非父子组件通讯）">
-<meta property="og:url" content="http://www.webhmy.com/2018/08/03/angular-advance/index.html">
+<meta property="og:title" content="Vue打包后文件的接口地址配置方法">
+<meta property="og:url" content="http://www.webhmy.com/2018/08/22/config/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。">
-<meta property="og:updated_time" content="2018-08-02T09:22:35.292Z">
+<meta property="og:description" content="本文主要记录如何对Vue打包之后的文件做修改。">
+<meta property="og:image" content="http://www.webhmy.com/2018/08/22/config/1.png">
+<meta property="og:updated_time" content="2018-08-22T06:50:32.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angular学习2：进阶（路由、依赖注入、非父子组件通讯）">
-<meta name="twitter:description" content="最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。">
+<meta name="twitter:title" content="Vue打包后文件的接口地址配置方法">
+<meta name="twitter:description" content="本文主要记录如何对Vue打包之后的文件做修改。">
+<meta name="twitter:image" content="http://www.webhmy.com/2018/08/22/config/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -153,7 +155,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-angular-advance" class="article article-type-post "
+            <article id="post-config" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -161,13 +163,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Angular学习2：进阶（路由、依赖注入、非父子组件通讯）
+      Vue打包后文件的接口地址配置方法
     </h1>
   
 
           
-            <a href="/2018/08/03/angular-advance/" class="archive-article-date">
-  	<time datetime="2018-08-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
+            <a href="/2018/08/22/config/" class="archive-article-date">
+  	<time datetime="2018-08-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
 </a>
               
       </header>
@@ -181,7 +183,7 @@
           <div id="toc-article" class="toc-article">
             <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
             <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、路由"><span class="toc-number">1.</span> <span class="toc-text">1、路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、依赖注入"><span class="toc-number">2.</span> <span class="toc-text">2、依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、非父子组件通讯"><span class="toc-number">3.</span> <span class="toc-text">3、非父子组件通讯</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、背景"><span class="toc-number">1.</span> <span class="toc-text">1、背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、可选方案"><span class="toc-number">2.</span> <span class="toc-text">2、可选方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、执行方案"><span class="toc-number">3.</span> <span class="toc-text">3、执行方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#配置步骤"><span class="toc-number">3.1.</span> <span class="toc-text">配置步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#打包修改"><span class="toc-number">3.2.</span> <span class="toc-text">打包修改</span></a></li></ol></li></ol>
           </div>
           <script type="text/javascript">
             function showToc() {
@@ -203,9 +205,26 @@
             <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
-                        <p>最近学习了下Angular框架相关知识，本篇主要汇总常用基础知识点。</p>
+                        <p>本文主要记录如何对Vue打包之后的文件做修改。</p>
 <a id="more"></a>
-<h3 id="1、路由"><a href="#1、路由" class="headerlink" title="1、路由"></a>1、路由</h3><h3 id="2、依赖注入"><a href="#2、依赖注入" class="headerlink" title="2、依赖注入"></a>2、依赖注入</h3><h3 id="3、非父子组件通讯"><a href="#3、非父子组件通讯" class="headerlink" title="3、非父子组件通讯"></a>3、非父子组件通讯</h3>
+<h3 id="1、背景"><a href="#1、背景" class="headerlink" title="1、背景"></a>1、背景</h3><p>常规的vue项目分为本地环境和生产环境，我们只要对 <code>config</code> 文件夹下的 <code>dev.env.js</code> 和 <code>prod.env.js</code> 做相应的配置即可。但是最近在做的项目中，涉及到私有化部署，就是对应的生产环境的地址，不是唯一的。如果每次都修改一个地址，再打包文件进行部署，过程繁琐且低效。那么如何把环境地址设置成可配置的，不需要再构建代码就能直接生效呢？</p>
+<h3 id="2、可选方案"><a href="#2、可选方案" class="headerlink" title="2、可选方案"></a>2、可选方案</h3><p>进行了调研后，网上介绍的方案有2种：</p>
+<ul>
+<li>1）在static上设置一个<code>config.js</code>，把配置的参数设置成 <code>window</code> 下的全局变量。这种方案的确可行，但是，但是，<strong>不安全！！！</strong> 如果请求地址被恶意修改，后果不太好~</li>
+<li>2）使用 <code>generate-asset-webpack-plugin</code> 插件，配置一大坨后生成一个静态文件，然后通过请求的方式，获取需要的数据，这种方法可以解决安全性问题，但是，但是，<strong>有点小麻烦啊~</strong><br>因此，博主根据实际项目，将两种方法结合在一起，形成了一个中和的方案。</li>
+</ul>
+<h3 id="3、执行方案"><a href="#3、执行方案" class="headerlink" title="3、执行方案"></a>3、执行方案</h3><h4 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h4><p><strong>第一步</strong>：在 <code>static</code> 文件夹中新建一个 <code>config.json</code>，把你要写的配置写入，比如我需要2个参数，一个是环境地址，一个是标识是不是私有化部署。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="comment">// 基本访问地址</span></div><div class="line"><span class="string">"BASE_URL"</span>: <span class="string">"http://webhmy.com"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>放在static下的文件，可以被直接访问。</p>
+</blockquote>
+<p><strong>第二步</strong>：在 <code>main.js</code> 中请求定义的配置文件，并放到 <code>Vue.prototype</code> 中，使全局可访问，注意，这里把<code>new Vue()</code>放在请求里执行，是防止请求与页面渲染之间的时间差异化导致值获取不到，因此这样比较保险。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义外部接口可配置</span></div><div class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></div><div class="line"><span class="keyword">let</span> startApp = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  axios.get(<span class="string">'/static/config.json'</span>).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// 基础地址</span></div><div class="line">    Vue.prototype.BASE_URL = res.BASE_URL;</div><div class="line"></div><div class="line">    <span class="keyword">new</span> Vue(&#123;</div><div class="line">      el: <span class="string">'#app'</span>,</div><div class="line">      router,</div><div class="line">      store,</div><div class="line">      components: &#123;</div><div class="line">        App</div><div class="line">      &#125;,</div><div class="line">      template: <span class="string">'&lt;App/&gt;'</span></div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">startApp()</div></pre></td></tr></table></figure>
+<p><strong>第三步</strong>：如果在 <code>.vue</code> 文件中使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.BASE_URL)</div><div class="line"><span class="comment">// http://webhmy.com</span></div></pre></td></tr></table></figure>
+<p>如果在一些 <code>.js</code> 文件中，可以调用Vue后再使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="built_in">console</span>.log(Vue.prototype.BASE_URL)</div><div class="line"><span class="comment">// http://webhmy.com</span></div></pre></td></tr></table></figure>
+<h4 id="打包修改"><a href="#打包修改" class="headerlink" title="打包修改"></a>打包修改</h4><p>执行 <code>npm run build</code> 可以看到打包文件夹 <code>static</code> 文件夹下的 <code>config.json</code>，之后可以修改配置，刷新页面即可。<br><img src="/2018/08/22/config/1.png" alt=""></p>
+
                           
 
                             
@@ -274,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/08/03/angular-advance/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/08/22/config/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,7 +308,7 @@
 
   <section id="comments">
     <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-    <div id="SOHUCS" sid="Angular学习2：进阶（路由、依赖注入、非父子组件通讯）" style="padding: 0px 30px 0px 46px;"></div>
+    <div id="SOHUCS" sid="Vue打包后文件的接口地址配置方法" style="padding: 0px 30px 0px 46px;"></div>
     <script>
       (function () {
         var appid = 'cytzfOug4',
