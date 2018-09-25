@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Heimayu | learn and live</title>
+  <title>简述手动拖拽旋转元素的方法实现（Math.atan2的应用） | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/page/2/index.html">
+  <meta name="description" content="本文主要介绍使用如何实现手动拖拽旋转元素的效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简述手动拖拽旋转元素的方法实现（Math.atan2的应用）">
+<meta property="og:url" content="http://www.webhmy.com/2018/09/25/rotate/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="本文主要介绍使用如何实现手动拖拽旋转元素的效果。">
+<meta property="og:image" content="http://www.webhmy.com/2018/09/25/rotate/1.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/09/25/rotate/2.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/09/25/rotate/3.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/09/25/rotate/4.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/09/25/rotate/5.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/09/25/rotate/6.png">
+<meta property="og:updated_time" content="2018-09-25T08:05:25.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="简述手动拖拽旋转元素的方法实现（Math.atan2的应用）">
+<meta name="twitter:description" content="本文主要介绍使用如何实现手动拖拽旋转元素的效果。">
+<meta name="twitter:image" content="http://www.webhmy.com/2018/09/25/rotate/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -152,38 +160,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-echarts" class="article article-type-post  article-index"
+            <article id="post-rotate" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/echarts/">echarts解决各种大屏图形配置方案</a>
+    <h1 class="article-title" itemprop="name">
+      简述手动拖拽旋转元素的方法实现（Math.atan2的应用）
     </h1>
   
 
           
-            <a href="/2018/06/23/echarts/" class="archive-article-date">
-  	<time datetime="2018-06-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-23</time>
+            <a href="/2018/09/25/rotate/" class="archive-article-date">
+  	<time datetime="2018-09-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
 </a>
               
       </header>
       
         <!-- 目录内容 -->
         
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、简述"><span class="toc-number">1.</span> <span class="toc-text">1、简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、效果展示"><span class="toc-number">2.</span> <span class="toc-text">2、效果展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、实现分析"><span class="toc-number">3.</span> <span class="toc-text">3、实现分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-获取转动的角度"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 获取转动的角度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-角度与弧度之间的转换"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 角度与弧度之间的转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-组件中心点位置计算"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 组件中心点位置计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、最终代码"><span class="toc-number">4.</span> <span class="toc-text">4、最终代码</span></a></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
+
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
+
+          </script>
+          
             <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
-                <p>本文主要记录使用echarts解决各种大屏图形配置方案。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/06/23/echarts/#more">
-                      more >></a>
-                    
-                      
+                        <p>本文主要介绍使用如何实现手动拖拽旋转元素的效果。<br><a id="more"></a></p>
+<h3 id="1、简述"><a href="#1、简述" class="headerlink" title="1、简述"></a>1、简述</h3><p>最近在研究如何实现手动控制元素的旋转效果，经过一些调研和计算，最终完美实现效果，记录下来。</p>
+<h3 id="2、效果展示"><a href="#2、效果展示" class="headerlink" title="2、效果展示"></a>2、效果展示</h3><p>通过手动旋转的方式，实现组件的360度无缝旋转。图示是实现结果的几个截图：</p>
+<ul>
+<li><p><code>0deg</code><br><img src="/2018/09/25/rotate/1.png" alt=""></p>
+</li>
+<li><p>顺时针转到 <code>66deg</code><br><img src="/2018/09/25/rotate/2.png" alt=""></p>
+</li>
+<li><p>逆时针转到 <code>315deg</code><br><img src="/2018/09/25/rotate/3.png" alt=""></p>
+</li>
+<li><p>转到 <code>180deg</code><br><img src="/2018/09/25/rotate/4.png" alt=""></p>
+</li>
+</ul>
+<h3 id="3、实现分析"><a href="#3、实现分析" class="headerlink" title="3、实现分析"></a>3、实现分析</h3><p>如图所示，实现难点在于计算出两点间连线的倾斜角 <code>angle</code><br><img src="/2018/09/25/rotate/5.png" alt=""><br>这里需要掌握的几个知识点：</p>
+<h4 id="3-1-获取转动的角度"><a href="#3-1-获取转动的角度" class="headerlink" title="3.1 获取转动的角度"></a>3.1 获取转动的角度</h4><p>使用 <code>Math.atan2()</code> 函数可以非常高效的实现之，它是返回点与原点之间的倾斜角，如图所示，如果想计算出点 <code>(x1,y1)</code> 与 原点 <code>(cx,cy)</code> 与X轴的角度，只需要执行：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.atan2(y1 - cy, x1 - cx)</div></pre></td></tr></table></figure></p>
+<p>需要注意的是，它的取值范围是[-PI, PI]。<br>当 (x1, y1) 在第一象限, 0 &lt; θ &lt; PI/2</p>
+<p>当 (x1, y1) 在第二象限 PI/2 &lt; θ≤PI</p>
+<p>当 (x1, y1) 在第三象限, -PI &lt; θ &lt; -PI/2</p>
+<p>当 (x1, y1) 在第四象限, -PI/2 &lt; θ &lt; 0</p>
+<h4 id="3-2-角度与弧度之间的转换"><a href="#3-2-角度与弧度之间的转换" class="headerlink" title="3.2 角度与弧度之间的转换"></a>3.2 角度与弧度之间的转换</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">角度 = 弧度 * <span class="number">180</span> / <span class="built_in">Math</span>.PI;</div><div class="line">弧度= 角度 * <span class="built_in">Math</span>.PI / <span class="number">180</span>;</div></pre></td></tr></table></figure>
+<h4 id="3-3-组件中心点位置计算"><a href="#3-3-组件中心点位置计算" class="headerlink" title="3.3 组件中心点位置计算"></a>3.3 组件中心点位置计算</h4><p>使用<code>getBoundingClientRect()</code> 的方法可以获取出容器的位置信息，用当前位置减去宽/高的一半，即可获取中心点位置。<br><img src="/2018/09/25/rotate/6.png" alt=""></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//中心点</span></div><div class="line">cx = x + width / <span class="number">2</span>;</div><div class="line">cy = y + height / <span class="number">2</span>;</div></pre></td></tr></table></figure>
+<h3 id="4、最终代码"><a href="#4、最终代码" class="headerlink" title="4、最终代码"></a>4、最终代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 获得旋转夹角</span></div><div class="line"><span class="comment"> * @param &#123;*&#125; x1 旋转点1</span></div><div class="line"><span class="comment"> * @param &#123;*&#125; y1 </span></div><div class="line"><span class="comment"> * @param &#123;*&#125; x2 旋转点2</span></div><div class="line"><span class="comment"> * @param &#123;*&#125; y2 </span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAngle</span>(<span class="params">x1, y1, x2, y2</span>) </span>&#123;</div><div class="line">  <span class="comment">// 获取组件的位置信息</span></div><div class="line">  <span class="keyword">let</span> rect = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'active-ele'</span>)[<span class="number">0</span>].getBoundingClientRect();</div><div class="line">  <span class="keyword">let</span> &#123;</div><div class="line">    x,</div><div class="line">    y,</div><div class="line">    width,</div><div class="line">    height</div><div class="line">  &#125; = rect;</div><div class="line"></div><div class="line">  <span class="comment">//中心点</span></div><div class="line">  <span class="keyword">let</span> cx = x + width / <span class="number">2</span>;</div><div class="line">  <span class="keyword">let</span> cy = y + height / <span class="number">2</span>;</div><div class="line"></div><div class="line">  <span class="comment">//2个点之间的角度获取</span></div><div class="line">  <span class="keyword">let</span> c1 = <span class="built_in">Math</span>.atan2(y1 - cy, x1 - cx) * <span class="number">180</span> / (<span class="built_in">Math</span>.PI);</div><div class="line">  <span class="keyword">let</span> c2 = <span class="built_in">Math</span>.atan2(y2 - cy, x2 - cx) * <span class="number">180</span> / (<span class="built_in">Math</span>.PI);</div><div class="line">  <span class="keyword">let</span> angle;</div><div class="line">  c1 = c1 &lt;= <span class="number">-90</span> ? (<span class="number">360</span> + c1) : c1;</div><div class="line">  c2 = c2 &lt;= <span class="number">-90</span> ? (<span class="number">360</span> + c2) : c2;</div><div class="line"></div><div class="line">  <span class="comment">//夹角获取</span></div><div class="line">  angle = <span class="built_in">Math</span>.floor(c2 - c1);</div><div class="line">  angle = angle &lt; <span class="number">0</span> ? angle + <span class="number">360</span> : angle;</div><div class="line">  <span class="keyword">return</span> angle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 获得旋转夹角</span></div><div class="line"><span class="comment"> * @param startPos.x 指的是初始位置的x坐标</span></div><div class="line"><span class="comment"> * @param startPos.y 指的是初始位置的y坐标</span></div><div class="line"><span class="comment"> * @param startPos.r 指的是初始的旋转角度</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">let</span> angle = getAngle(startPos.x, startPos.y, e.x, e.y);</div><div class="line"><span class="keyword">let</span> startAngle = startPos.r;</div><div class="line"><span class="keyword">let</span> deg;</div><div class="line"></div><div class="line"><span class="comment">// 赋值的旋转角度</span></div><div class="line"><span class="keyword">let</span> rotate;</div><div class="line"></div><div class="line"><span class="comment">// 顺时针旋转</span></div><div class="line"><span class="keyword">if</span> (e.x - startX &gt; <span class="number">0</span>) &#123;</div><div class="line">  deg = startAngle + angle;</div><div class="line">  rotate = deg &gt; <span class="number">360</span> ? deg - <span class="number">360</span> : deg;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="comment">// 逆时针旋转</span></div><div class="line">  angle = <span class="number">360</span> - angle;</div><div class="line">  deg = startAngle - angle;</div><div class="line">  rotate = deg &lt; <span class="number">0</span> ? deg + <span class="number">360</span> : deg;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+                          
 
                             
             </div>
@@ -204,79 +256,59 @@
 
 
                       
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/06/23/echarts/">
-                            Read more >></a>
-                        </p>
-                        
 
                           
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-vue-vuex" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/09/vue-vuex/">vuex的深入浅出</a>
-    </h1>
-  
-
-          
-            <a href="/2018/06/09/vue-vuex/" class="archive-article-date">
-  	<time datetime="2018-06-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录使用vuex的使用场景、重要组成部分和学习心得。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/06/09/vue-vuex/#more">
-                      more >></a>
-                    
-                      
-
                             
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/09/25/rotate/" alt="微信分享二维码">
+    </div>
+</div>
 
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/06/09/vue-vuex/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
+<div class="mask js-mask"></div>
+                              
                                 <div class="clearfix"></div>
             </div>
   </div>
@@ -284,543 +316,26 @@
 
 
 
+  <section id="comments">
+    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <div id="SOHUCS" sid="简述手动拖拽旋转元素的方法实现（Math.atan2的应用）" style="padding: 0px 30px 0px 46px;"></div>
+    <script>
+      (function () {
+        var appid = 'cytzfOug4',
+            conf = '8f1ff3e2ba569c54d8d0f3ecb439cbb6';
+        var doc = document,
+            s = doc.createElement('script'),
+            h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf=' + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+        window.SCS_NO_IFRAME = true;
+      })()
 
+    </script>
+  </section>
   
-    <article id="post-vue-base" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/24/vue-base/">vue基础知识入门</a>
-    </h1>
-  
-
-          
-            <a href="/2018/05/24/vue-base/" class="archive-article-date">
-  	<time datetime="2018-05-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录使用vue的一些基础内容及常用知识点的记录。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/05/24/vue-base/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/05/24/vue-base/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-typescript" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/20/typescript/">Typescript的使用</a>
-    </h1>
-  
-
-          
-            <a href="/2018/05/20/typescript/" class="archive-article-date">
-  	<time datetime="2018-05-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录学习<code>typescript</code>的一些笔记。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/05/20/typescript/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/05/20/typescript/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-iconfont" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/20/iconfont/">字体图标iconfont的使用</a>
-    </h1>
-  
-
-          
-            <a href="/2018/05/20/iconfont/" class="archive-article-date">
-  	<time datetime="2018-05-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录字体图标 iconfont 的基本使用方法。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/05/20/iconfont/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/05/20/iconfont/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-css-compile" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/01/css-compile/">css预编译工具-Sass Less Stylus</a>
-    </h1>
-  
-
-          
-            <a href="/2018/05/01/css-compile/" class="archive-article-date">
-  	<time datetime="2018-04-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-01</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录css预编译器的基本特性的编写规则。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/05/01/css-compile/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/05/01/css-compile/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-es6-advanced" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/02/es6-advanced/">ES6入门-进阶篇</a>
-    </h1>
-  
-
-          
-            <a href="/2018/04/02/es6-advanced/" class="archive-article-date">
-  	<time datetime="2018-04-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录es6的一些高级应用，比如Symbol，Set和Map数据结构，Promise对象，Generator函数，Class的使用，Decorator等。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/04/02/es6-advanced/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/04/02/es6-advanced/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-es6-base" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/01/es6-base/">ES6入门-基础篇</a>
-    </h1>
-  
-
-          
-            <a href="/2018/04/01/es6-base/" class="archive-article-date">
-  	<time datetime="2018-03-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-01</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>最近有在学习ES6基础知识使用，记录学习笔记。本篇主要记录ES6的变量声明、解构赋值、字符串，数组，数值，函数，对象的扩展。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/04/01/es6-base/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/04/01/es6-base/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-require-css" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/20/require-css/">使用requireJS实现单页面开发</a>
-    </h1>
-  
-
-          
-            <a href="/2018/03/20/require-css/" class="archive-article-date">
-  	<time datetime="2018-03-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要介绍如何使用H5的history新方法结合requireJS来实现单页面开发。<br></p>
-                  
-                    <a class="article-more-a" href="/2018/03/20/require-css/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2018/03/20/require-css/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-    <article id="post-canvas3" class="article article-type-post  article-index"
-  itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/22/canvas3/">放大镜下的真相-初识canvas(三)</a>
-    </h1>
-  
-
-          
-            <a href="/2017/10/22/canvas3/" class="archive-article-date">
-  	<time datetime="2017-10-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-22</time>
-</a>
-              
-      </header>
-      
-        <!-- 目录内容 -->
-        
-            <!-- 目录内容结束 -->
-            <div class="article-entry" itemprop="articleBody">
-              
-                <p>本文主要记录 <code>canvas</code> 在图像、文字处理、离屏技术和放大镜特效的实现过程中使用到的API。<br></p>
-                  
-                    <a class="article-more-a" href="/2017/10/22/canvas3/#more">
-                      more >></a>
-                    
-                      
-
-                            
-            </div>
-            <div class="article-info article-info-index">
-              
-                  
-                    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-                      
-                        <p class="article-more-link">
-                          <a class="article-more-a" href="/2017/10/22/canvas3/">
-                            Read more >></a>
-                        </p>
-                        
-
-                          
-                                <div class="clearfix"></div>
-            </div>
-  </div>
-</article>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
-
-
 
           </div>
         </div>
@@ -847,8 +362,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
