@@ -14,6 +14,7 @@
 <meta property="og:url" content="http://www.webhmy.com/2017/06/20/toPdf/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
 <meta property="og:description" content="记录如何使用atom编写pdf文档。">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-06-04T01:14:35.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发人员写文档（Atom&#x2F;Markdown&#x2F;Pdf）">
@@ -212,20 +213,20 @@
   </div>
 </div>
 </p>
-<h4 id="1、Atom"><a href="#1、Atom" class="headerlink" title="1、Atom"></a>1、Atom</h4><p>Atom是GitHub推出的一款开源编辑器，我用的不多，主要用来编写markdown文档，这里转化成pdf文档也是用的这个编辑器。“好用不贵”说的就是这款啦！前往Atom官网：<a href="https://atom.io/" target="_blank" rel="external">https://atom.io/</a> 即可下载最新版。</p>
+<h4 id="1、Atom"><a href="#1、Atom" class="headerlink" title="1、Atom"></a>1、Atom</h4><p>Atom是GitHub推出的一款开源编辑器，我用的不多，主要用来编写markdown文档，这里转化成pdf文档也是用的这个编辑器。“好用不贵”说的就是这款啦！前往Atom官网：<a href="https://atom.io/" target="_blank" rel="noopener">https://atom.io/</a> 即可下载最新版。</p>
 <h4 id="2、Markdown"><a href="#2、Markdown" class="headerlink" title="2、Markdown"></a>2、Markdown</h4><p>Markdown 的语法十分简单。学习成本低，且一旦熟悉这种语法规则，会有一劳永逸的效果。<em>上面的话都是网上说的</em>，但素我“老”记不住呀，还是重新<code>mark</code>下吧！参考网页：<a href="http://www.jianshu.com/p/1e402922ee32/" target="_blank">戳这里</a><br>1、标题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 一级标题</div><div class="line">## 二级标题</div><div class="line">### 三级标题</div><div class="line">#### 四级标题</div><div class="line">##### 五级标题</div><div class="line">###### 六级标题</div></pre></td></tr></table></figure>
-<p>2、无序列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">无序列表的显示只需要在文字前加上 - 或 * 即可变为无序列表</div></pre></td></tr></table></figure></p>
-<p>3、有序列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。</div></pre></td></tr></table></figure></p>
-<p>4、引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在文本前加入 &gt; （大于号）即可。</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<p>2、无序列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无序列表的显示只需要在文字前加上 - 或 * 即可变为无序列表</span><br></pre></td></tr></table></figure></p>
+<p>3、有序列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。</span><br></pre></td></tr></table></figure></p>
+<p>4、引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在文本前加入 &gt; （大于号）即可。</span><br></pre></td></tr></table></figure></p>
 <p>例如：</p>
 <blockquote>
 <p>志向不过是记忆的奴隶，生气勃勃地降生，但却很难成长。 —— 莎士比亚</p>
 </blockquote>
-<p>5、插入链接或图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">插入链接：[name](url)</div><div class="line">插入图片：![name](url)</div></pre></td></tr></table></figure></p>
-<p>6、粗斜体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">粗体：**你要加粗的话**</div><div class="line">斜体：*你要变斜的话*</div></pre></td></tr></table></figure></p>
+<p>5、插入链接或图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">插入链接：[name](url)</span><br><span class="line">插入图片：![name](url)</span><br></pre></td></tr></table></figure></p>
+<p>6、粗斜体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">粗体：**你要加粗的话**</span><br><span class="line">斜体：*你要变斜的话*</span><br></pre></td></tr></table></figure></p>
 <p><em>我们常常听人说，人们因工作过度而垮下来</em> <strong>：但是实际上十有八九是因为饱受担忧或焦虑的折磨。</strong></p>
-<p>7、表格–中间虚线的冒号是控制文本对齐的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| Name          | Age             |</div><div class="line">| :------------ | :-------------: |</div><div class="line">| heimayu       | 18              |</div></pre></td></tr></table></figure></p>
+<p>7、表格–中间虚线的冒号是控制文本对齐的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| Name          | Age             |</span><br><span class="line">| :------------ | :-------------: |</span><br><span class="line">| heimayu       | 18              |</span><br></pre></td></tr></table></figure></p>
 <table>
 <thead>
 <tr>
@@ -240,9 +241,9 @@
 </tr>
 </tbody>
 </table>
-<p>8、单行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`var a;`</div></pre></td></tr></table></figure></p>
-<p>9、多行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">前后使用```将代码包裹起来，然后对于html和js代码最好都加上后缀名</div><div class="line">```html</div><div class="line">```js</div></pre></td></tr></table></figure></p>
-<p>10、分割线<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">分割线的语法只需要三个 * 号</div></pre></td></tr></table></figure></p>
+<p>8、单行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`var a;`</span><br></pre></td></tr></table></figure></p>
+<p>9、多行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">前后使用```将代码包裹起来，然后对于html和js代码最好都加上后缀名</span><br><span class="line">```html</span><br><span class="line">```js</span><br></pre></td></tr></table></figure></p>
+<p>10、分割线<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分割线的语法只需要三个 * 号</span><br></pre></td></tr></table></figure></p>
 <h4 id="3、转换Pdf"><a href="#3、转换Pdf" class="headerlink" title="3、转换Pdf"></a>3、转换Pdf</h4><ol>
 <li>安装插件 markdown-themeable-pdf，前往GitHub下载该插件的压缩包：<a href="https://github.com/cakebake/markdown-themeable-pdf" target="_blank">戳这里</a>；</li>
 <li>将压缩包解压至目录<code>C:\Users\admin\.atom\packages</code>；</li>
