@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Archives | Heimayu | learn and live</title>
+  <title>复活hexo静态博客的方法 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/archives/index.html">
+  <meta name="description" content="我的个人博客是通过hexo搭建的，它支持图片显示，支持md，无需主机空间，可以满足我的大部分需求。但是在2年的使用的过程中遇到一些问题，这里记录下来。便于下次快速复活它。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复活hexo静态博客的方法">
+<meta property="og:url" content="http://www.webhmy.com/2018/10/22/git/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="我的个人博客是通过hexo搭建的，它支持图片显示，支持md，无需主机空间，可以满足我的大部分需求。但是在2年的使用的过程中遇到一些问题，这里记录下来。便于下次快速复活它。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/22/git/2.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/22/git/3.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/22/git/4.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/22/git/5.png">
+<meta property="og:updated_time" content="2018-10-23T01:07:44.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="复活hexo静态博客的方法">
+<meta name="twitter:description" content="我的个人博客是通过hexo搭建的，它支持图片显示，支持md，无需主机空间，可以满足我的大部分需求。但是在2年的使用的过程中遇到一些问题，这里记录下来。便于下次快速复活它。">
+<meta name="twitter:image" content="http://www.webhmy.com/2018/10/22/git/2.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -153,37 +159,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-git" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      复活hexo静态博客的方法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/22/git/" class="archive-article-date">
+
+          
+            <a href="/2018/10/22/git/" class="archive-article-date">
   	<time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/22/git/">复活hexo静态博客的方法</a>
-    </h1>
-  
+              
+      </header>
+      
+        <!-- 目录内容 -->
+        
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、坑描述"><span class="toc-number">1.</span> <span class="toc-text">1、坑描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、换系统后的复活"><span class="toc-number">2.</span> <span class="toc-text">2、换系统后的复活</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-重装git"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 重装git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-重装hexo"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 重装hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-重设SSH-keys"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 重设SSH keys</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、换电脑后的复活"><span class="toc-number">3.</span> <span class="toc-text">3、换电脑后的复活</span></a></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
 
-        <div class="article-info info-on-right">
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
+
+          </script>
           
-          
+            <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <p>我的个人博客是通过<code>hexo</code>搭建的，它支持图片显示，支持md，无需主机空间，可以满足我的大部分需求。但是在2年的使用的过程中遇到一些问题，这里记录下来。便于下次快速复活它。</p>
+<a id="more"></a>
+<h3 id="1、坑描述"><a href="#1、坑描述" class="headerlink" title="1、坑描述"></a>1、坑描述</h3><p>用过 <code>hexo</code> 的应该知道，它的文件是本地存储的，发布到我们的<code>github</code>仓库，但是hexo是将我们的md文件打包解析后再发布的，并没有保存我们的源md文档，源md文档已然妥妥的还在我们的电脑上。因此就会出现一系列的隐患。比如：</p>
+<ol>
+<li>换了电脑后，本机的文件忘了拷贝，悲催了~ 没办法了！</li>
+<li>换了系统了，写了博客后发布，又悲催了~ 发不出去！<br>于是才想起来，好像要安装一系列的东东，安装哪些又一头浆糊的去找度娘（反正我这老人家是这样啦），( ╯□╰ )</li>
+</ol>
+<h3 id="2、换系统后的复活"><a href="#2、换系统后的复活" class="headerlink" title="2、换系统后的复活"></a>2、换系统后的复活</h3><h4 id="2-1-重装git"><a href="#2-1-重装git" class="headerlink" title="2.1 重装git"></a>2.1 重装git</h4><p>访问 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git下载</a> 找到自己系统下的版本，然后不停的按<code>NEXT</code>安装。常用的git命令有：</p>
+<ul>
+<li><code>git clone</code> #仓库克隆</li>
+<li><code>git pull origin master</code> #更新代码</li>
+<li><code>git add .</code> #添加本地更新</li>
+<li><code>git commit -m &#39;提交注释&#39;</code> #提交内容</li>
+<li><code>git push</code> #提交至服务器</li>
+<li><code>git branch</code> #列出分支</li>
+<li><code>git checkout</code> #切换分支</li>
+<li><code>git merge</code> #合并分支</li>
+</ul>
+<h4 id="2-2-重装hexo"><a href="#2-2-重装hexo" class="headerlink" title="2.2 重装hexo"></a>2.2 重装hexo</h4><p>当然，你需要首先安装 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a> 然后在你的博客文件目录下，执行<code>npm install hexo -g</code> 安装hexo。常用的hexo命令有：</p>
+<ul>
+<li><code>hexo init</code> #初始化(如果你是新建的话)</li>
+<li><code>hexo n</code>  #新建文章</li>
+<li><code>hexo p</code>  #发布文章</li>
+<li><code>hexo g</code>  #生成</li>
+<li><code>hexo clean</code> #清除缓存</li>
+<li><code>hexo s</code>  #启动服务本地预览</li>
+<li><code>hexo d</code>  #远程部署网站</li>
+</ul>
+<h4 id="2-3-重设SSH-keys"><a href="#2-3-重设SSH-keys" class="headerlink" title="2.3 重设SSH keys"></a>2.3 重设SSH keys</h4><p>这时候你执行部署 <code>hexo d</code> 就会出现 <code>Host key verification failed</code> 的错误</p>
+<ol>
+<li>打开Git Bash 输入<code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code>，帮助文档见<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">ssh新建</a></li>
+<li>继续输入<code>ssh-agent -s</code><br><img src="/2018/10/22/git/2.png" alt=""></li>
+<li>继续输入<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">`ssh-agent -s`</span></span><br><span class="line"></span><br><span class="line">ssh-add</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/2018/10/22/git/3.png" alt=""></p>
+<ol>
+<li>粘贴SSH key <code>clip &lt; ~/.ssh/id_rsa.pub</code></li>
+<li>在<code>Github</code>上的设置中，找到 <code>SSH keys</code> 新增一个 （直接粘贴出来）<br><img src="/2018/10/22/git/4.png" alt=""><br><img src="/2018/10/22/git/5.png" alt=""></li>
+</ol>
+<h3 id="3、换电脑后的复活"><a href="#3、换电脑后的复活" class="headerlink" title="3、换电脑后的复活"></a>3、换电脑后的复活</h3><p>没办法了，你必须保存一份并上传到云端仓库啊，我选择的是码云，可以创建私有仓库，还是蛮好用的。麻烦点的就是需要你定期将代码上传过去，但是可以避免你的文件丢失哦~</p>
+
+                          
+
+                            
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -196,365 +271,87 @@
 	</div>
 
 
+                      
+
+                          
+                            
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/10/22/git/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/21/svg/" class="archive-article-date">
-  	<time datetime="2018-10-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/21/svg/">基于svg.js实现对图形的拖拽、选择和编辑操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/27/element/" class="archive-article-date">
-  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/27/element/">ElementUI组件库常见方法及问题汇总</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  <section id="comments">
+    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <div id="SOHUCS" sid="复活hexo静态博客的方法" style="padding: 0px 30px 0px 46px;"></div>
+    <script>
+      (function () {
+        var appid = 'cytzfOug4',
+            conf = '8f1ff3e2ba569c54d8d0f3ecb439cbb6';
+        var doc = document,
+            s = doc.createElement('script'),
+            h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf=' + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+        window.SCS_NO_IFRAME = true;
+      })()
 
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+    </script>
+  </section>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/25/rotate/" class="archive-article-date">
-  	<time datetime="2018-09-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/rotate/">简述手动拖拽旋转元素的方法实现（Math.atan2的应用）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/06/htmltoimg/" class="archive-article-date">
-  	<time datetime="2018-09-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/06/htmltoimg/">给HTML拍个照（如何将html元素转成图片）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/28/canvas4/" class="archive-article-date">
-  	<time datetime="2018-08-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/28/canvas4/">Canvas知识点汇总</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/config/" class="archive-article-date">
-  	<time datetime="2018-08-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/config/">Vue打包后文件的接口地址配置方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/08/angular-advance/" class="archive-article-date">
-  	<time datetime="2018-08-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/angular-advance/">Angular6 进阶（路由、依赖注入、非父子组件通讯）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/02/angular-base/" class="archive-article-date">
-  	<time datetime="2018-08-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/02/angular-base/">Angular6 基础（数据绑定、生命周期、父子组件通讯、响应式编程）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/31/websocket/" class="archive-article-date">
-  	<time datetime="2018-07-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/31/websocket/">实现接口模拟及websocket通讯</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
-
-
 
           </div>
         </div>
@@ -582,8 +379,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
