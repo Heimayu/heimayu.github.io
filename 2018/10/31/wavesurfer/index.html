@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Category: 黑玛鱼知识库 | Heimayu | learn and live</title>
+  <title>Wavesurfer.js音频播放器插件的使用教程 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/categories/黑玛鱼知识库/index.html">
+  <meta name="description" content="Wavesurfer.js是一款基于HTML5 canvas和Web Audio的音频播放器插件，本文主要记录它及其视觉效果插件Regions插件的使用方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wavesurfer.js音频播放器插件的使用教程">
+<meta property="og:url" content="http://www.webhmy.com/2018/10/31/wavesurfer/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="Wavesurfer.js是一款基于HTML5 canvas和Web Audio的音频播放器插件，本文主要记录它及其视觉效果插件Regions插件的使用方法。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/31/wavesurfer/1.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/31/wavesurfer/2.png">
+<meta property="og:updated_time" content="2018-10-31T06:53:15.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="Wavesurfer.js音频播放器插件的使用教程">
+<meta name="twitter:description" content="Wavesurfer.js是一款基于HTML5 canvas和Web Audio的音频播放器插件，本文主要记录它及其视觉效果插件Regions插件的使用方法。">
+<meta name="twitter:image" content="http://www.webhmy.com/2018/10/31/wavesurfer/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -141,37 +145,449 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-wavesurfer" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Wavesurfer.js音频播放器插件的使用教程
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/31/wavesurfer/" class="archive-article-date">
+
+          
+            <a href="/2018/10/31/wavesurfer/" class="archive-article-date">
   	<time datetime="2018-10-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/31/wavesurfer/">Wavesurfer.js音频播放器插件的使用教程</a>
-    </h1>
-  
+              
+      </header>
+      
+        <!-- 目录内容 -->
+        
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、创建实例"><span class="toc-number">1.</span> <span class="toc-text">1、创建实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、方法调用"><span class="toc-number">2.</span> <span class="toc-text">2、方法调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、事件绑定"><span class="toc-number">3.</span> <span class="toc-text">3、事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、Regions插件"><span class="toc-number">4.</span> <span class="toc-text">4、Regions插件</span></a></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
 
-        <div class="article-info info-on-right">
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
+
+          </script>
           
-          
+            <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <p>Wavesurfer.js是一款基于HTML5 canvas和Web Audio的音频播放器插件，本文主要记录它及其视觉效果插件Regions插件的使用方法。<br><a id="more"></a></p>
+<h3 id="1、创建实例"><a href="#1、创建实例" class="headerlink" title="1、创建实例"></a>1、创建实例</h3><ul>
+<li><p>引入插件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> WaveSurfer <span class="keyword">from</span> <span class="string">"wavesurfer.js"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建实例对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.wavesurfer = WaveSurfer.create(options);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>options</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">audioRate</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">音频的播放速度，数值越小越慢</td>
+</tr>
+<tr>
+<td style="text-align:left">barWidth</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">如果设置，波纹的样式将变成类似柱状图的形状</td>
+</tr>
+<tr>
+<td style="text-align:left">barHeight</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">波纹柱状图的高度，当大于1的时候，将增加设置的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">barGap</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">波纹柱状图之间的间距</td>
+</tr>
+<tr>
+<td style="text-align:left">container</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left"><strong>必填参数</strong>，指定渲染的dom的id名、类名或者dom本身</td>
+</tr>
+<tr>
+<td style="text-align:left">cursorColor</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">鼠标点击的颜色</td>
+</tr>
+<tr>
+<td style="text-align:left">cursorWidth</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">鼠标点击显示的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">128</td>
+<td style="text-align:left">音频的显示高度</td>
+</tr>
+<tr>
+<td style="text-align:left">hideScrollbar</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">当出现横坐标的时候，设置是否显示</td>
+</tr>
+<tr>
+<td style="text-align:left">mediaType</td>
+<td style="text-align:left">audio</td>
+<td style="text-align:left">音频的类型，支持video</td>
+</tr>
+<tr>
+<td style="text-align:left">plugins</td>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">使用的插件</td>
+</tr>
+<tr>
+<td style="text-align:left">progressColor</td>
+<td style="text-align:left">#555</td>
+<td style="text-align:left">光标后面的波形部分的填充颜色</td>
+</tr>
+<tr>
+<td style="text-align:left">waveColor</td>
+<td style="text-align:left">#555</td>
+<td style="text-align:left">光标后面的波形的填充颜色</td>
+</tr>
+<tr>
+<td style="text-align:left">xhr</td>
+<td style="text-align:left">{}</td>
+<td style="text-align:left">额外的请求XHR参数</td>
+</tr>
+</tbody>
+</table>
+<p>实例演示：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.wavesurfer = WaveSurfer.create(&#123;</span><br><span class="line">    container: <span class="string">"#wave"</span>,</span><br><span class="line">    waveColor: <span class="string">"#368666"</span>,</span><br><span class="line">    progressColor: <span class="string">"#6d9e8b"</span>,</span><br><span class="line">    cursorColor: <span class="string">"#fff"</span>,</span><br><span class="line">    height: <span class="number">80</span>,</span><br><span class="line">    plugins: [RegionsPlugin.create()]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/31/wavesurfer/1.png" alt=""></p>
+<h3 id="2、方法调用"><a href="#2、方法调用" class="headerlink" title="2、方法调用"></a>2、方法调用</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">load(url)</td>
+<td style="text-align:left">加载音频</td>
+</tr>
+<tr>
+<td style="text-align:left">loadBlob(url)</td>
+<td style="text-align:left">从Bolb或者file对象中调用音频</td>
+</tr>
+<tr>
+<td style="text-align:left">play([start[, end]])</td>
+<td style="text-align:left">从当前位置开始播放音频文件。结合使用start和end可以指定一个音频播放范围</td>
+</tr>
+<tr>
+<td style="text-align:left">playPause()</td>
+<td style="text-align:left">如果当前为状态状态开始播放，反之暂停播放</td>
+</tr>
+<tr>
+<td style="text-align:left">pause()</td>
+<td style="text-align:left">停止播放</td>
+</tr>
+<tr>
+<td style="text-align:left">stop()</td>
+<td style="text-align:left">停止播放并回到音频文件的起始处</td>
+</tr>
+<tr>
+<td style="text-align:left">empty()</td>
+<td style="text-align:left">清空waveform</td>
+</tr>
+<tr>
+<td style="text-align:left">destroy()</td>
+<td style="text-align:left">销毁waveform，移除事件，元素和关联节点</td>
+</tr>
+<tr>
+<td style="text-align:left">getCurrentTime()</td>
+<td style="text-align:left">获取当前播放的进度，单位：秒</td>
+</tr>
+<tr>
+<td style="text-align:left">getDuration()</td>
+<td style="text-align:left">获取音频的总时长，单位：秒</td>
+</tr>
+<tr>
+<td style="text-align:left">getVolume()</td>
+<td style="text-align:left">获取音量</td>
+</tr>
+<tr>
+<td style="text-align:left">setVolume(v)</td>
+<td style="text-align:left">设置音量[0-1]</td>
+</tr>
+<tr>
+<td style="text-align:left">skip(offset)</td>
+<td style="text-align:left">调到offset的位置</td>
+</tr>
+<tr>
+<td style="text-align:left">skipBackward()</td>
+<td style="text-align:left">倒退skipLength秒</td>
+</tr>
+<tr>
+<td style="text-align:left">skipForward()</td>
+<td style="text-align:left">前进skipLength秒</td>
+</tr>
+<tr>
+<td style="text-align:left">isPlaying()</td>
+<td style="text-align:left">判断音频是否在播放</td>
+</tr>
+<tr>
+<td style="text-align:left">on(eventName, callback)</td>
+<td style="text-align:left">绑定事件</td>
+</tr>
+<tr>
+<td style="text-align:left">un(eventName, callback)</td>
+<td style="text-align:left">解绑事件</td>
+</tr>
+<tr>
+<td style="text-align:left">unAll</td>
+<td style="text-align:left">绑定所有的事件</td>
+</tr>
+</tbody>
+</table>
+<p>实例演示：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 音频加载</span></span><br><span class="line"><span class="keyword">this</span>.wavesurfer.load(audioUrl);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取总时长</span></span><br><span class="line"><span class="keyword">let</span> duration = <span class="built_in">parseInt</span>(<span class="keyword">this</span>.wavesurfer.getDuration());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 停止播放</span></span><br><span class="line"><span class="keyword">this</span>.wavesurfer.stop();</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、事件绑定"><a href="#3、事件绑定" class="headerlink" title="3、事件绑定"></a>3、事件绑定</h3><p>使用<code>on()</code>和<code>un()</code>对事件进行绑定和解绑操作。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">事件</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">audioprocess</td>
+<td style="text-align:left">音频播放时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">destroy</td>
+<td style="text-align:left">音频销毁时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">error</td>
+<td style="text-align:left">音频出错时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">finish</td>
+<td style="text-align:left">音频播放结束时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">loading</td>
+<td style="text-align:left">音频加载时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">ready</td>
+<td style="text-align:left">音频加载成功时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">play</td>
+<td style="text-align:left">音频开始播放时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">pause</td>
+<td style="text-align:left">音频暂停时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">scroll</td>
+<td style="text-align:left">当有滚动条滚动的时候触发</td>
+</tr>
+<tr>
+<td style="text-align:left">volume</td>
+<td style="text-align:left">声音调整时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">seek</td>
+<td style="text-align:left">鼠标点击某个位置的时候触发</td>
+</tr>
+</tbody>
+</table>
+<p>实例演示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载时候</span></span><br><span class="line"><span class="keyword">this</span>.wavesurfer.on(<span class="string">"loading"</span>, percents =&gt; &#123;</span><br><span class="line">    <span class="comment">// 当前加载的进度</span></span><br><span class="line">    <span class="keyword">this</span>.percent = percents;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载成功</span></span><br><span class="line"><span class="keyword">this</span>.wavesurfer.on(<span class="string">"ready"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">this</span>.progress = <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 播放中</span></span><br><span class="line"><span class="keyword">this</span>.wavesurfer.on(<span class="string">"audioprocess"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">this</span>.currentTime = <span class="keyword">this</span>.getCurrentTime();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结束播放</span></span><br><span class="line"><span class="keyword">this</span>.wavesurfer.on(<span class="string">"finish"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">this</span>.wavesurfer.pause();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4、Regions插件"><a href="#4、Regions插件" class="headerlink" title="4、Regions插件"></a>4、Regions插件</h3><p>Regions用于音频播放器waveform视觉效果部分，可以用它来标注某个区域。Regions可以被拖拽和改变尺寸大小。</p>
+<ul>
+<li><p>引入插件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> RegionsPlugin <span class="keyword">from</span> <span class="string">"wavesurfer.js/dist/plugin/wavesurfer.regions.js"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插件定义</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.wavesurfer = WaveSurfer.create(&#123;          </span><br><span class="line">    plugins: [RegionsPlugin.create()]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Regions方法</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">addRegion(options)</td>
+<td style="text-align:left">在waveform中创建一个Region。返回一个Region对象</td>
+</tr>
+<tr>
+<td style="text-align:left">clearRegions()</td>
+<td style="text-align:left">移除所有的regions</td>
+</tr>
+<tr>
+<td style="text-align:left">enableDragSelection(options)</td>
+<td style="text-align:left">可以通过选择来创建支持拖拽和改变大小的Regin</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Regions的options</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">region的id</td>
+</tr>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">region的开始位置，单位秒</td>
+</tr>
+<tr>
+<td style="text-align:left">end</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">region的开始位置，单位秒</td>
+</tr>
+<tr>
+<td style="text-align:left">loop</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">播放完毕后是否循环播放</td>
+</tr>
+<tr>
+<td style="text-align:left">drag</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">是否支持拖拽</td>
+</tr>
+<tr>
+<td style="text-align:left">resize</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">是否支持改变region的大小</td>
+</tr>
+<tr>
+<td style="text-align:left">color</td>
+<td style="text-align:left">“rgba(0, 0, 0, 0.1)”</td>
+<td style="text-align:left">region的颜色</td>
+</tr>
+</tbody>
+</table>
+<p>实例演示：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.currentRegion = <span class="keyword">this</span>.wavesurfer.addRegion(&#123;</span><br><span class="line">    id: id,</span><br><span class="line">    start: startTime,</span><br><span class="line">    end: endTime,</span><br><span class="line">    loop: <span class="literal">false</span>,</span><br><span class="line">    drag: <span class="literal">false</span>,</span><br><span class="line">    resize: <span class="literal">false</span>,</span><br><span class="line">    color: <span class="string">"rgba(254, 255, 255, 0.4)"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/31/wavesurfer/2.png" alt=""></p>
+<ul>
+<li>Regions的方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">play()</td>
+<td style="text-align:left">播放region</td>
+</tr>
+<tr>
+<td style="text-align:left">playLoop()</td>
+<td style="text-align:left">循环播放region</td>
+</tr>
+<tr>
+<td style="text-align:left">remove()</td>
+<td style="text-align:left">移除region</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Regions的事件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">事件</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">remove</td>
+<td style="text-align:left">在region被移除前触发</td>
+</tr>
+<tr>
+<td style="text-align:left">update</td>
+<td style="text-align:left">当region被更新时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">click</td>
+<td style="text-align:left">当region点击时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">dbclick</td>
+<td style="text-align:left">当region被双击时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">over</td>
+<td style="text-align:left">当region被鼠标滑入时触发</td>
+</tr>
+<tr>
+<td style="text-align:left">leave</td>
+<td style="text-align:left">当在region上的鼠标离开时触发</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新起始时间</span></span><br><span class="line"><span class="keyword">this</span>.currentRegion.update(&#123; <span class="attr">start</span>: newStartTime &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除region</span></span><br><span class="line"><span class="keyword">this</span>.currentRegion.remove();</span><br></pre></td></tr></table></figure>
+
+                          
+
+                            
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -184,365 +600,87 @@
 	</div>
 
 
+                      
+
+                          
+                            
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/10/31/wavesurfer/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/29/css3-2/" class="archive-article-date">
-  	<time datetime="2018-10-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/29/css3-2/">《CSS3揭秘》之技巧锦集(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/25/css3/" class="archive-article-date">
-  	<time datetime="2018-10-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/25/css3/">《CSS3揭秘》之技巧锦集(一)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  <section id="comments">
+    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <div id="SOHUCS" sid="Wavesurfer.js音频播放器插件的使用教程" style="padding: 0px 30px 0px 46px;"></div>
+    <script>
+      (function () {
+        var appid = 'cytzfOug4',
+            conf = '8f1ff3e2ba569c54d8d0f3ecb439cbb6';
+        var doc = document,
+            s = doc.createElement('script'),
+            h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf=' + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+        window.SCS_NO_IFRAME = true;
+      })()
 
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+    </script>
+  </section>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/22/git/" class="archive-article-date">
-  	<time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/22/git/">复活hexo静态博客的方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/21/svg/" class="archive-article-date">
-  	<time datetime="2018-10-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/21/svg/">基于svg.js实现对图形的拖拽、选择和编辑操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/27/element/" class="archive-article-date">
-  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/27/element/">ElementUI组件库常见方法及问题汇总</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/25/rotate/" class="archive-article-date">
-  	<time datetime="2018-09-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/rotate/">简述手动拖拽旋转元素的方法实现（Math.atan2的应用）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/06/htmltoimg/" class="archive-article-date">
-  	<time datetime="2018-09-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/06/htmltoimg/">给HTML拍个照（如何将html元素转成图片）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/28/canvas4/" class="archive-article-date">
-  	<time datetime="2018-08-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/28/canvas4/">Canvas知识点汇总</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/config/" class="archive-article-date">
-  	<time datetime="2018-08-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/config/">Vue打包后文件的接口地址配置方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/categories/黑玛鱼知识库/page/2/">2</a><a class="page-number" href="/categories/黑玛鱼知识库/page/3/">3</a><a class="page-number" href="/categories/黑玛鱼知识库/page/4/">4</a><a class="extend next" rel="next" href="/categories/黑玛鱼知识库/page/2/">Next &raquo;</a>
-    </nav>
-  
-
-
 
           </div>
         </div>
@@ -570,10 +708,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		root: "/",
 		innerArchive: false,
