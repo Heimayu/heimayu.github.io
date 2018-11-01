@@ -8,19 +8,24 @@
   <link rel="dns-prefetch" href="http://www.webhmy.com">
   <title>《CSS3揭秘》之技巧锦集(二) | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本篇继续上篇博客描述内容。">
+  <meta name="description" content="本篇主要记录《CSS3揭秘》一书中后面几章的常用技巧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《CSS3揭秘》之技巧锦集(二)">
 <meta property="og:url" content="http://www.webhmy.com/2018/10/29/css3-2/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="本篇继续上篇博客描述内容。">
+<meta property="og:description" content="本篇主要记录《CSS3揭秘》一书中后面几章的常用技巧。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.webhmy.com/2018/10/29/css3-2/1.png">
 <meta property="og:image" content="http://www.webhmy.com/2018/10/29/css3-2/2.png">
-<meta property="og:updated_time" content="2018-10-29T05:42:59.809Z">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/29/css3-2/3.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/29/css3-2/4.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/29/css3-2/5.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/29/css3-2/6.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/10/29/css3-2/7.png">
+<meta property="og:updated_time" content="2018-11-01T03:16:46.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《CSS3揭秘》之技巧锦集(二)">
-<meta name="twitter:description" content="本篇继续上篇博客描述内容。">
+<meta name="twitter:description" content="本篇主要记录《CSS3揭秘》一书中后面几章的常用技巧。">
 <meta name="twitter:image" content="http://www.webhmy.com/2018/10/29/css3-2/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
@@ -173,7 +178,7 @@
           <div id="toc-article" class="toc-article">
             <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
             <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、伪元素换行"><span class="toc-number">1.</span> <span class="toc-text">1、伪元素换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、条纹背景"><span class="toc-number">2.</span> <span class="toc-text">2、条纹背景</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、伪元素换行"><span class="toc-number">1.</span> <span class="toc-text">1、伪元素换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、文字条纹背景"><span class="toc-number">2.</span> <span class="toc-text">2、文字条纹背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、垂直居中新技巧"><span class="toc-number">3.</span> <span class="toc-text">3、垂直居中新技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#position-translate"><span class="toc-number">3.1.</span> <span class="toc-text">position + translate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vw-vh"><span class="toc-number">3.2.</span> <span class="toc-text">vw + vh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex"><span class="toc-number">3.3.</span> <span class="toc-text">flex</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、文字环绕效果"><span class="toc-number">4.</span> <span class="toc-text">4、文字环绕效果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#path"><span class="toc-number">4.1.</span> <span class="toc-text">path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#textPath"><span class="toc-number">4.2.</span> <span class="toc-text">textPath</span></a></li></ol></li></ol>
           </div>
           <script type="text/javascript">
             function showToc() {
@@ -195,12 +200,86 @@
             <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
-                        <p>本篇继续上篇博客描述内容。<br><a id="more"></a></p>
+                        <p>本篇主要记录《CSS3揭秘》一书中后面几章的常用技巧。<br><a id="more"></a></p>
 <h3 id="1、伪元素换行"><a href="#1、伪元素换行" class="headerlink" title="1、伪元素换行"></a>1、伪元素换行</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>当爱的故事剩听说<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>我找不到你单纯的面孔<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>默认显示：<br><img src="/2018/10/29/css3-2/1.png" alt=""></p>
 <p>一般情况下，我们喜欢直接在第一个<code>span</code>元素后面加个换行符，但是它对于语义来说并不友好,或者将第一个<code>span</code>设置成块元素。这里说的换行技巧是使用 <strong>伪元素+字符</strong> 来实现：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.text</span> &#123;</span><br><span class="line">    <span class="attribute">span</span>:first-child:after&#123;</span><br><span class="line">        display: block;</span><br><span class="line">        <span class="attribute">content</span>: <span class="string">"\A"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2018/10/29/css3-2/2.png" alt=""></p>
-<h3 id="2、条纹背景"><a href="#2、条纹背景" class="headerlink" title="2、条纹背景"></a>2、条纹背景</h3>
+<h3 id="2、文字条纹背景"><a href="#2、文字条纹背景" class="headerlink" title="2、文字条纹背景"></a>2、文字条纹背景</h3><p>之前有遇到这样一个场景，一个标签，里面的数据是后台传入的数据源（字数不定），要求自动换行，且有条纹背景，当时首先想到的是使用<code>js+css</code>的方式来实现。但是现在想来css3也完全可以实现的。<br>原始代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span>&#123;</span></span><br><span class="line"><span class="undefined">        width: 150px;</span></span><br><span class="line"><span class="undefined">        line-height: 30px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">    When I was young,</span><br><span class="line"></span><br><span class="line">    my homesickness was a small stamp,</span><br><span class="line"></span><br><span class="line">    I was here,</span><br><span class="line"></span><br><span class="line">    my mother was there.</span><br><span class="line"></span><br><span class="line">    After growing up,</span><br><span class="line"></span><br><span class="line">    my homesickness was a narrow ticket,</span><br><span class="line"></span><br><span class="line">    I was here,</span><br><span class="line"></span><br><span class="line">    my bride was there.</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2018/10/29/css3-2/3.png" alt=""></p>
+<p>效果分析：<br>我们现在想给文字加入条纹背景，想到我们在上篇提到的<a href="http://webhmy.com/2018/10/25/css3/#%E6%9D%A1%E7%BA%B9%E6%95%88%E6%9E%9C" target="_blank" rel="noopener">条纹效果</a>没？这里也是一样的，直接上代码，2行代码搞定，so amazing!<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(rgba(255, 0, 0, 0.24) <span class="number">50%</span>, <span class="built_in">rgba</span>(0, 0, 255, 0.25) <span class="number">0</span>);</span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">60px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/29/css3-2/4.png" alt=""></p>
+<h3 id="3、垂直居中新技巧"><a href="#3、垂直居中新技巧" class="headerlink" title="3、垂直居中新技巧"></a>3、垂直居中新技巧</h3><p>垂直居中是CSS中的老话题，在之前我们可以采用很多种方式来处理包括文字居中，块状元素居中，定宽定高居中，不定宽不定高的居中。。。常规的解决方法有：</p>
+<ul>
+<li>position+margin方法</li>
+<li>line-height方法</li>
+<li>table-cell方法</li>
+</ul>
+<p>这里不再赘述，这边要汇总的是属于css3的新方法。<br><strong>案例演示：要求box（知道宽高）在视图窗口居中，item（不知宽高）在box视口居中</strong>，基本样式如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span></span><br><span class="line">        幸福就像穿鞋子 不舒服的 都只是脚镣<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        倒不如去赤脚奔跑</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123;</span></span><br><span class="line"><span class="undefined">    width: 500px;</span></span><br><span class="line"><span class="undefined">    height: 400px;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">border</span>: <span class="selector-id">#b8b8b8</span> 1<span class="selector-tag">px</span> <span class="selector-tag">dashed</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.item</span> &#123;</span></span><br><span class="line"><span class="undefined">        display: inline-block;</span></span><br><span class="line"><span class="undefined">        background-color: aquamarine;</span></span><br><span class="line"><span class="undefined">        padding: 20px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2018/10/29/css3-2/5.png" alt=""></p>
+<h4 id="position-translate"><a href="#position-translate" class="headerlink" title="position + translate"></a>position + translate</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">    .item &#123;</span><br><span class="line">        <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">        <span class="selector-tag">left</span>: 50%;</span><br><span class="line">        <span class="selector-tag">top</span>: 50%;</span><br><span class="line">        <span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(<span class="selector-tag">-50</span>%, <span class="selector-tag">-50</span>%);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先通过定位的方式，将元素向左边和顶部移动50%，这里的50%是相对于relative的父元素的，然后使用 <code>translate(-50%)</code> 移动<strong>自身宽高的50%</strong>，没错，这里的重点就是，translate移动的是自身的宽高，不管是否知道自身的宽高，是不是比margin更灵活了？</p>
+<h4 id="vw-vh"><a href="#vw-vh" class="headerlink" title="vw + vh"></a>vw + vh</h4><p><code>vm</code>和<code>vh</code>是一种css3的新的视窗单位，相对的不是父节点而是由视窗大小来决定的。它可以用户相对于视口做居中处理以及对body元素设置宽高（无需再设置根节点），适用于做一些响应式的布局。</p>
+<ul>
+<li><code>vm</code>：视窗宽度的百分百（1表示1%）</li>
+<li><code>vh</code>：视窗高度的百分百（1表示1%）</li>
+<li><code>vmin</code>：当前 vw 和 vh 中较小的一个值</li>
+<li><code>vmax</code>：当前 vw 和 vh 中较大的一个值</li>
+</ul>
+<p>因此可以将box的代码改为：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">50vh</span> auto <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><p>其实最好的布局方式就是使用<code>flex</code>啦！熟读一下阮大神的 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">flex教程</a> 就可以对各个属性一目了然了~这里，我们可以把box设置成容器（<code>display:flex</code>），再将 <code>justify-content</code> 和 <code>align-items</code> 设置成 <code>center</code> 就可以使item垂直居中了。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>最终方案：上面三种方法，单独使用都可以达到垂直居中的效果，我们也可以三合一来使用，达到代码最简，即仅仅对box进行样式设置：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">45vh</span> auto <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最终效果：<br><img src="/2018/10/29/css3-2/6.png" alt=""></p>
+<h3 id="4、文字环绕效果"><a href="#4、文字环绕效果" class="headerlink" title="4、文字环绕效果"></a>4、文字环绕效果</h3><p>先上个效果图：<br><img src="/2018/10/29/css3-2/7.png" alt=""><br>华丽丽的大爱心，再上下代码，是不是一脸萌？</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">path</span> <span class="attr">id</span>=<span class="string">"svgLove"</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">d</span>=<span class="string">"m209.19776,126.00144c63.28732,-157.11301 311.2491,0 0,202.00244c-311.2491,-202.00244 -63.28732,-359.11545 0,-202.00244z"</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">stroke-width</span>=<span class="string">"0"</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">fill</span>=<span class="string">"red"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">stroke</span>=<span class="string">"#780879"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textPath</span> <span class="attr">xlink:href</span>=<span class="string">"#svgLove"</span>&gt;</span></span><br><span class="line">            you feel lonely Do you feel blue Alright too Leaves dancing in the wind No brakes in your broken world Don't prey happy~</span><br><span class="line">        <span class="tag">&lt;/<span class="name">textPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="path"><a href="#path" class="headerlink" title="path"></a>path</h4><p><code>path</code>元素是SVG中最强大的一个，它可以绘制很多不同的形状。path元素的形状是通过属性d来定义的，属性d的值是一个“命令+参数”的序列，然后就写命令。参数说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">M</td>
+<td style="text-align:left">移动到的点的x,y坐标</td>
+</tr>
+<tr>
+<td style="text-align:left">L</td>
+<td style="text-align:left">L命令将会在当前位置和新位置（L前面画笔所在的点）之间画一条线段。</td>
+</tr>
+<tr>
+<td style="text-align:left">H</td>
+<td style="text-align:left">绘制平行线</td>
+</tr>
+<tr>
+<td style="text-align:left">V</td>
+<td style="text-align:left">绘制垂直线</td>
+</tr>
+<tr>
+<td style="text-align:left">Z</td>
+<td style="text-align:left">从当前点画一条直线到路径的起点（回到起点）</td>
+</tr>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">绘制弧线</td>
+</tr>
+<tr>
+<td style="text-align:left">Q</td>
+<td style="text-align:left">二次贝塞尔曲线 Q x1 y1, x y</td>
+</tr>
+<tr>
+<td style="text-align:left">C</td>
+<td style="text-align:left">三次贝塞尔曲线 C x1 y1, x2 y2, x y</td>
+</tr>
+</tbody>
+</table>
+<p>画不出来也是没关系的，其实现在线上有很多的图形path生成工具，可以帮助我们快速生成path，但是我们需要知道其中字母表示的意思。比如上面的爱心，就是先移动到坐标点(m)，然后绘制2条曲线(c)，最后回到原点(z)。</p>
+<h4 id="textPath"><a href="#textPath" class="headerlink" title="textPath"></a>textPath</h4><p>文字环绕的重点在于<code>textPath</code>即文字围绕着路径来显示。定义完path后使用<code>href</code>引用即可。是不是很简单了~</p>
+
                           
 
                             
