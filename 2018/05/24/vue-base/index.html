@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Heimayu | learn and live">
 <meta property="og:description" content="本文主要记录使用vue的一些基础内容及常用知识点的记录。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-10T01:29:06.195Z">
+<meta property="og:updated_time" content="2018-11-02T02:26:29.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue基础知识入门">
 <meta name="twitter:description" content="本文主要记录使用vue的一些基础内容及常用知识点的记录。">
@@ -43,7 +43,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #00b195"></div>
+<div class="overlay" style="background: linear-gradient(to bottom, #4c94be 0%, #a5d0e1 100%)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -59,11 +59,13 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">大首页</a></li>
+				<li><a href="/categories/JS/">JAVASCRIPT</a></li>
 	        
-				<li><a href="/categories/黑玛鱼知识库/">全目录</a></li>
+				<li><a href="/categories/HTML5/">HTML5</a></li>
 	        
-				<li><a href="/2017/03/20/aboutme/">关于我</a></li>
+				<li><a href="/categories/CSS3/">CSS3</a></li>
+	        
+				<li><a href="/categories/LIFE/">LIFE</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,7 +90,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #00b195"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(to bottom, #4c94be 0%, #a5d0e1 100%)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -111,6 +113,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -123,11 +127,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">大首页</a></li>
+					<li style="width: 25%"><a href="/categories/JS/">JAVASCRIPT</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/黑玛鱼知识库/">全目录</a></li>
+					<li style="width: 25%"><a href="/categories/HTML5/">HTML5</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/03/20/aboutme/">关于我</a></li>
+					<li style="width: 25%"><a href="/categories/CSS3/">CSS3</a></li>
+		        
+					<li style="width: 25%"><a href="/categories/LIFE/">LIFE</a></li>
 		        
 				</ul>
 			</nav>
@@ -163,11 +169,11 @@
       
         <!-- 目录内容 -->
         
-          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();">
             <span class="btn-bg"></span>
             <span class="btn-text">文章导航</span>
           </p>
-          <div id="toc-article" class="toc-article">
+          <div id="toc-article" class="toc-article"  style="display:none">
             <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
             <strong class="toc-title">文章目录</strong>
             <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、搭建脚手架"><span class="toc-number">1.</span> <span class="toc-text">1、搭建脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、常用参数"><span class="toc-number">2.</span> <span class="toc-text">2、常用参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本参数"><span class="toc-number">2.1.</span> <span class="toc-text">基本参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#监听属性"><span class="toc-number">2.2.</span> <span class="toc-text">监听属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算属性"><span class="toc-number">2.3.</span> <span class="toc-text">计算属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、vue指令"><span class="toc-number">3.</span> <span class="toc-text">3、vue指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单指令"><span class="toc-number">3.1.</span> <span class="toc-text">简单指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件指令"><span class="toc-number">3.2.</span> <span class="toc-text">事件指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#循环指令"><span class="toc-number">3.3.</span> <span class="toc-text">循环指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件指令"><span class="toc-number">3.4.</span> <span class="toc-text">条件指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、组件注册"><span class="toc-number">4.</span> <span class="toc-text">4、组件注册</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#全局注册"><span class="toc-number">4.1.</span> <span class="toc-text">全局注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部注册"><span class="toc-number">4.2.</span> <span class="toc-text">局部注册</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、父子组件通信"><span class="toc-number">5.</span> <span class="toc-text">5、父子组件通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#父–-gt-子（props）"><span class="toc-number">5.1.</span> <span class="toc-text">父–&gt;子（props）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子–-gt-父（-emit）"><span class="toc-number">5.2.</span> <span class="toc-text">子–&gt;父（$emit）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、is属性"><span class="toc-number">6.</span> <span class="toc-text">6、is属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、钩子函数"><span class="toc-number">7.</span> <span class="toc-text">7、钩子函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、ref属性"><span class="toc-number">8.</span> <span class="toc-text">8、ref属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、slot插槽"><span class="toc-number">9.</span> <span class="toc-text">9、slot插槽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、keep-alive"><span class="toc-number">10.</span> <span class="toc-text">10、keep-alive</span></a></li></ol>
@@ -326,7 +332,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
+        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>

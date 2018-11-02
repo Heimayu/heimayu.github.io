@@ -16,7 +16,7 @@
 <meta property="og:description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.webhmy.com/2017/10/21/canvas2/star.png">
-<meta property="og:updated_time" content="2018-06-04T01:15:37.154Z">
+<meta property="og:updated_time" content="2018-11-02T02:24:22.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="璀璨的星空-初识canvas(二)">
 <meta name="twitter:description" content="这一篇主要描述如何使用 canvas 绘制背景、渲染图片，并在图片上绘制闪光移动小星星的效果的过程，结合具体的案例总结API，加油~">
@@ -45,7 +45,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #00b195"></div>
+<div class="overlay" style="background: linear-gradient(to bottom, #4c94be 0%, #a5d0e1 100%)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -61,11 +61,13 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">大首页</a></li>
+				<li><a href="/categories/JS/">JAVASCRIPT</a></li>
 	        
-				<li><a href="/categories/黑玛鱼知识库/">全目录</a></li>
+				<li><a href="/categories/HTML5/">HTML5</a></li>
 	        
-				<li><a href="/2017/03/20/aboutme/">关于我</a></li>
+				<li><a href="/categories/CSS3/">CSS3</a></li>
+	        
+				<li><a href="/categories/LIFE/">LIFE</a></li>
 	        
 			</ul>
 		</nav>
@@ -90,7 +92,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #00b195"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(to bottom, #4c94be 0%, #a5d0e1 100%)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -113,6 +115,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -125,11 +129,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">大首页</a></li>
+					<li style="width: 25%"><a href="/categories/JS/">JAVASCRIPT</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/黑玛鱼知识库/">全目录</a></li>
+					<li style="width: 25%"><a href="/categories/HTML5/">HTML5</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/03/20/aboutme/">关于我</a></li>
+					<li style="width: 25%"><a href="/categories/CSS3/">CSS3</a></li>
+		        
+					<li style="width: 25%"><a href="/categories/LIFE/">LIFE</a></li>
 		        
 				</ul>
 			</nav>
@@ -165,11 +171,11 @@
       
         <!-- 目录内容 -->
         
-          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();">
             <span class="btn-bg"></span>
             <span class="btn-text">文章导航</span>
           </p>
-          <div id="toc-article" class="toc-article">
+          <div id="toc-article" class="toc-article"  style="display:none">
             <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
             <strong class="toc-title">文章目录</strong>
             <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、绘制canvas"><span class="toc-number">1.</span> <span class="toc-text">1、绘制canvas</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、绘制深蓝色的背景"><span class="toc-number">2.</span> <span class="toc-text">2、绘制深蓝色的背景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、绘制背景图片"><span class="toc-number">3.</span> <span class="toc-text">3、绘制背景图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、单个星星定义（类的方法）"><span class="toc-number">4.</span> <span class="toc-text">4、单个星星定义（类的方法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、循环动画显示闪闪星星"><span class="toc-number">5.</span> <span class="toc-text">5、循环动画显示闪闪星星</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、移动的小星星"><span class="toc-number">6.</span> <span class="toc-text">6、移动的小星星</span></a></li></ol>
@@ -245,7 +251,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
+        			<a href="/categories/HTML5/" class="article-tag-list-link color1">HTML5</a>
         		</li>
       		
 		</ul>

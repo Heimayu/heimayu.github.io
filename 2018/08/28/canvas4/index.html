@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://www.webhmy.com/2018/08/28/canvas4/12.png">
 <meta property="og:image" content="http://www.webhmy.com/2018/08/28/canvas4/13.png">
 <meta property="og:image" content="http://www.webhmy.com/2018/08/28/canvas4/14.png">
-<meta property="og:updated_time" content="2018-08-28T05:53:25.330Z">
+<meta property="og:updated_time" content="2018-11-02T02:24:37.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Canvas知识点汇总">
 <meta name="twitter:description" content="本文主要记录Canvas基础知识汇总。">
@@ -58,7 +58,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #00b195"></div>
+<div class="overlay" style="background: linear-gradient(to bottom, #4c94be 0%, #a5d0e1 100%)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -74,11 +74,13 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">大首页</a></li>
+				<li><a href="/categories/JS/">JAVASCRIPT</a></li>
 	        
-				<li><a href="/categories/黑玛鱼知识库/">全目录</a></li>
+				<li><a href="/categories/HTML5/">HTML5</a></li>
 	        
-				<li><a href="/2017/03/20/aboutme/">关于我</a></li>
+				<li><a href="/categories/CSS3/">CSS3</a></li>
+	        
+				<li><a href="/categories/LIFE/">LIFE</a></li>
 	        
 			</ul>
 		</nav>
@@ -103,7 +105,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #00b195"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(to bottom, #4c94be 0%, #a5d0e1 100%)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -126,6 +128,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -138,11 +142,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">大首页</a></li>
+					<li style="width: 25%"><a href="/categories/JS/">JAVASCRIPT</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/黑玛鱼知识库/">全目录</a></li>
+					<li style="width: 25%"><a href="/categories/HTML5/">HTML5</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/2017/03/20/aboutme/">关于我</a></li>
+					<li style="width: 25%"><a href="/categories/CSS3/">CSS3</a></li>
+		        
+					<li style="width: 25%"><a href="/categories/LIFE/">LIFE</a></li>
 		        
 				</ul>
 			</nav>
@@ -178,11 +184,11 @@
       
         <!-- 目录内容 -->
         
-          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();">
             <span class="btn-bg"></span>
             <span class="btn-text">文章导航</span>
           </p>
-          <div id="toc-article" class="toc-article">
+          <div id="toc-article" class="toc-article"  style="display:none">
             <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
             <strong class="toc-title">文章目录</strong>
             <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、Canvas定义"><span class="toc-number">1.</span> <span class="toc-text">1、Canvas定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、Canvas基本使用"><span class="toc-number">2.</span> <span class="toc-text">2、Canvas基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-创建画布和对象"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 创建画布和对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-绘制线条"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 绘制线条</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-填充颜色"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 填充颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-绘制多图像"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 绘制多图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-绘制矩形"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 绘制矩形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-绘制圆形"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 绘制圆形</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Canvas高级使用"><span class="toc-number">3.</span> <span class="toc-text">3、Canvas高级使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-线性渐变"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 线性渐变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-径向渐变"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 径向渐变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-添加阴影"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 添加阴影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-绘制图像"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 绘制图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-图形变形"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 图形变形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-图形组合"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 图形组合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-图形平铺"><span class="toc-number">3.7.</span> <span class="toc-text">3.7 图形平铺</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-8-图像剪切"><span class="toc-number">3.8.</span> <span class="toc-text">3.8 图像剪切</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-9-绘制文字"><span class="toc-number">3.9.</span> <span class="toc-text">3.9 绘制文字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-10-贝塞尔曲线"><span class="toc-number">3.10.</span> <span class="toc-text">3.10 贝塞尔曲线</span></a></li></ol></li></ol>
@@ -393,7 +399,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/黑玛鱼知识库/" class="article-tag-list-link color2">黑玛鱼知识库</a>
+        			<a href="/categories/HTML5/" class="article-tag-list-link color1">HTML5</a>
         		</li>
       		
 		</ul>
