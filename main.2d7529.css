@@ -4287,6 +4287,7 @@ a.pswp__share--download:hover {
     transform: scale(0);
 }
 
-#pop_ad{
-    display: none!important;
+#pop_ad,
+#BDAD_right {
+    display: none !important;
 }
