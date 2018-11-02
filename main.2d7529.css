@@ -4286,3 +4286,7 @@ a.pswp__share--download:hover {
     margin-top: -250px !important;
     transform: scale(0);
 }
+
+#pop_ad{
+    display: none!important;
+}
