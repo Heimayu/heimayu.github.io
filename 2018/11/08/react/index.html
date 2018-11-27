@@ -6,21 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>CSS3动画探究之旅(一) | Heimayu | learn and live</title>
+  <title>React基础教程 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我们经常会看到CSS3能制作出很炫酷的动画效果，但是自己却只能做一些简单的。原因是对CSS3动画只知其一，不知其二。最近正好有做动画的项目，于是花时间将css3动画做了一个探究之旅，记录在册。">
+  <meta name="description" content="自学react基础教程记录。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3动画探究之旅(一)">
-<meta property="og:url" content="http://www.webhmy.com/2018/11/02/animate/index.html">
+<meta property="og:title" content="React基础教程">
+<meta property="og:url" content="http://www.webhmy.com/2018/11/08/react/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="我们经常会看到CSS3能制作出很炫酷的动画效果，但是自己却只能做一些简单的。原因是对CSS3动画只知其一，不知其二。最近正好有做动画的项目，于是花时间将css3动画做了一个探究之旅，记录在册。">
+<meta property="og:description" content="自学react基础教程记录。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.webhmy.com/2018/11/02/animate/1.png">
-<meta property="og:updated_time" content="2018-11-02T03:27:50.247Z">
+<meta property="og:image" content="http://www.webhmy.com/2018/11/08/react/1.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/11/08/react/2.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/11/08/react/3.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/11/08/react/4.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/11/08/react/5.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/11/08/react/6.png">
+<meta property="og:updated_time" content="2018-11-07T08:26:08.448Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3动画探究之旅(一)">
-<meta name="twitter:description" content="我们经常会看到CSS3能制作出很炫酷的动画效果，但是自己却只能做一些简单的。原因是对CSS3动画只知其一，不知其二。最近正好有做动画的项目，于是花时间将css3动画做了一个探究之旅，记录在册。">
-<meta name="twitter:image" content="http://www.webhmy.com/2018/11/02/animate/1.png">
+<meta name="twitter:title" content="React基础教程">
+<meta name="twitter:description" content="自学react基础教程记录。">
+<meta name="twitter:image" content="http://www.webhmy.com/2018/11/08/react/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -150,7 +155,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-animate" class="article article-type-post "
+            <article id="post-react" class="article article-type-post "
   itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -158,13 +163,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CSS3动画探究之旅(一)
+      React基础教程
     </h1>
   
 
           
-            <a href="/2018/11/02/animate/" class="archive-article-date">
-  	<time datetime="2018-11-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+            <a href="/2018/11/08/react/" class="archive-article-date">
+  	<time datetime="2018-11-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
 </a>
               
       </header>
@@ -178,7 +183,7 @@
           <div id="toc-article" class="toc-article"  style="display:none">
             <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
             <strong class="toc-title">文章目录</strong>
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#keyframes"><span class="toc-number">1.</span> <span class="toc-text">@keyframes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation"><span class="toc-number">2.</span> <span class="toc-text">animation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#animation-timing-function"><span class="toc-number">2.1.</span> <span class="toc-text">animation-timing-function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#animation-direction"><span class="toc-number">2.2.</span> <span class="toc-text">animation-direction</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装"><span class="toc-number">1.</span> <span class="toc-text">1、安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、JSX"><span class="toc-number">2.</span> <span class="toc-text">2、JSX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、元素渲染"><span class="toc-number">3.</span> <span class="toc-text">3、元素渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、父-gt-子通信"><span class="toc-number">4.</span> <span class="toc-text">4、父-&gt;子通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、状态"><span class="toc-number">5.</span> <span class="toc-text">5、状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、事件处理"><span class="toc-number">6.</span> <span class="toc-text">6、事件处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、条件渲染"><span class="toc-number">7.</span> <span class="toc-text">7、条件渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、列表渲染"><span class="toc-number">8.</span> <span class="toc-text">8、列表渲染</span></a></li></ol>
           </div>
           <script type="text/javascript">
             function showToc() {
@@ -200,263 +205,45 @@
             <!-- 目录内容结束 -->
             <div class="article-entry" itemprop="articleBody">
               
-                        <p>我们经常会看到CSS3能制作出很炫酷的动画效果，但是自己却只能做一些简单的。原因是对CSS3动画只知其一，不知其二。最近正好有做动画的项目，于是花时间将css3动画做了一个探究之旅，记录在册。<br><a id="more"></a></p>
-<p>动画是使元素从一种样式逐渐变化为另外一种效果，CSS3动画的生成，主要依赖<code>@keyframes</code>定义动画，<code>animation</code>执行动画。</p>
-<h3 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h3><p>通过 <code>@keyframes</code> 规则创建动画。</p>
+                        <p>自学react基础教程记录。<br><a id="more"></a></p>
+<h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cnpm install create-react-app -g</span><br><span class="line"></span><br><span class="line">create-react-app my-app</span><br><span class="line"></span><br><span class="line">cd my-app/</span><br><span class="line"></span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<p>在浏览器中打开 <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a> ，就可以看到默认的界面了~</p>
+<h3 id="2、JSX"><a href="#2、JSX" class="headerlink" title="2、JSX"></a>2、JSX</h3><p><code>React</code> 使用JSX（js的语法扩展）来描述用户界面，在JSX中可以使用表达式（用{}包裹）。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ele = <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;user.acatarUrl&#125;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>JSX特性更接近js而不是html。React Dom 使用小驼峰命名，比如<code>class</code>变成<code>className</code>:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ele = (</span><br><span class="line">    &lt;h1 className =<span class="string">"greet"</span>&gt;</span><br><span class="line">        Hello,React!</span><br><span class="line">    &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3、元素渲染"><a href="#3、元素渲染" class="headerlink" title="3、元素渲染"></a>3、元素渲染</h3><p>元素是<code>React</code> 应用的最小单位。使用 <code>ReactDOM.render()</code> 可以将JSX定义的元素渲染到根节点，例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> ele = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span></span><br><span class="line"><span class="javascript">    ReactDOM.render(ele, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>))</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>渲染结果：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4、父-gt-子通信"><a href="#4、父-gt-子通信" class="headerlink" title="4、父-&gt;子通信"></a>4、父-&gt;子通信</h3><ul>
+<li><p>子组件示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> This is Child: &#123;this.props.name&#125; <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Child;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>父组件示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Child <span class="keyword">from</span> <span class="string">'.Child'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">        &lt;Child name=<span class="string">"heimayu"</span> /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>父组件通过<code>&lt;Child name=&quot;heimayu&quot; /&gt;</code>直接调用子组件，在组件上定义的属性 <code>name=&quot;heimayu&quot;</code>，render函数可以从<code>this.props</code>上获取到属性上对应的值。<br><img src="/2018/11/08/react/1.png" alt=""></p>
+<h3 id="5、状态"><a href="#5、状态" class="headerlink" title="5、状态"></a>5、状态</h3><p>状态（<code>state</code>）是组件私有的状态属性，具有局部函数的特性。定义：在组件的构造函数中定义，<strong>构造函数是唯一能够直接赋值的地方</strong>。<br>举例：封装一个简易钟表组件<code>Time</code>，实时显示当前时间<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Time</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化定义</span></span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            date: <span class="keyword">this</span>.getNowTime(<span class="keyword">new</span> <span class="built_in">Date</span>())</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 组件渲染dom后</span></span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        <span class="keyword">this</span>.timer = setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                date: <span class="keyword">this</span>.getNowTime(<span class="keyword">new</span> <span class="built_in">Date</span>())</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,<span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取2位数的时间</span></span><br><span class="line">    getTwoNumber(time)&#123;</span><br><span class="line">        <span class="keyword">return</span> time.toString().padStart(<span class="number">2</span>,<span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取当前时间</span></span><br><span class="line">    getNowTime(date)&#123;</span><br><span class="line">        <span class="keyword">let</span> y = date.getFullYear();</span><br><span class="line">        <span class="keyword">let</span> M = <span class="keyword">this</span>.getTwoNumber(date.getMonth() + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">let</span> d = <span class="keyword">this</span>.getTwoNumber(date.getDate());</span><br><span class="line">        <span class="keyword">let</span> h = <span class="keyword">this</span>.getTwoNumber(date.getHours());</span><br><span class="line">        <span class="keyword">let</span> m = <span class="keyword">this</span>.getTwoNumber(date.getMinutes());</span><br><span class="line">        <span class="keyword">let</span> s = <span class="keyword">this</span>.getTwoNumber(date.getSeconds());</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;y&#125;</span>年<span class="subst">$&#123;M&#125;</span>月<span class="subst">$&#123;d&#125;</span>日 <span class="subst">$&#123;h&#125;</span>时<span class="subst">$&#123;m&#125;</span>分<span class="subst">$&#123;s&#125;</span>秒`</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;h2&gt;现在时间是：&#123;<span class="keyword">this</span>.state.date&#125;&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        )        </span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Time;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/08/react/2.png" alt=""></p>
+<p><strong>2个知识点：</strong></p>
+<ol>
+<li><p>更改状态的方法 <code>setState()</code></p>
 <blockquote>
-<p>@keyframes keyframes-name {keyframes-selector {css-styles;}}<br><code>keyframes-name</code> 帧列表的名称。 名称必须符合 CSS 语法中对标识符的定义。<br><code>keyframes-selector</code> 动画时长的百分比。合法值：</p>
-<ul>
-<li>0-100%</li>
-<li>from 等效于 0% </li>
-<li>to 等效于 100%<br><code>css-styles</code> 需要改变的css样式，支持多属性</li>
-</ul>
+<p>如果在更新的时候，需要使用上一个状态值，需要这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function">(<span class="params">prevState,props</span>)=&gt;</span>&#123;</span><br><span class="line">    prevState 表示上一个状态</span><br><span class="line">    props 表示当前组件的属性对象</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h3><p><code>animation</code> 是一个简写的属性，用于设置6个动画属性：</p>
-<ul>
-<li><code>animation-name</code>：这个就是使用@keyframes定义的动画名称；</li>
-<li><code>animation-duration</code>：动画执行的时间，以秒为单位</li>
-<li><code>animation-delay</code>：规定动画开始之前的延迟</li>
-<li><code>animation-iteration-count</code>：规定动画应该播放的次数,n(次数) | infinite(无限次)</li>
-<li><code>animation-direction</code>：规定是否应该轮流反向播放动画</li>
-<li><code>animation-timing-function</code>：规定动画的速度曲线</li>
-</ul>
-
-<div class="demo1"></div>
-<style>
-@keyframes changeSize {
-    0% {
-        transform: scale(0.8);            
-    }
-    50% {
-        transform: scale(1.2);            
-    }
-    100% {
-        transform: scale(0.8);            
-    }
-}
-
-.demo1 {
-    margin: 50px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: pink;
-    border: #e2ffc0 10px solid;
-    animation-name: changeSize;
-    animation-duration: 2s;
-    animation-iteration-count:infinite;
-}
-</style>
-
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> changeSize &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.8);            </span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.2);            </span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(0.8);            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.demo</span> &#123;</span><br><span class="line">    <span class="attribute">animation-name</span>: changeSize;</span><br><span class="line">    <span class="attribute">animation-duration</span>: <span class="number">2s</span>;</span><br><span class="line">    <span class="attribute">animation-iteration-count</span>:infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="animation-timing-function"><a href="#animation-timing-function" class="headerlink" title="animation-timing-function"></a>animation-timing-function</h4><p>这里说下复杂属性，第一个是<code>animation-timing-function</code>：<strong>规定动画速度的曲线</strong> </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">值</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">ease</td>
-<td style="text-align:left">默认，低速开始，然后加快，结束前变慢</td>
-</tr>
-<tr>
-<td style="text-align:left">linear</td>
-<td style="text-align:left">从头到尾速度相同</td>
-</tr>
-<tr>
-<td style="text-align:left">ease-in</td>
-<td style="text-align:left">以低速度开始，先慢后快</td>
-</tr>
-<tr>
-<td style="text-align:left">ease-out</td>
-<td style="text-align:left">以低速结束，先快后慢</td>
-</tr>
-<tr>
-<td style="text-align:left">ease-in-out</td>
-<td style="text-align:left">以低速开始和结束</td>
-</tr>
-<tr>
-<td style="text-align:left">cubic-bezier(x1,y1,x2,y2)</td>
-<td style="text-align:left">在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><code>cubic-bezier</code>：三次赛贝尔曲线函数，前面的几个预设函数都可以通过它来实现。 通过控制曲线上的四个点（起始点(0,0)、终止点(1,1)以及两个相互分离的中间点）来绘制一条曲线并以曲线的状态来反映动画过程中速度的变化。可以访问 <a href="http://cubic-bezier.com/#.08,.6,.67,1.03" target="_blank" rel="noopener">cubic-bezier.com</a> 来设置对应的值。</li>
-</ul>
-<p><code>ease</code> 的效果等同于 <code>cubic-bezier(.25,.01,.25,1)</code><br><code>linear</code> 的效果等同于 <code>cubic-bezier(0,0,1,1)</code><br><code>ease-in</code> 的效果等同于 <code>cubic-bezier(.42,0,1,1)</code><br><code>ease-out</code> 的效果等同于 <code>cubic-bezier(0,0,.58,1)</code><br><code>ease-in-out</code> 的效果等同于 <code>cubic-bezier(.42,0,.58,1)</code><br><img src="/2018/11/02/animate/1.png" alt=""></p>
-
-<ul class="demo2">
-    <li>ease</li>
-    <li style="background-color:rebeccapurple">linear</li>
-    <li style="background-color:darkcyan">ease-in</li>
-    <li style="background-color:silver">ease-out</li>
-    <li style="background-color:fuchsia">ease-in-out</li>
-    <li style="background-color:cadetblue">cubic-bezier</li>
-</ul>
-
-<style>
-@keyframes dropdown {
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: 320px;
-  }
-}
-
-.demo2 {
-  display: flex;
-  justify-content: space-around;
-  width: 700px;
-  height: 400px;
-  border: grey 1px dashed;
-  margin: 0;
-  padding: 0;
-}
-
-.demo2 li {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  font-size: 12px;
-  border-radius: 50%;
-  background-color: antiquewhite;
-  line-height: 80px;
-  text-align: center;
-  list-style: none;
-  color: #343434;
-}
-
-.demo2 li:before{
-    display:none!important;
-}
-
-ul.demo2 li:first-child {
-  animation: dropdown 6s ease infinite;
-}
-ul.demo2 li:nth-child(2) {
-  animation: dropdown 6s linear infinite;
-}
-ul.demo2 li:nth-child(3) {
-  animation: dropdown 6s ease-in infinite;
-}
-ul.demo2 li:nth-child(4) {
-  animation: dropdown 6s ease-out infinite;
-}
-ul.demo2 li:nth-child(5) {
-  animation: dropdown 6s ease-in-out infinite;
-}
-ul.demo2 li:last-child {
-  animation: dropdown 6s cubic-bezier(.08,.6,.67,1.03) infinite;
-}
-
-</style>
-
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> dropdown &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">0px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">420px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    &amp;:first-child&#123;</span><br><span class="line">        <span class="selector-tag">animation</span>: <span class="selector-tag">dropdown</span> 6<span class="selector-tag">s</span> <span class="selector-tag">ease</span> <span class="selector-tag">infinite</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(2)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> linear infinite;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(3)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> ease-in infinite;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(4)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> ease-out infinite;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(5)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> ease-in-out infinite;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:last-child</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> <span class="built_in">cubic-bezier</span>(.08,.6,.67,1.03) infinite;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="animation-direction"><a href="#animation-direction" class="headerlink" title="animation-direction"></a>animation-direction</h4><p><code>animation-direction</code> 定义是否应该轮流反向播放动画，如果动画次数设置为一次，则无效。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">值</th>
-<th style="text-align:left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">normal</td>
-<td style="text-align:left">默认，正常播放</td>
-</tr>
-<tr>
-<td style="text-align:left">reverse</td>
-<td style="text-align:left">动画反向播放</td>
-</tr>
-<tr>
-<td style="text-align:left">alternate</td>
-<td style="text-align:left">交替播放， 动画会在奇数次数（1、3、5 等等）正常播放，而在偶数次数（2、4、6 等等）反向播放。</td>
-</tr>
-<tr>
-<td style="text-align:left">alternate-reverse</td>
-<td style="text-align:left">交替播放， 动画会在奇数次数（1、3、5 等等）反向播放，而在偶数次数（2、4、6 等等）正常播放。</td>
-</tr>
-</tbody>
-</table>
-<p>我们可以把上面的案例每个都加上<code>alternate</code>的参数，再看下效果，是不是更赞了？</p>
-
-<ul class="demo3">
-    <li>ease</li>
-    <li style="background-color:rebeccapurple">linear</li>
-    <li style="background-color:darkcyan">ease-in</li>
-    <li style="background-color:silver">ease-out</li>
-    <li style="background-color:fuchsia">ease-in-out</li>
-    <li style="background-color:cadetblue">cubic-bezier</li>
-</ul>
-
-<style>
-@keyframes dropdown {
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: 320px;
-  }
-}
-
-.demo3 {
-  display: flex;
-  justify-content: space-around;
-  width: 700px;
-  height: 400px;
-  border: grey 1px dashed;
-  margin: 0;
-  padding: 0;
-}
-
-.demo3 li {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  font-size: 12px;
-  border-radius: 50%;
-  background-color: antiquewhite;
-  line-height: 80px;
-  text-align: center;
-  list-style: none;
-  color: #343434;
-}
-
-.demo3 li:before{
-    display:none!important;
-}
-
-ul.demo3 li:first-child {
-  animation: dropdown 6s ease infinite alternate;
-}
-ul.demo3 li:nth-child(2) {
-  animation: dropdown 6s linear infinite alternate;
-}
-ul.demo3 li:nth-child(3) {
-  animation: dropdown 6s ease-in infinite alternate;
-}
-ul.demo3 li:nth-child(4) {
-  animation: dropdown 6s ease-out infinite alternate;
-}
-ul.demo3 li:nth-child(5) {
-  animation: dropdown 6s ease-in-out infinite alternate;
-}
-ul.demo3 li:last-child {
-  animation: dropdown 6s cubic-bezier(.08,.6,.67,1.03) infinite alternate;
-}
-
-</style>
-
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    &amp;:first-child&#123;</span><br><span class="line">        <span class="selector-tag">animation</span>: <span class="selector-tag">dropdown</span> 6<span class="selector-tag">s</span> <span class="selector-tag">ease</span> <span class="selector-tag">infinite</span> <span class="selector-tag">alternate</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(2)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> linear infinite alternate;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(3)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> ease-in infinite alternate;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(4)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> ease-out infinite alternate;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:nth-child(5)</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> ease-in-out infinite alternate;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;<span class="selector-pseudo">:last-child</span>&#123;</span><br><span class="line">        <span class="attribute">animation</span>: dropdown <span class="number">6s</span> <span class="built_in">cubic-bezier</span>(.08,.6,.67,1.03) infinite alternate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dom加载后的生命周期函数调用<code>componentDidMount</code> </p>
+</li>
+</ol>
+<h3 id="6、事件处理"><a href="#6、事件处理" class="headerlink" title="6、事件处理"></a>6、事件处理</h3><p><strong>注意事项：</strong><br>1、类似JS的事件绑定，但是需要使用驼峰；例如：点击事件<code>onClick</code>；<br>2、事件中的 <code>this</code> 必须为对应的方法绑定后才能获取，例如：<code>this.clickEvt.bind(this)</code>；<br>3、通过 <code>bind</code> 的方法获取参数 <code>e</code>的方法是在你传入参数的后面进行获取；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test3</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            info: <span class="string">"myinfo:"</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 事件处理可以在这里定义，也可以像下面一样直接在事件的表达式里定义~</span></span><br><span class="line">        <span class="comment">// this.clickEvt = this.clickEvt.bind(this, "heimayu", "18");</span></span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;h3&gt;</span><br><span class="line">                事件处理：</span><br><span class="line">                &lt;button onClick=&#123;<span class="keyword">this</span>.clickEvt.bind(<span class="keyword">this</span>, <span class="string">"heimayu"</span>, <span class="string">"18"</span>)&#125;&gt;点击&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>h3&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    clickEvt(name, age, e) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.info);</span><br><span class="line">        <span class="built_in">console</span>.log(name);</span><br><span class="line">        <span class="built_in">console</span>.log(age);</span><br><span class="line">        e.preventDefault();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/08/react/3.png" alt=""></p>
+<h3 id="7、条件渲染"><a href="#7、条件渲染" class="headerlink" title="7、条件渲染"></a>7、条件渲染</h3><p>和JS语法一样，可以使用<code>if(){}else{}</code>语句，例如下面的例子中，使用<code>{TestJSX}</code>表示条件过滤后的组件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="comment">// 定义一个状态</span></span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      showTextNum: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// 条件渲染</span></span><br><span class="line">    <span class="keyword">let</span> TextJSX;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.showTextNum == <span class="number">1</span>) &#123;</span><br><span class="line">      TextJSX = <span class="xml"><span class="tag">&lt;<span class="name">Text1</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125; else &#123;</span></span><br><span class="line"><span class="xml">      TextJSX = <span class="tag">&lt;<span class="name">Text2</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    return (</span></span><br><span class="line">      &lt;div className="App"&gt;</span><br><span class="line">        &lt;button onClick=&#123;this.changeState.bind(this)&#125;&gt;切换&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">        // 这里使用大括号</span><br><span class="line">        &#123;TextJSX&#125;</span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    );</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  changeState() &#123;</span></span><br><span class="line"><span class="xml">    this.setState((prevState) =&gt; &#123;</span></span><br><span class="line"><span class="xml">      return &#123;</span></span><br><span class="line"><span class="xml">        showTextNum: prevState.showTextNum == 1 ? 2 : 1</span></span><br><span class="line"><span class="xml">      &#125;</span></span><br><span class="line"><span class="xml">    &#125;)</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/08/react/4.png" alt=""></p>
+<p><img src="/2018/11/08/react/5.png" alt=""></p>
+<p>上面的例子还可以使用三元表达式进行简写：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">    &lt;button onClick=&#123;<span class="keyword">this</span>.changeState.bind(<span class="keyword">this</span>)&#125;&gt;切换&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#123;</span></span><br><span class="line"><span class="regexp">        this.state.showTextNum == 1 ?</span></span><br><span class="line"><span class="regexp">        &lt;Text1 /</span>&gt; :</span><br><span class="line">        &lt;Text2 /&gt;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="8、列表渲染"><a href="#8、列表渲染" class="headerlink" title="8、列表渲染"></a>8、列表渲染</h3><p>通过对数据进行处理，返回对应的渲染出来的JSX模板，例如下例中，使用<code>map</code>方法遍历<code>listItems</code>数组，生成列表的JSX模块，因为简单，所以可以直接使用{}写对应的表达式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">const</span> listItems = [&#123;</span><br><span class="line">        id:<span class="number">1</span>,</span><br><span class="line">        name: <span class="string">"heimayu"</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        id: <span class="number">2</span>,</span><br><span class="line">        name: <span class="string">"黑玛鱼"</span></span><br><span class="line">    &#125;]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div className=<span class="string">"App"</span>&gt;         </span><br><span class="line">            <span class="comment">// 简单的列表渲染</span></span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &#123;</span><br><span class="line">                listItems.map(<span class="function"><span class="params">item</span> =&gt;</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> (</span><br><span class="line">                        &lt;li key=&#123;item.id&#125;&gt;&#123;item.name&#125;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">                    )</span></span><br><span class="line"><span class="regexp">                &#125;)</span></span><br><span class="line"><span class="regexp">                &#125;</span></span><br><span class="line"><span class="regexp">            &lt;/u</span>l&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/08/react/6.png" alt=""></p>
 
                           
 
@@ -471,7 +258,7 @@ ul.demo3 li:last-child {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/CSS3/" class="article-tag-list-link color5">CSS3</a>
+        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
         		</li>
       		
 		</ul>
@@ -526,7 +313,7 @@ ul.demo3 li:last-child {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/11/02/animate/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/11/08/react/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -541,7 +328,7 @@ ul.demo3 li:last-child {
 
   <section id="comments">
     <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-    <div id="SOHUCS" sid="CSS3动画探究之旅(一)" style="padding: 0px 30px 0px 46px;"></div>
+    <div id="SOHUCS" sid="React基础教程" style="padding: 0px 30px 0px 46px;"></div>
     <script>
       (function () {
         var appid = 'cytzfOug4',
