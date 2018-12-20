@@ -6,18 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.webhmy.com">
-  <title>Category: JS | Heimayu | learn and live</title>
+  <title>修改vue的配置项支持生产环境下二级域名访问的方法 | Heimayu | learn and live</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Heimayu | learn and live">
-<meta property="og:url" content="http://www.webhmy.com/categories/JS/index.html">
+  <meta name="description" content="本文主要记录如何配置vue的打包文件配置项，使打包后的文件可以支持二级域名的访问。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修改vue的配置项支持生产环境下二级域名访问的方法">
+<meta property="og:url" content="http://www.webhmy.com/2018/12/20/vue-changedomain/index.html">
 <meta property="og:site_name" content="Heimayu | learn and live">
-<meta property="og:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta property="og:description" content="本文主要记录如何配置vue的打包文件配置项，使打包后的文件可以支持二级域名的访问。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.webhmy.com/2018/12/20/vue-changedomain/1.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/12/20/vue-changedomain/2.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/12/20/vue-changedomain/5.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/12/20/vue-changedomain/4.png">
+<meta property="og:image" content="http://www.webhmy.com/2018/12/20/vue-changedomain/3.png">
+<meta property="og:updated_time" content="2018-12-20T09:02:08.400Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Heimayu | learn and live">
-<meta name="twitter:description" content="黑玛鱼的前端博客，专注前端知识、个人素描作品、个人知识累积">
+<meta name="twitter:title" content="修改vue的配置项支持生产环境下二级域名访问的方法">
+<meta name="twitter:description" content="本文主要记录如何配置vue的打包文件配置项，使打包后的文件可以支持二级域名的访问。">
+<meta name="twitter:image" content="http://www.webhmy.com/2018/12/20/vue-changedomain/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Heimayu | learn and live" type="application/atom+xml">
   
@@ -147,37 +154,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue-changedomain" class="article article-type-post "
+  itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      修改vue的配置项支持生产环境下二级域名访问的方法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/20/vue-changedomain/" class="archive-article-date">
+
+          
+            <a href="/2018/12/20/vue-changedomain/" class="archive-article-date">
   	<time datetime="2018-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/20/vue-changedomain/">修改vue的配置项支持生产环境下二级域名访问的方法</a>
-    </h1>
-  
+              
+      </header>
+      
+        <!-- 目录内容 -->
+        
+          <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+          </p>
+          <div id="toc-article" class="toc-article"  style="display:none">
+            <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、常规打包"><span class="toc-number">1.</span> <span class="toc-text">1、常规打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、静态文件地址修改"><span class="toc-number">2.</span> <span class="toc-text">2、静态文件地址修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、接口地址修改"><span class="toc-number">3.</span> <span class="toc-text">3、接口地址修改</span></a></li></ol>
+          </div>
+          <script type="text/javascript">
+            function showToc() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:block");
+              show_toc_btn.setAttribute("style", "display:none");
+            };
 
-        <div class="article-info info-on-right">
+            function showBtn() {
+              var toc_article = document.getElementById("toc-article");
+              var show_toc_btn = document.getElementById("show-toc-btn");
+              toc_article.setAttribute("style", "display:none");
+              show_toc_btn.setAttribute("style", "display:block");
+            };
+
+          </script>
           
-          
+            <!-- 目录内容结束 -->
+            <div class="article-entry" itemprop="articleBody">
+              
+                        <p>本文主要记录如何配置vue的打包文件配置项，使打包后的文件可以支持二级域名的访问。<br><a id="more"></a></p>
+<h3 id="1、常规打包"><a href="#1、常规打包" class="headerlink" title="1、常规打包"></a>1、常规打包</h3><p>在实际的项目中，我们通常都使用 <code>npm run build</code> 直接打包文件后丢到服务器上访问<br>打包后的文件目录是这样的：<br><img src="/2018/12/20/vue-changedomain/1.png" alt=""></p>
+<p>访问的静态资源都是地址是这样的：<br><img src="/2018/12/20/vue-changedomain/2.png" alt=""></p>
+<p>我们现在要放在服务器的二级域名下访问地址，那么访问的路径就应该也加上二级域名，该如何配置尼？</p>
+<h3 id="2、静态文件地址修改"><a href="#2、静态文件地址修改" class="headerlink" title="2、静态文件地址修改"></a>2、静态文件地址修改</h3><p>静态文件的访问地址应该加上二级域名前缀：<br><img src="/2018/12/20/vue-changedomain/5.png" alt=""></p>
+<p>方法：找到项目的打包配置文件<code>index.js</code>，对参数<code>assetsPublicPath</code>进行配置：<br><img src="/2018/12/20/vue-changedomain/4.png" alt=""></p>
+<p><strong>解释一下：</strong></p>
+<ul>
+<li><code>assetsPublicPath</code>： 是webpack打包后的文件访问的静态资源路径的根路径，如果我们想在访问的域名后加入二级域名，那么就要在这里进行配置了。</li>
+<li><code>process.argv</code>：是node的全局变量，我们在执行<code>npm run build</code> 其实真实的命令行是<code>node build/build.js</code>！<code>process.argv</code>指的就是node命令行后的参数，argv是一个数组，第一个参数是<code>process.execPath</code>，第二个参数是当前执行的js文件路径，<strong>第三个参数</strong>开始指向我们在命名行后面加的参数了。</li>
+</ul>
+<p>因此我们这样执行命令进行打包就可以了：<br><img src="/2018/12/20/vue-changedomain/3.png" alt=""></p>
+<p>如此，node就可以获取到<code>process.argv[2]</code>是<code>hmy</code>了，那么静态资源的路径就可以是<code>/hmy</code>了。</p>
+<h3 id="3、接口地址修改"><a href="#3、接口地址修改" class="headerlink" title="3、接口地址修改"></a>3、接口地址修改</h3><p>除了修改静态文件的路径，我们还要修改接口请求地址的路径，我们知道在vue的业务代码中可以通过<code>process.env</code>来获取全局配置对象区分生产环境和开发环境，因此我们可以将相应的配置放在对应的配置文件中。</p>
+<p>方法：找到项目的打包生产环境的配置文件<code>prod.env.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">let</span> url = (process.argv[<span class="number">2</span>] &amp;&amp; process.argv[<span class="number">2</span>] == <span class="string">'hmy'</span>) ? <span class="string">'hmy'</span> : <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line">  URL: <span class="string">'"'</span> + url + <span class="string">'"'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在封装axios请求的文件中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> URL = process.env.URL;</span><br><span class="line">axios.defaults.baseURL = URL === <span class="string">'hmy'</span> ? <span class="string">'/hmy'</span> : <span class="string">'/'</span>;</span><br></pre></td></tr></table></figure>
+<p>这样，就完成了二级域名访问的配置啦！</p>
+
+                          
+
+                            
+            </div>
+            <div class="article-info article-info-index">
+              
+                  
+                    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -190,365 +243,87 @@
 	</div>
 
 
+                      
+
+                          
+                            
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.webhmy.com/2018/12/20/vue-changedomain/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+                              
+                                <div class="clearfix"></div>
+            </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/23/vue-webpack/" class="archive-article-date">
-  	<time datetime="2018-11-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/23/vue-webpack/">如何将vue的单页面改造成多页面应用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/08/react/" class="archive-article-date">
-  	<time datetime="2018-11-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/08/react/">React基础教程</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  <section id="comments">
+    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <div id="SOHUCS" sid="修改vue的配置项支持生产环境下二级域名访问的方法" style="padding: 0px 30px 0px 46px;"></div>
+    <script>
+      (function () {
+        var appid = 'cytzfOug4',
+            conf = '8f1ff3e2ba569c54d8d0f3ecb439cbb6';
+        var doc = document,
+            s = doc.createElement('script'),
+            h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+        s.type = 'text/javascript';
+        s.charset = 'utf-8';
+        s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf=' + conf + '&appid=' + appid;
+        h.insertBefore(s, h.firstChild);
+        window.SCS_NO_IFRAME = true;
+      })()
 
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+    </script>
+  </section>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/22/git/" class="archive-article-date">
-  	<time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/22/git/">复活hexo静态博客的方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/27/element/" class="archive-article-date">
-  	<time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/27/element/">ElementUI组件库常见方法及问题汇总</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/25/rotate/" class="archive-article-date">
-  	<time datetime="2018-09-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/rotate/">简述手动拖拽旋转元素的方法实现（Math.atan2的应用）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/22/config/" class="archive-article-date">
-  	<time datetime="2018-08-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/22/config/">Vue打包后文件的接口地址配置方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/08/angular-advance/" class="archive-article-date">
-  	<time datetime="2018-08-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/08/angular-advance/">Angular6 进阶（路由、依赖注入、非父子组件通讯）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/02/angular-base/" class="archive-article-date">
-  	<time datetime="2018-08-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/02/angular-base/">Angular6 基础（数据绑定、生命周期、父子组件通讯、响应式编程）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/crossdomain/" class="archive-article-date">
-  	<time datetime="2018-07-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/crossdomain/">前端如何使用proxy代理配置和nginx解决跨域问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS/" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/categories/JS/page/2/">2</a><a class="extend next" rel="next" href="/categories/JS/page/2/">Next &raquo;</a>
-    </nav>
-  
-
-
 
           </div>
         </div>
@@ -576,10 +351,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		root: "/",
 		innerArchive: false,
